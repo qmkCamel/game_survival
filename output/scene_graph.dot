@@ -1,0 +1,50 @@
+digraph GameScenes {
+  // 图形设置
+  graph [fontname="SimHei", rankdir=LR, overlap=false, splines=true, bgcolor="#FFFFFF"];
+  node [shape=box, style=filled, fontname="SimHei", fontsize=12, margin="0.2,0.1"];
+  edge [fontname="SimHei", fontsize=10];
+  subgraph cluster_intro {
+    label="入职培训";
+    style=filled;
+    color="#9ED3FF";
+    fontsize=16;
+  }
+  subgraph cluster_office_politics {
+    label="办公室政治";
+    style=filled;
+    color="#FFC09E";
+    fontsize=16;
+  }
+  subgraph cluster_projects {
+    label="项目管理";
+    style=filled;
+    color="#C9E4DE";
+    fontsize=16;
+  }
+  subgraph cluster_dramatic {
+    label="戏剧性事件";
+    style=filled;
+    color="#FFCDAB";
+    fontsize=16;
+  }
+  subgraph cluster_hr {
+    label="HR互动";
+    style=filled;
+    color="#E6E6FA";
+    fontsize=16;
+  }
+  subgraph cluster_endings {
+    label="游戏结局";
+    style=filled;
+    color="#FFABAB";
+    fontsize=16;
+  }
+  subgraph cluster_misc {
+    label="其他场景";
+    style=filled;
+    color="#E2E2E2";
+    fontsize=16;
+  }
+
+  // 场景连接
+}

@@ -1,0 +1,68 @@
+// 游戏的开始场景和培训场景
+var introScenes = {
+    // 开始场景
+    start: {
+        text: `
+            <h2>新的开始</h2>
+            <p>恭喜你！在经历了数十场面试后，你终于收到了知名互联网公司"996科技"的offer。</p>
+            <p>作为一名新入职的员工，你即将面对各种职场挑战和人际关系。</p>
+            <p>你需要明智地做出选择，平衡工作表现和心理健康，以便在这个竞争激烈的环境中生存下来。</p>
+            <p>今天是你入职的第一天，HR已经发了邮件通知你去新员工培训...</p>
+        `,
+        choices: [
+            { text: "准时到达培训地点", nextScene: "training_ontime" },
+            { text: "提前半小时到达，表现积极性", nextScene: "training_early" },
+            { text: "迟到10分钟，但带了咖啡给大家", nextScene: "training_late" }
+        ]
+    },
+    
+    // 培训场景 - 准时到达
+    training_ontime: {
+        text: `
+            <h2>新员工培训</h2>
+            <p>你准时到达了培训地点，发现大部分新员工都已经到了。</p>
+            <p>HR小王微笑着记录你的到达时间，并邀请你找个位置坐下。</p>
+            <p>培训开始后，你了解到公司的文化强调"拼搏、创新和团队合作"，同时也提到了"能者多劳"的理念。</p>
+            <p>在培训的互动环节，主持人问道："对于加班，你有什么看法？"</p>
+        `,
+        choices: [
+            { text: "表示愿意为项目加班，展现奉献精神", nextScene: "training_overtime_positive", effects: {performance: 5, mental: -3} },
+            { text: "委婉表示工作效率比时间更重要", nextScene: "training_efficiency", effects: {performance: 0, mental: 3} },
+            { text: "直接表明个人时间很重要，不想过度加班", nextScene: "training_overtime_negative", effects: {performance: -5, mental: 5} }
+        ]
+    },
+    
+    // 培训场景 - 提前到达
+    training_early: {
+        text: `
+            <h2>提前到达的积极分子</h2>
+            <p>你提前半小时到达培训地点，发现只有HR小王和另外两名新员工在场。</p>
+            <p>HR小王对你的积极性表示赞赏，并请你帮忙分发培训材料。</p>
+            <p>这让你有机会提前和HR建立了良好的第一印象，也认识了几位新同事。</p>
+            <p>培训开始后，你了解到公司的文化强调"拼搏、创新和团队合作"，同时也提到了"能者多劳"的理念。</p>
+            <p>在培训的互动环节，主持人问道："对于加班，你有什么看法？"</p>
+        `,
+        choices: [
+            { text: "热情表示愿意随时为公司加班", nextScene: "training_overtime_positive", effects: {performance: 8, mental: -5, skills: ["印象管理"]} },
+            { text: "委婉表示工作效率比时间更重要", nextScene: "training_efficiency", effects: {performance: 3, mental: 2} },
+            { text: "表示会在需要时加班，但也要注意工作生活平衡", nextScene: "training_balance", effects: {performance: 2, mental: 5} }
+        ]
+    },
+    
+    // 培训场景 - 迟到
+    training_late: {
+        text: `
+            <h2>小小的迟到</h2>
+            <p>你迟到了10分钟，但带了咖啡给在场的人。</p>
+            <p>HR小王皱了皱眉，但接受了你的道歉和咖啡。</p>
+            <p>其他新员工对你的这个举动反应不一，有人觉得你很会来事，也有人觉得这是在贿赂HR。</p>
+            <p>培训已经开始，你急忙找了个位置坐下。当前话题是关于公司的996工作文化。</p>
+            <p>主持人注意到你的到来，直接问你："作为新员工，你愿意为项目经常加班工作吗？"</p>
+        `,
+        choices: [
+            { text: "表示非常愿意加班，弥补迟到的不良印象", nextScene: "training_overtime_positive", effects: {performance: 3, mental: -8} },
+            { text: "表示会在关键时刻加班，但平时希望提高效率", nextScene: "training_balance", effects: {performance: -2, mental: 0} },
+            { text: "诚实地说偶尔可以，但不希望成为常态", nextScene: "training_overtime_negative", effects: {performance: -5, mental: 2} }
+        ]
+    }
+}; 

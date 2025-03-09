@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职场生存游戏 - 场景路径图</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .graph-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .graph-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .legend {
+            margin-top: 30px;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .description {
+            margin-bottom: 30px;
+        }
+        .download-links {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f4ff;
+            border-radius: 5px;
+        }
+        .download-links a {
+            margin-right: 15px;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .download-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>职场生存游戏 - 场景路径图</h1>
+        
+        <div class="description">
+            <p>这个页面展示了职场生存游戏中所有场景的路径图。场景路径图可视化了游戏中不同场景之间的连接和转换关系，帮助理解游戏的结构和可能的路径。</p>
+            <p>游戏从"新的开始"场景出发，根据玩家的选择，会进入不同的分支和结局。图中使用不同的颜色来区分不同类型的场景组，以便更容易理解游戏的整体结构。</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="changeTab('dot')">层级布局</div>
+            <div class="tab" onclick="changeTab('fdp')">力导向布局</div>
+            <div class="tab" onclick="changeTab('neato')">弹簧模型布局</div>
+        </div>
+        
+        <div class="tab-content active" id="dot">
+            <div class="graph-container">
+                <h3>层级布局（dot引擎）</h3>
+                <p>这种布局强调层级结构，适合展示有明确方向性的场景流程。</p>
+                <img src="scene_graph_dot.png" alt="场景路径图 - 层级布局">
+            </div>
+        </div>
+        
+        <div class="tab-content" id="fdp">
+            <div class="graph-container">
+                <h3>力导向布局（fdp引擎）</h3>
+                <p>这种布局使用力导向算法，节点之间相互排斥，边则相互吸引，适合展示复杂的关系网络。</p>
+                <img src="scene_graph_fdp.png" alt="场景路径图 - 力导向布局">
+            </div>
+        </div>
+        
+        <div class="tab-content" id="neato">
+            <div class="graph-container">
+                <h3>弹簧模型布局（neato引擎）</h3>
+                <p>这种布局使用弹簧模型，尽量保持边的长度一致，适合展示对称或均匀的结构。</p>
+                <img src="scene_graph_neato.png" alt="场景路径图 - 弹簧模型布局">
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>图例说明</h3>
+            <div class="legend-item"><div class="color-box" style="background-color: #9ED3FF;"></div> 入职培训场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #FFC09E;"></div> 办公室政治场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #C9E4DE;"></div> 项目管理场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #FFCDAB;"></div> 戏剧性事件场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #E6E6FA;"></div> HR互动场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #FFABAB;"></div> 游戏结局场景</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #E2E2E2;"></div> 其他场景</div>
+            <br>
+            <div class="legend-item"><div class="color-box" style="background-color: #90EE90;"></div> 游戏起点</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #FF7F7F;"></div> 游戏结局</div>
+            <div class="legend-item"><div class="color-box" style="background-color: #FFFF99;"></div> 未定义场景</div>
+        </div>
+
+        <div class="download-links">
+            <h3>下载图表文件</h3>
+            <a href="scene_graph_dot.png" download>下载层级布局图 (PNG)</a>
+            <a href="scene_graph_fdp.png" download>下载力导向布局图 (PNG)</a>
+            <a href="scene_graph_neato.png" download>下载弹簧模型布局图 (PNG)</a>
+            <a href="scene_graph.dot" download>下载DOT源文件</a>
+        </div>
+    </div>
+
+    <script>
+        function changeTab(tabId) {
+            // 隐藏所有标签内容
+            var contents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            
+            // 取消所有标签激活状态
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            // 激活选中的标签和内容
+            document.getElementById(tabId).classList.add('active');
+            var activeElements = document.querySelectorAll('.tab-content#' + tabId);
+            for (var i = 0; i < activeElements.length; i++) {
+                activeElements[i].classList.add('active');
+            }
+            
+            // 激活对应的标签按钮
+            var matchingTabs = document.querySelectorAll('.tab');
+            for (var i = 0; i < matchingTabs.length; i++) {
+                if (matchingTabs[i].textContent.toLowerCase().includes(tabId)) {
+                    matchingTabs[i].classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html> 

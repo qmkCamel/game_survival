@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互联网职场生存 - 文字冒险游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>互联网职场生存</h1>
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="stat-label">工作表现:</span>
+                    <div class="progress-bar">
+                        <div id="performance-bar" class="progress"></div>
+                    </div>
+                    <span id="performance-value">75%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">心理健康:</span>
+                    <div class="progress-bar">
+                        <div id="mental-bar" class="progress"></div>
+                    </div>
+                    <span id="mental-value">80%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-content">
+            <div id="story-text" class="story-container"></div>
+            <div id="choices-container" class="choices-container"></div>
+        </div>
+        
+        <div class="inventory">
+            <div class="inventory-section">
+                <h3>技能</h3>
+                <div id="skills-list"></div>
+            </div>
+            <div class="inventory-section">
+                <h3>盟友</h3>
+                <div id="allies-list"></div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <button id="restart-btn">重新开始</button>
+        </div>
+    </div>
+    
+    <!-- 场景文件 -->
+    <script src="scenes/scenes_loader.js"></script>
+    <script src="scenes/scenes_intro.js"></script>
+    <script src="scenes/scenes_training_responses.js"></script>
+    <script src="scenes/scenes_office_politics.js"></script>
+    <script src="scenes/scenes_projects.js"></script>
+    <script src="scenes/scenes_advanced.js"></script>
+    <script src="scenes/scenes_dramatic_events.js"></script>
+    <script src="scenes/scenes_dramatic_outcomes.js"></script>
+    <script src="scenes/scenes_missing_definitions.js"></script>
+    <script src="scenes/scenes_hr_followup.js"></script>
+    <script src="scenes/scenes_endings.js"></script>
+    <script src="scenes/scenes_index.js"></script>
+    
+    <!-- 游戏逻辑 -->
+    <script src="game.js"></script>
+    
+    <!-- 测试框架 -->
+    <script src="../tests/game_tests.js"></script>
+</body>
+</html> 
