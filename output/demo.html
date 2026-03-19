@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Game Survival Demo</title>
+  <!-- SugarCube CDN（需联网） -->
+  <script src="https://cdn.jsdelivr.net/gh/tmedwards/sugarcube-2/dist/format.js"></script>
+</head>
+<body>
+  <!-- 简易 Demo：仅包含 start -> training_ontime -> promotion 三个节点 -->
+  <tw-storydata name="Game Survival Demo" startnode="1" creator="SugarCube" creator-version="2.36.1" ifid="DEMO-IFID-0001" format="SugarCube" options="" zoom="1" hidden>
+    <style role="stylesheet" id="twine-user-stylesheet">
+      body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .ending-icon { display:block; width:80px; height:80px; margin:0 auto 16px; image-rendering:pixelated; background-size:contain; background-repeat:no-repeat; }
+      .icon-promotion { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23FFD700' d='M1 7h6V6H1v1zm1-2h4V4H2v1zm1-2h2V2H3v1z'/%3E%3Cpath fill='%23FFA500' d='M0 7h8v1H0z'/%3E%3C/svg%3E"); }
+    </style>
+    <script role="script" id="twine-user-script">
+      /* 初始状态 */
+      Setup.init = function () {
+        State.variables.performance = 75;
+        State.variables.mental = 80;
+      };
+    </script>
+    <tw-passagedata pid="1" name="start" tags="" position="100,100" size="100,100">
+      &lt;h2&gt;新的开始&lt;/h2&gt;
+      &lt;p&gt;恭喜你入职 996 科技，面对职场挑战。&lt;/p&gt;
+      &lt;p&gt;选择你的培训到场方式：&lt;/p&gt;
+      [[准时到达培训地点|training_ontime]]
+    </tw-passagedata>
+    <tw-passagedata pid="2" name="training_ontime" tags="" position="300,100" size="100,100">
+      &lt;h2&gt;新员工培训&lt;/h2&gt;
+      &lt;p&gt;你准时到达，HR 记录了你的时间。&lt;/p&gt;
+      &lt;p&gt;互动环节：如何看待加班？&lt;/p&gt;
+      [[表达积极加班|promotion]]
+      [[保持效率观点|start]]
+    </tw-passagedata>
+    <tw-passagedata pid="3" name="promotion" tags="" position="500,100" size="100,100">
+      &lt;div class=&quot;ending-icon icon-promotion&quot;&gt;&lt;/div&gt;
+      &lt;h2&gt;职场成功&lt;/h2&gt;
+      &lt;p&gt;你一路表现亮眼，成为团队负责人。&lt;/p&gt;
+      [[重新开始|start]]
+    </tw-passagedata>
+  </tw-storydata>
+</body>
+</html>
+

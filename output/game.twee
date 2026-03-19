@@ -1,0 +1,5125 @@
+:: StoryTitle
+Game Survival (SugarCube)
+
+:: StoryData
+<<set $performance = 75>>
+<<set $mental = 80>>
+<<set $skills = []>>
+<<set $allies = []>>
+
+:: StoryInit
+<<run window.clamp = (v,min,max) => Math.max(min, Math.min(max, v))>>
+
+:: senior_advice
+<h2>资深员工的忠告</h2>
+            <p>你找到了那位资深员工王哥，他看了看四周，把你拉到一个安静的角落。</p>
+            <p>"新人啊，我看你挺实诚的，跟你说几句心里话。这个公司有几个不成文的规矩..."</p>
+            <p>王哥详细讲解了公司的"潜规则"：如何避免成为"背锅侠"，如何识别"低垂的果实"（容易完成但能获得认可的任务），以及如何应对同事的"摘桃子"行为（抢功劳）。</p>
+            <p>"记住，不要轻易承诺做不到的事，但也别拒绝太多。找到平衡点才能长久。"</p>
+            <p>这次谈话让你对公司的生态有了更深的了解。</p>
+
+<<link "感谢王哥并请教如何识别团队中的&#x27;关键人物&#x27;">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("职场眼光")>><<set $skills.push("职场眼光")>><</if>>
+<<if !$skills.includes("政治嗅觉")>><<set $skills.push("政治嗅觉")>><</if>>
+<<goto "key_figures">>
+<</link>>
+
+<<link "重点询问如何应对&#x27;摘桃子&#x27;行为">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("功劳保护")>><<set $skills.push("功劳保护")>><</if>>
+<<goto "credit_stealing">>
+<</link>>
+
+<<link "询问如何找到并完成&#x27;低垂的果实&#x27;">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("任务筛选")>><<set $skills.push("任务筛选")>><</if>>
+<<goto "low_hanging_fruit">>
+<</link>>
+
+
+:: key_figures
+<h2>职场关系图谱</h2>
+            <p>王哥微微一笑："这个问题问得好，认清公司中谁真正有话语权比做多少加班都重要。"</p>
+            <p>他详细描述了部门中的几个关键角色：</p>
+            <p>"别看李总是直属领导，但他在公司其实不太受重视。真正的决策者是技术VP赵总，他虽然不常露面，但一句话能决定项目走向。"</p>
+            <p>"还有产品经理小陈，表面上职位不高，但和CEO是校友，意见很受重视。得罪谁也别得罪她。"</p>
+            <p>"最后别忽视HR小王，她虽然总是笑脸相迎，但掌握着绩效评定的关键信息渠道。"</p>
+            <p>王哥拍拍你的肩膀："新人要想站稳脚跟，得学会'排兵布阵'，合理分配精力，重点维护关键关系。"</p>
+
+<<link "争取和技术VP赵总搭上线">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("高层社交")>><<set $skills.push("高层社交")>><</if>>
+<<goto "approach_vp">>
+<</link>>
+
+<<link "和产品经理小陈建立良好关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$allies.includes("小陈")>><<set $allies.push("小陈")>><</if>>
+<<goto "befriend_pm">>
+<</link>>
+
+<<link "忽然接到通知，公司要进行重大重组...">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "company_restructure">>
+<</link>>
+
+
+:: credit_stealing
+<h2>功劳保卫战</h2>
+            <p>王哥听到你的问题，苦笑道："这个问题问到点子上了，'摘桃子'可是职场常态。"</p>
+            <p>他分享了几个应对策略：</p>
+            <p>"首先，重要成果要做好记录，在群里及时汇报，留下痕迹；其次，关键会议一定要参加，不给别人代表你的机会；最后，建立自己的'粉丝团'，让更多人知道你的贡献。"</p>
+            <p>"记住，不要正面冲突指责同事摘桃子，那样只会让自己看起来小气。要用制度和流程来保护自己。"</p>
+            <p>王哥最后提醒你："有时候适当让别人分享一点功劳，也能换来日后的帮助。这是门艺术。"</p>
+
+<<link "在团队中建立周报制度，记录每个人的贡献">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("流程建设")>><<set $skills.push("流程建设")>><</if>>
+<<goto "establish_system">>
+<</link>>
+
+<<link "学会在关键场合展示自己的工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("自我营销")>><<set $skills.push("自我营销")>><</if>>
+<<goto "self_promotion">>
+<</link>>
+
+<<link "偶尔分享功劳，建立互惠关系网">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (4)))>>
+<<if !$skills.includes("人情世故")>><<set $skills.push("人情世故")>><</if>>
+<<if !$allies.includes("团队成员")>><<set $allies.push("团队成员")>><</if>>
+<<goto "share_credit">>
+<</link>>
+
+
+:: low_hanging_fruit
+<h2>精明的任务选择</h2>
+            <p>王哥露出赞赏的表情："你很聪明，知道要找'低垂的果实'。"</p>
+            <p>他解释道："'低垂的果实'就是那些投入小、回报大、容易完成但看起来很有价值的任务。"</p>
+            <p>"比如系统优化类的工作，优化前后有明显数据对比；或者一些看起来技术难度高但其实有现成方案的问题；再或者是直接影响用户体验的小功能，改进后立竿见影。"</p>
+            <p>王哥进一步分析："新人刚来，要先接一些能快速出成果的工作，建立初步信任；同时避开那些历史遗留的'坑'，那些往往是前人都解决不了的难题。"</p>
+            <p>他神秘地笑了笑："最近有个数据看板项目，技术难度不大但很受领导关注，你可以考虑争取一下。"</p>
+
+<<link "争取接手数据看板项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("战略眼光")>><<set $skills.push("战略眼光")>><</if>>
+<<goto "dashboard_project">>
+<</link>>
+
+<<link "请王哥指导如何识别项目中的&#x27;陷阱&#x27;">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("风险识别")>><<set $skills.push("风险识别")>><</if>>
+<<goto "identify_traps">>
+<</link>>
+
+<<link "询问如何平衡&#x27;低垂果实&#x27;和有挑战性的任务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "balance_tasks">>
+<</link>>
+
+
+:: dashboard_project
+<h2>抢手的项目</h2>
+            <p>在王哥的建议下，你主动向李总请缨负责数据看板项目。</p>
+            <p>李总有些惊讶："这个项目之前几个人都不太想接，说没有技术亮点。你确定要做？"</p>
+            <p>你表示有信心做好，并提出了初步方案。李总欣然同意，但提醒项目下周要向高层汇报。</p>
+            <p>接手项目后，你才发现这确实是个"低垂的果实"：技术实现不复杂，但能直观展示公司业务数据，高层非常重视。</p>
+            <p>然而，就在你完成一半时，同事小明突然表示也想参与这个项目，并在组内会议上分享了一些"改进想法"。</p>
+            <p>你意识到这可能是一个"摘桃子"的苗头。</p>
+
+<<link "邀请小明加入，但清晰划分职责和贡献">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("合作边界")>><<set $skills.push("合作边界")>><</if>>
+<<goto "collaborate_boundary">>
+<</link>>
+
+<<link "加班加点提前完成项目，不给摘桃子的机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("快速交付")>><<set $skills.push("快速交付")>><</if>>
+<<goto "rush_completion">>
+<</link>>
+
+<<link "在团队群里详细记录自己的工作进展和创意">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("自我保护")>><<set $skills.push("自我保护")>><</if>>
+<<goto "document_contribution">>
+<</link>>
+
+
+:: seek_transfer
+<h2>寻找新家</h2>
+            <p>你谨慎地联系了其他几个部门的经理，表达了自己的转岗意愿。</p>
+            <p>意外的是，产品研发部的张总对你非常感兴趣。"我正好需要一个了解技术又懂业务的人，明天下午有空聊聊吗？"</p>
+            <p>但就在你准备赴约时，李总把你叫到了一边。"我知道你最近在和其他部门接触，"他的表情有些复杂，"其实重组计划有变，我们部门不仅不会被裁撤，反而要扩编..."</p>
+            <p>他暗示如果你留下，将获得小组长的职位。但你已经答应了张总的面谈，处境变得有些尴尬。</p>
+
+<<link "向李总道歉，坚持赴约探索新机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("决断力")>><<set $skills.push("决断力")>><</if>>
+<<goto "new_department">>
+<</link>>
+
+<<link "婉拒张总，向李总表示忠诚">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("忠诚度")>><<set $skills.push("忠诚度")>><</if>>
+<<if !$allies.includes("李总")>><<set $allies.push("李总")>><</if>>
+<<goto "stay_loyal">>
+<</link>>
+
+<<link "两边都见，多争取一些筹码">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("谈判技巧")>><<set $skills.push("谈判技巧")>><</if>>
+<<goto "negotiate_both">>
+<</link>>
+
+
+:: loyalty_crisis
+<h2>患难见真情</h2>
+            <p>在公司动荡之际，你选择向李总表达了忠诚，并主动加班帮他准备重组应对方案。</p>
+            <p>李总对你的支持非常感动："多谢你小王，现在才知道谁是真心的。"</p>
+            <p>一周后，重组名单公布，出人意料的是，李总不仅没有被降职，反而因为出色的应对方案获得了晋升。</p>
+            <p>在庆功宴上，李总当众感谢了你的贡献，并承诺会在未来给你更多发展机会。</p>
+            <p>其他曾经动摇过的同事看你的眼神中多了几分复杂。</p>
+
+<<link "继续低调做事，牢固与李总的信任关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("李总++")>><<set $allies.push("李总++")>><</if>>
+<<goto "build_trust">>
+<</link>>
+
+<<link "利用这个机会扩展自己在部门的影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "expand_influence">>
+<</link>>
+
+<<link "主动提出带领新项目，展示自己的能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("项目管理")>><<set $skills.push("项目管理")>><</if>>
+<<goto "lead_project">>
+<</link>>
+
+
+:: update_resume
+<h2>未雨绸缪</h2>
+            <p>你悄悄更新了简历，并在几个招聘平台上设置了"隐性求职"状态。</p>
+            <p>很快，你收到了几家公司的面试邀请，其中包括996科技的竞争对手"星辰科技"。</p>
+            <p>然而，就在你准备参加第一场面试的前一天，公司内网突然公布了保留名单，你的名字赫然在列，甚至还有一个小小的加薪。</p>
+            <p>与此同时，你的一位同事被发现在工作时间参加竞争对手的面试，当场被HR约谈，随后被要求签署了自愿离职协议，没有获得任何补偿。</p>
+            <p>这个消息让你感到既庆幸又忐忑。</p>
+
+<<link "取消所有面试，专注当前工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "cancel_interviews">>
+<</link>>
+
+<<link "继续秘密进行面试，但更加谨慎">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("风险管理")>><<set $skills.push("风险管理")>><</if>>
+<<goto "careful_interview">>
+<</link>>
+
+<<link "利用offer作为筹码，与公司谈判更好的待遇">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("谈判博弈")>><<set $skills.push("谈判博弈")>><</if>>
+<<goto "negotiate_offer">>
+<</link>>
+
+
+:: refuse_offer
+<h2>忠诚的代价</h2>
+            <p>你婉拒了星辰科技的邀请，表示目前不考虑跳槽。</p>
+            <p>一个月后，公司进行了新一轮裁员，同时宣布因业绩不佳，取消今年的年终奖。</p>
+            <p>更让你意外的是，拒绝星辰科技后，你在技术社区发布的文章开始遭遇莫名的举报和攻击，你怀疑这可能是星辰科技的"报复"。</p>
+            <p>午餐时，你得知曾经拒绝过的那个职位，最终以比你高30%的薪资成功挖走了你的同事小林。</p>
+            <p>你开始怀疑自己的决定是否明智。</p>
+
+<<link "坚持自己的选择，耐心等待公司好转">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "patience_virtue">>
+<</link>>
+
+<<link "主动联系星辰科技，看是否还有机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("机会把握")>><<set $skills.push("机会把握")>><</if>>
+<<goto "reconnect_competitor">>
+<</link>>
+
+<<link "向管理层表达自己的忠诚和付出，争取认可">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("沟通技巧")>><<set $skills.push("沟通技巧")>><</if>>
+<<goto "seek_recognition">>
+<</link>>
+
+
+:: secret_interview
+<h2>秘密会面</h2>
+            <p>你选择了秘密赴约，在一家远离公司的咖啡厅与星辰科技的HR见面。</p>
+            <p>面谈非常顺利，对方对你的能力非常认可，当场提出了比你目前高30%的薪资。</p>
+            <p>正当你考虑是否接受时，你惊讶地发现公司的产品经理小陈也在这家咖啡厅，似乎也在面试。</p>
+            <p>你们尴尬地对视一眼，随后都默契地假装没看见对方。</p>
+            <p>第二天，小陈在茶水间暗示她知道你在找工作，并表示自己也在考虑离职，问你是否有兴趣一起跳槽。</p>
+
+<<link "拒绝与小陈合作，独自考虑offer">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "solo_decision">>
+<</link>>
+
+<<link "与小陈结盟，共享信息和资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略联盟")>><<set $skills.push("战略联盟")>><</if>>
+<<if !$allies.includes("小陈")>><<set $allies.push("小陈")>><</if>>
+<<goto "alliance_departure">>
+<</link>>
+
+<<link "向小陈套话，获取更多内部信息">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("情报分析")>><<set $skills.push("情报分析")>><</if>>
+<<goto "extract_info">>
+<</link>>
+
+
+:: seek_advice_offer
+<h2>前辈的建议</h2>
+            <p>你向信任的老同事王哥咨询了这个挖角邀约。</p>
+            <p>王哥沉思片刻："这件事比你想象的复杂。星辰最近在大规模挖人，但听说他们的投资人开始施压，可能不太稳定。"</p>
+            <p>他分享了自己曾经跳槽失败的经历："表面上的高薪可能伴随着更大的压力，有时候'看起来像天堂实际是地狱'。"</p>
+            <p>王哥建议你至少去了解一下情况："但千万小心，公司最近在严查与竞争对手接触的员工，HR小王就是专门负责这个的。"</p>
+            <p>正说着，HR小王走过茶水间，对你们投来探询的目光。</p>
+
+<<link "放弃面试机会，避免不必要的风险">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "stay_safe">>
+<</link>>
+
+<<link "制定周密计划，秘密参加面试">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("风险规避")>><<set $skills.push("风险规避")>><</if>>
+<<goto "covert_interview">>
+<</link>>
+
+<<link "直接与管理层沟通薪资问题，争取内部调整">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("直接沟通")>><<set $skills.push("直接沟通")>><</if>>
+<<goto "internal_negotiation">>
+<</link>>
+
+
+:: take_responsibility
+<h2>危机中的担当</h2>
+            <p>"这个问题与我审核的代码有关，我来负责解决。"你在紧急会议上主动发言。</p>
+            <p>接下来的36小时，你几乎没有合眼，带领团队一步步排查问题，最终找到了根源并成功修复。</p>
+            <p>事后调查显示，故障并非完全是你的责任，而是系统架构的历史遗留问题被你的代码意外触发。</p>
+            <p>你的担当和解决问题的能力得到了团队的认可，甚至连一向严厉的技术VP也对你刮目相看。</p>
+            <p>然而，这次事件也被记录在你的绩效档案中，成为一个"待观察"的风险点。</p>
+
+<<link "主动提出改进代码审核流程，避免类似问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "improve_process">>
+<</link>>
+
+<<link "低调工作，努力挽回因事故损失的信任">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "rebuild_trust">>
+<</link>>
+
+<<link "申请调职到更适合自己的岗位">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("自我认知")>><<set $skills.push("自我认知")>><</if>>
+<<goto "position_change">>
+<</link>>
+
+
+:: analyze_logs
+<h2>技术侦探</h2>
+            <p>面对指责，你没有急于辩解，而是冷静地投入到日志分析中。</p>
+            <p>经过几小时的深入调查，你发现了一个惊人的事实：故障源头是一段被刻意植入的恶意代码，目的是在特定时间触发系统崩溃。</p>
+            <p>更令人震惊的是，这段代码的提交记录显示来自于技术VP的账号，但时间点是凌晨3点，这与他的常规工作习惯不符。</p>
+            <p>你意识到这可能是一次黑客入侵或内部破坏，但指控技术VP是非常严重的事情。</p>
+            <p>与此同时，公司内部已经开始流传你疏忽大意导致系统崩溃的传言。</p>
+
+<<link "私下向技术VP汇报发现，寻求指导">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("危机汇报")>><<set $skills.push("危机汇报")>><</if>>
+<<goto "private_report">>
+<</link>>
+
+<<link "向公司安全团队报告，启动正式调查">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("勇气")>><<set $skills.push("勇气")>><</if>>
+<<goto "official_investigation">>
+<</link>>
+
+<<link "追查到底，发现更大的公司阴谋">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("深度调查")>><<set $skills.push("深度调查")>><</if>>
+<<goto "corporate_conspiracy">>
+<</link>>
+
+
+:: stay_silent
+<h2>暗流涌动</h2>
+            <p>面对同事的暗示和指责，你选择保持沉默，静观其变。</p>
+            <p>随着故障持续，公司损失不断扩大，管理层开始寻找"替罪羊"。由于你没有及时澄清，更多的怀疑指向了你。</p>
+            <p>第二天，你收到HR的面谈通知，主题是"关于近期系统故障的责任认定"。</p>
+            <p>此时，你的同事小张私下找到你："其实我知道真相，问题出在运维的自动更新脚本上，不是你的代码。但运维主管是副总的表弟..."</p>
+            <p>你面临艰难的抉择：据实已辩解可能得罪权贵，默认责任则可能影响职业发展。</p>
+
+<<link "在面谈中据实陈述，提供技术证据">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("原则立场")>><<set $skills.push("原则立场")>><</if>>
+<<goto "technical_defense">>
+<</link>>
+
+<<link "接受部分责任，同时委婉指出系统问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("策略妥协")>><<set $skills.push("策略妥协")>><</if>>
+<<goto "partial_responsibility">>
+<</link>>
+
+<<link "寻求小张作证，联合其他同事反击">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("政治反击")>><<set $skills.push("政治反击")>><</if>>
+<<if !$allies.includes("小张")>><<set $allies.push("小张")>><</if>>
+<<goto "alliance_defense">>
+<</link>>
+
+
+:: betrayal_ending
+<h2>信任的崩塌</h2>
+            <p>经过一系列复杂的职场博弈，你终于接近了真相：从一开始，你就是一个精心设计的局中人。</p>
+            <p>你最信任的导师李总，实际上一直在利用你为自己铺路。你帮他解决的那些"难题"，其实都是他自己制造的陷阱。</p>
+            <p>公司的重组、项目的危机、竞争对手的挖角，这一切都是他设计的剧本，目的是测试你的忠诚度和能力，同时借你的手清除异己。</p>
+            <p>当你终于识破这一切时，李总不但不否认，反而欣赏地说："你比我想象的聪明，现在你有两个选择：成为我的接班人，或者离开。"</p>
+            <p>这一刻，你对职场的认知彻底崩塌，也明白了成功的代价。</p>
+
+<<link "接受现实，成为下一个李总">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("权术大师")>><<set $skills.push("权术大师")>><</if>>
+<<goto "successor_path">>
+<</link>>
+
+<<link "拒绝妥协，带着真相离开">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("自我救赎")>><<set $skills.push("自我救赎")>><</if>>
+<<goto "truth_departure">>
+<</link>>
+
+<<link "假装接受，暗中策划反击">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("深谋远虑")>><<set $skills.push("深谋远虑")>><</if>>
+<<goto "revenge_plot">>
+<</link>>
+
+
+:: corporate_conspiracy
+<h2>公司阴谋</h2>
+            <p>通过一系列调查，你发现996科技的财务状况远比表面上看起来糟糕得多。</p>
+            <p>公司高层已经秘密抛售股票，而让中层管理者继续鼓吹"光明前景"，招揽新人。</p>
+            <p>更可怕的是，你无意中获取的内部邮件显示，下个月将有一次大规模裁员，覆盖40%的员工，而且补偿方案远低于法定标准。</p>
+            <p>你面临道德困境：保守秘密保全自己，还是冒险揭露真相？</p>
+            <p>与此同时，一位神秘人士联系你，表示愿意高价购买你手中的信息...</p>
+
+<<link "匿名向媒体爆料，揭露公司行为">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-20)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("正义感")>><<set $skills.push("正义感")>><</if>>
+<<goto "whistleblower">>
+<</link>>
+
+<<link "秘密警告关键同事，同时为自己谋划出路">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$allies.includes("良知圈")>><<set $allies.push("良知圈")>><</if>>
+<<goto "selective_warning">>
+<</link>>
+
+<<link "向神秘人出售信息，借机离开公司">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("灰色交易")>><<set $skills.push("灰色交易")>><</if>>
+<<goto "information_dealer">>
+<</link>>
+
+
+:: unexpected_ally
+<h2>意外盟友</h2>
+            <p>在职场迷宫中挣扎之际，你意外获得了一位强大盟友的支持。</p>
+            <p>一直被视为冷漠严厉的技术VP赵总，突然成为了你的职场导师。</p>
+            <p>"我看到了你的潜力，也经历过你现在的困境，"他在一次私下谈话中坦言，"这个公司需要真正有才华和原则的人。"</p>
+            <p>在他的指导下，你开始接触公司核心项目，也了解到更多高层运作的内幕。</p>
+            <p>然而，你也感受到其他同事投来的嫉妒和猜疑目光，以及李总微妙的态度变化。</p>
+
+<<link "全力把握这个难得机会，成为赵总的得力助手">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("高层思维")>><<set $skills.push("高层思维")>><</if>>
+<<if !$allies.includes("赵总")>><<set $allies.push("赵总")>><</if>>
+<<goto "vp_assistant">>
+<</link>>
+
+<<link "平衡与李总的关系，避免两面不是人">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("平衡之道")>><<set $skills.push("平衡之道")>><</if>>
+<<goto "balance_loyalties">>
+<</link>>
+
+<<link "保持警惕，调查赵总突然亲近的真实动机">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("深度思考")>><<set $skills.push("深度思考")>><</if>>
+<<goto "investigate_motives">>
+<</link>>
+
+
+:: alliance_departure
+<h2>联手出击</h2>
+            <p>你决定与小陈结盟，你们开始秘密交换信息，共同评估星辰科技的机会。</p>
+            <p>小陈透露："我负责的产品线可能要被砍掉，但管理层一直在隐瞒这个消息。而且我听说年底会有大裁员。"</p>
+            <p>你们互相帮助准备面试，甚至约好了同一天去面试，给对方提供情报支持。</p>
+            <p>出人意料的是，星辰科技对你们两人都很感兴趣，并暗示如果能一起加入，可以给你们组建新团队的机会。</p>
+            <p>与此同时，公司的氛围确实越来越紧张，各种猜疑和焦虑在蔓延。</p>
+
+<<link "与小陈一起接受offer，开启新篇章">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("职业决断")>><<set $skills.push("职业决断")>><</if>>
+<<if !$allies.includes("小陈++")>><<set $allies.push("小陈++")>><</if>>
+<<goto "joint_departure">>
+<</link>>
+
+<<link "独自接受offer，避免过度依赖关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("独立性")>><<set $skills.push("独立性")>><</if>>
+<<goto "solo_departure">>
+<</link>>
+
+<<link "得知更多内幕，发现这一切都是一场阴谋">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("真相洞察")>><<set $skills.push("真相洞察")>><</if>>
+<<goto "betrayal_ending">>
+<</link>>
+
+
+:: covert_interview
+<h2>秘密行动</h2>
+            <p>你精心策划了一次"完美犯罪"：请了半天病假，穿上平时不会穿的衣服，选择了一家偏远的咖啡馆与星辰科技的HR见面。</p>
+            <p>面试进行得很顺利，对方对你的能力表示认可，提出了一个看起来很有吸引力的职位。</p>
+            <p>正当你准备离开时，一个熟悉的身影出现在咖啡馆门口——是赵总的助理。她朝你的方向看了一眼，但似乎没有认出你。</p>
+            <p>接下来的几天，你忐忑不安，生怕自己的秘密被发现。</p>
+            <p>一周后，一位陌生人在你下班路上拦住你："我是赵总的朋友，他想和你私下聊聊。"</p>
+
+<<link "赴约见赵总，做好最坏的准备">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("危机应对")>><<set $skills.push("危机应对")>><</if>>
+<<goto "confront_vp">>
+<</link>>
+
+<<link "拒绝见面，加速跳槽进程">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("果断决策")>><<set $skills.push("果断决策")>><</if>>
+<<goto "hasty_departure">>
+<</link>>
+
+<<link "赴约，却意外获得一位强大的盟友">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("逆势思维")>><<set $skills.push("逆势思维")>><</if>>
+<<goto "unexpected_ally">>
+<</link>>
+
+
+:: new_department
+<h2>新的开始</h2>
+            <p>你决定把握这个机会，与张总进行了富有成效的交谈。</p>
+            <p>他对你的技术背景和业务理解能力非常欣赏，当场决定接纳你加入他的团队。</p>
+            <p>两周后，你正式转入产品研发部，开始了全新的工作。</p>
+            <p>虽然李总对此有些不满，但公司重组的大背景下，他也无力阻止。</p>
+            <p>新部门的工作节奏和氛围与之前截然不同，你感到一种久违的活力。</p>
+
+<<link "全力投入新工作，争取尽快出成绩">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("适应力")>><<set $skills.push("适应力")>><</if>>
+<<goto "quick_win">>
+<</link>>
+
+<<link "主动向张总提出创新项目想法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<goto "innovation_proposal">>
+<</link>>
+
+<<link "保持低调，先观察新环境的潜规则">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("环境敏感度")>><<set $skills.push("环境敏感度")>><</if>>
+<<goto "observe_rules">>
+<</link>>
+
+
+:: stay_loyal
+<h2>忠诚的回报</h2>
+            <p>你婉拒了张总的邀约，决定留在李总身边共度难关。</p>
+            <p>李总对你的忠诚表示感谢："现在的职场，像你这样懂得感恩的年轻人不多了。"</p>
+            <p>在接下来的重组过程中，李总保护了团队核心成员，你的岗位不仅保住了，还获得了一个小型项目的负责权。</p>
+            <p>重组结束后，李总的地位反而因危机处理得当而提升，这也间接为你带来了更多发展机会。</p>
+
+<<link "趁势向李总提出加薪申请">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("谈判技巧")>><<set $skills.push("谈判技巧")>><</if>>
+<<goto "ask_raise">>
+<</link>>
+
+<<link "专注于新项目，增强自己的不可替代性">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("专业深度")>><<set $skills.push("专业深度")>><</if>>
+<<goto "focus_project">>
+<</link>>
+
+<<link "在公司内部建立更广泛的人脉">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("人脉建设")>><<set $skills.push("人脉建设")>><</if>>
+<<goto "expand_network">>
+<</link>>
+
+
+:: negotiate_both
+<h2>两面下注</h2>
+            <p>你巧妙地安排了时间，同时与李总和张总保持沟通，尽可能多地获取信息和承诺。</p>
+            <p>在与张总的会面中，你了解到产品研发部将获得更多资源；而李总则承诺如果留下，将提升你的职级。</p>
+            <p>在获取了双方信息后，你做出了更加明智的决定。</p>
+            <p>这个过程也让你意识到，在职场中多一分选择权就多一分主动。</p>
+
+<<link "选择加入张总团队，前景更广阔">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("战略选择")>><<set $skills.push("战略选择")>><</if>>
+<<if !$allies.includes("张总")>><<set $allies.push("张总")>><</if>>
+<<goto "join_zhang">>
+<</link>>
+
+<<link "留在李总团队，但争取更好的条件">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("谈判能力")>><<set $skills.push("谈判能力")>><</if>>
+<<if !$allies.includes("李总")>><<set $allies.push("李总")>><</if>>
+<<goto "stay_negotiate">>
+<</link>>
+
+<<link "利用两边的offer，寻找公司外的更好机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "external_opportunity">>
+<</link>>
+
+
+:: successor_path
+<h2>权术继承者</h2>
+            <p>"我接受。"你平静地说道。李总露出满意的微笑，拍了拍你的肩膀。</p>
+            <p>接下来的几个月，李总开始有意识地将你引荐给公司高层，并教你一些不会出现在任何管理书籍上的"潜规则"。</p>
+            <p>你学会了如何在不留痕迹的情况下排除异己，如何建立自己的信息网络，以及如何在关键时刻做出表面上公正但实际上对自己有利的决策。</p>
+            <p>半年后，李总升职，而你顺理成章地接替了他的位置。</p>
+            <p>当你坐在曾经属于李总的办公室里，你意识到自己已经成为了曾经最害怕成为的那种人。</p>
+
+<<link "这就是职场的本质，接受现实">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<goto "political_master">>
+<</link>>
+
+<<link "利用权力改变规则，创造更公平的环境">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<goto "reform_attempt">>
+<</link>>
+
+<<link "开始规划自己的出路，不想重蹈李总的覆辙">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "entrepreneur">>
+<</link>>
+
+
+:: truth_departure
+<h2>真相的重量</h2>
+            <p>"我不会成为你那样的人。"你直视李总的眼睛，坚定地说。</p>
+            <p>李总的表情从惊讶转为失望，最后变成一丝难以察觉的敬意。</p>
+            <p>"你比我想象的有骨气，但职场不需要骨气，而是结果。"他冷冷地说，"你的离职手续明天可以办理。"</p>
+            <p>离开公司的那天，几位同事悄悄送你到楼下，他们都知道发生了什么。</p>
+            <p>"你做了我们都想做但没勇气做的事，"小林低声说，"我也在找工作，到时候联系你。"</p>
+
+<<link "在新公司重新开始，坚持自己的原则">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (15)))>>
+<<if !$skills.includes("道德坚持")>><<set $skills.push("道德坚持")>><</if>>
+<<goto "fresh_start">>
+<</link>>
+
+<<link "将经历匿名发布到职场论坛，引发热议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("社会影响")>><<set $skills.push("社会影响")>><</if>>
+<<goto "whistleblower">>
+<</link>>
+
+<<link "规划创业，打造符合自己价值观的公司">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("创业思维")>><<set $skills.push("创业思维")>><</if>>
+<<goto "entrepreneur">>
+<</link>>
+
+
+:: revenge_plot
+<h2>潜伏的反击</h2>
+            <p>你表面上接受了李总的提议，成为他的"接班人"，但内心已经开始了精心策划的反击。</p>
+            <p>在接下来的几个月里，你一边学习李总的权术，一边秘密收集他的各种不当行为证据。</p>
+            <p>你谨慎地与公司其他被李总伤害过的人建立联系，形成了一个隐秘的联盟。</p>
+            <p>当李总准备在董事会上推动自己晋升的关键时刻，你和盟友们同时出手，将证据递交给了CEO和董事会。</p>
+            <p>董事会震惊于李总的所作所为，紧急叫停了他的晋升，并对他启动了调查。</p>
+
+<<link "趁势接管李总的部门，但承诺改革">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("政治手腕")>><<set $skills.push("政治手腕")>><</if>>
+<<if !$skills.includes("战略思考")>><<set $skills.push("战略思考")>><</if>>
+<<goto "reform_leader">>
+<</link>>
+
+<<link "满足于看到正义得到伸张，寻求自身发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("内心平静")>><<set $skills.push("内心平静")>><</if>>
+<<goto "seek_peace">>
+<</link>>
+
+<<link "彻底离开这个复杂的环境，寻找新机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (15)))>>
+<<if !$skills.includes("决断力")>><<set $skills.push("决断力")>><</if>>
+<<goto "new_horizon">>
+<</link>>
+
+
+:: quick_win
+<h2>快速建功</h2>
+            <p>你全身心投入新工作，加班加点熟悉业务，很快就发现了几个可以改进的点。</p>
+            <p>通过优化产品研发流程，你帮团队提高了30%的开发效率，获得了张总的高度认可。</p>
+            <p>"不错，看来我没有看错人，"张总在部门会议上表扬你，"这正是我们需要的创新思维。"</p>
+            <p>你的表现也得到了团队其他成员的认可，初来乍到的陌生感很快消散。</p>
+
+<<link "继续专注技术创新，成为团队核心">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("技术领导力")>><<set $skills.push("技术领导力")>><</if>>
+<<goto "tech_expert">>
+<</link>>
+
+<<link "开始培养团队意识，建立个人影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("团队建设")>><<set $skills.push("团队建设")>><</if>>
+<<goto "team_influence">>
+<</link>>
+
+<<link "寻求更多跨部门项目，扩大影响范围">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("资源整合")>><<set $skills.push("资源整合")>><</if>>
+<<goto "cross_department">>
+<</link>>
+
+
+:: whistleblower
+<h2>吹哨人</h2>
+            <p>经过深思熟虑，你决定将公司的不当行为和财务造假证据匿名提供给了媒体。</p>
+            <p>这一爆料在行业内引起了巨大震动，996科技的股价在一周内暴跌40%。</p>
+            <p>监管部门介入调查，多位高管被约谈，公司陷入了前所未有的危机。</p>
+            <p>虽然你的身份保持了匿名，但内心的正义感得到了极大的满足。</p>
+            <p>与此同时，你也意识到自己在这个行业可能已经无法继续工作了。</p>
+
+<<link "离开互联网行业，寻找新的职业道路">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (15)))>>
+<<if !$skills.includes("勇气")>><<set $skills.push("勇气")>><</if>>
+<<if !$skills.includes("道德坚持")>><<set $skills.push("道德坚持")>><</if>>
+<<goto "career_change">>
+<</link>>
+
+<<link "加入一家注重职业道德的小公司">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("价值观匹配")>><<set $skills.push("价值观匹配")>><</if>>
+<<goto "ethical_workplace">>
+<</link>>
+
+<<link "创办自己的企业，以不同的价值观运营">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("创业精神")>><<set $skills.push("创业精神")>><</if>>
+<<goto "entrepreneur">>
+<</link>>
+
+
+:: career_change
+<div class="ending-icon icon-career-change"></div>
+            <h2>职业转型</h2>
+            <p>离开互联网行业后，你经过一段时间的探索和学习，找到了新的职业方向。</p>
+            <p>虽然起点重新归零，但不受过去束缚的感觉让你倍感轻松。</p>
+            <p>在新的领域里，你的部分经验和技能仍然适用，而你也带着从前职场学到的教训，更加明智地规划自己的职业道路。</p>
+            <p>有时候，重新开始也是一种幸运。</p>
+            <p><strong>恭喜你获得"职业转型"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: ethical_workplace
+<div class="ending-icon icon-ethical"></div>
+            <h2>价值观契合</h2>
+            <p>在离开996科技后，你加入了一家注重员工福祉和职业道德的创业公司。</p>
+            <p>薪资可能不如从前，但工作与生活的平衡、透明的管理和真实的同事关系让你感到前所未有的满足。</p>
+            <p>你的经验和技能在新环境中得到了充分尊重，而不必再陷入尔虞我诈的办公室政治。</p>
+            <p>有时候，成功不仅仅是晋升和加薪，还有内心的平静和自我认同。</p>
+            <p><strong>恭喜你获得"价值观契合"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: reform_leader
+<div class="ending-icon icon-reform"></div>
+            <h2>改革者</h2>
+            <p>在李总离开后，你接管了他的部门，但采取了完全不同的管理风格。</p>
+            <p>你建立了透明的晋升机制，鼓励开放沟通，打破了原有的小圈子文化。</p>
+            <p>起初，一些习惯了旧制度的员工有所抵触，但随着改革的深入，团队的创新能力和凝聚力都有了显著提升。</p>
+            <p>半年后，你的部门成为了公司效率和员工满意度最高的团队，甚至影响了整个公司的文化。</p>
+            <p><strong>恭喜你获得"改革者"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: new_horizon
+<div class="ending-icon icon-horizon"></div>
+            <h2>新的地平线</h2>
+            <p>完成对李总的反击后，你意识到是时候彻底离开这个复杂的环境了。</p>
+            <p>你递交了辞职信，开始寻找新的机会。很快，你收到了几个颇具吸引力的offer。</p>
+            <p>在充分评估后，你选择了一家海外公司的远程工作机会，这让你既能继续专业发展，又能获得更健康的工作环境。</p>
+            <p>回顾这段经历，你意识到有些战斗值得一打，但知道何时全身而退同样重要。</p>
+            <p><strong>恭喜你获得"新的地平线"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: investigate_motives
+<h2>真相探索者</h2>
+            <p>你决定保持警惕，暗中调查赵总突然亲近你的真实动机。</p>
+            <p>通过与不同部门的同事交流，查阅历史项目记录，你逐渐拼凑出了一幅完整的图景。</p>
+            <p>赵总正在公司内部秘密组建一个创新团队，准备开发一款可能颠覆现有业务的新产品。</p>
+            <p>他看中了你的技术能力和独立思考的特质，希望你成为这个秘密团队的核心成员。</p>
+            <p>这既是一个巨大的机会，也充满了风险——如果项目失败，你们可能都会成为牺牲品。</p>
+
+<<link "接受挑战，加入创新团队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<if !$skills.includes("冒险精神")>><<set $skills.push("冒险精神")>><</if>>
+<<goto "join_innovation">>
+<</link>>
+
+<<link "婉拒邀请，专注当前工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("风险控制")>><<set $skills.push("风险控制")>><</if>>
+<<goto "decline_risk">>
+<</link>>
+
+<<link "与赵总坦诚沟通，提出自己的顾虑和条件">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("谈判艺术")>><<set $skills.push("谈判艺术")>><</if>>
+<<goto "negotiate_terms">>
+<</link>>
+
+
+:: build_trust
+<h2>深厚信任</h2>
+            <p>你继续低调做事，同时与李总建立了更加牢固的信任关系。</p>
+            <p>在一次私下交谈中，李总向你透露了他对公司未来的看法和自己的职业规划。</p>
+            <p>"我很欣赏你的忠诚和能力，"李总说，"如果将来我有机会升职，一定会把你带上。"</p>
+            <p>这种信任不仅体现在言语上，还表现在他逐渐将一些重要但敏感的任务交给你处理。</p>
+            <p>你感觉自己已经成为了李总核心圈子中的一员。</p>
+
+<<link "继续保持低调忠诚的策略">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("李总+++")>><<set $allies.push("李总+++")>><</if>>
+<<goto "continued_loyalty">>
+<</link>>
+
+<<link "开始有选择地建立自己的人脉网络">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("人脉拓展")>><<set $skills.push("人脉拓展")>><</if>>
+<<goto "network_building">>
+<</link>>
+
+<<link "向李总提出更多职业发展的建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: steady_growth
+<h2>稳健前行</h2>
+            <p>你继续保持踏实肯干的工作态度，专注于做好每一个小任务。</p>
+            <p>一年后，你已经成为团队中被公认的"靠谱担当"，虽然不是技术最强的，但是最值得信赖的成员之一。</p>
+            <p>在年度评选中，你获得了"最佳团队协作奖"，这让你感到自己的价值得到了认可。</p>
+            <p>李总在颁奖时说："有些同事像火箭一样迅速崛起，有些则像长跑运动员一样稳健前行，两者都值得尊敬。"</p>
+
+<<link "继续这条稳健的职业道路">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<goto "work_life_balance">>
+<</link>>
+
+<<link "考虑是否应该更积极进取">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("自我反思")>><<set $skills.push("自我反思")>><</if>>
+<<goto "career_crossroad">>
+<</link>>
+
+
+:: seek_challenge
+<h2>跃升之路</h2>
+            <p>在站稳脚跟后，你开始主动申请更具挑战性的任务，展示自己的能力和野心。</p>
+            <p>李总似乎对你的转变感到意外但也欣赏："看来你是厚积薄发啊，不声不响地提升了不少。"</p>
+            <p>他给了你一个负责优化核心系统的机会，这是团队中的重要任务。</p>
+            <p>你成功完成了任务，证明了自己的技术实力，团队成员开始重新评估你的能力和潜力。</p>
+
+<<link "继续积极表现，争取更多关键任务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("核心技术")>><<set $skills.push("核心技术")>><</if>>
+<<goto "high_performer">>
+<</link>>
+
+<<link "在新地位上保持平衡，避免过度消耗">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "balanced_growth">>
+<</link>>
+
+
+:: help_others
+<h2>润物无声</h2>
+            <p>你开始分享自己的经验，主动帮助新加入的同事适应工作环境和技术要求。</p>
+            <p>你组织了每周一次的经验分享会，讲解工作中的实用技巧和注意事项。</p>
+            <p>渐渐地，你成为了新人们信赖的非正式导师，团队氛围也因此变得更加和谐友好。</p>
+            <p>HR注意到了你的影响力，邀请你参与公司的导师计划，正式承担新员工培训的部分工作。</p>
+
+<<link "接受HR的邀请，发展培训和领导能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("培训能力")>><<set $skills.push("培训能力")>><</if>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "training_specialist">>
+<</link>>
+
+<<link "保持非正式帮助，专注于技术岗位发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$allies.includes("团队新人")>><<set $allies.push("团队新人")>><</if>>
+<<goto "tech_focus">>
+<</link>>
+
+
+:: tech_specialist
+<h2>技术精英</h2>
+            <p>你继续深耕技术领域，逐渐成为团队中的技术权威。</p>
+            <p>当遇到复杂问题时，同事们开始自然而然地向你寻求建议和指导。</p>
+            <p>公司年度技术大会上，你受邀做了主题演讲，分享你的专业见解。</p>
+            <p>技术VP在会后找到你："我们考虑组建一个技术专家小组，专门解决关键技术难题，你有兴趣加入吗？"</p>
+
+<<link "欣然接受，加入技术专家小组">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("核心技术")>><<set $skills.push("核心技术")>><</if>>
+<<if !$skills.includes("问题解决")>><<set $skills.push("问题解决")>><</if>>
+<<goto "tech_expert">>
+<</link>>
+
+<<link "建议组建技术创新实验室，探索前沿技术">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<goto "innovation_lab">>
+<</link>>
+
+
+:: learning_group
+<h2>共同成长</h2>
+            <p>你组建了一个公司内部学习小组，定期分享技术知识和行业动态。</p>
+            <p>小组从最初的几人发展到跨部门的二十多人，成为公司文化的一部分。</p>
+            <p>你的影响力超出了技术范畴，成为连接不同团队的纽带。</p>
+            <p>公司高层注意到这一现象，CEO在全员会议上表扬了你们的自主学习文化。</p>
+
+<<link "将学习小组升级为公司正式项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("组织领导")>><<set $skills.push("组织领导")>><</if>>
+<<if !$skills.includes("知识管理")>><<set $skills.push("知识管理")>><</if>>
+<<goto "official_program">>
+<</link>>
+
+<<link "保持小组的草根性质，专注内容质量">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$allies.includes("跨部门伙伴")>><<set $allies.push("跨部门伙伴")>><</if>>
+<<goto "organic_growth">>
+<</link>>
+
+
+:: leverage_skills
+<h2>技能变现</h2>
+            <p>你利用新掌握的技能，申请到了公司一个备受瞩目的项目参与资格。</p>
+            <p>在项目中，你的专业知识和解决问题的能力给团队带来了显著价值。</p>
+            <p>项目经理公开表扬了你的贡献："这证明了持续学习的重要性。"</p>
+            <p>这次成功给了你更多的职业信心，也打开了新的发展通道。</p>
+
+<<link "继续这种工作-学习-应用的模式">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("持续学习")>><<set $skills.push("持续学习")>><</if>>
+<<goto "continuous_learning">>
+<</link>>
+
+<<link "利用项目成功，申请晋升或加薪">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (12)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("职业谈判")>><<set $skills.push("职业谈判")>><</if>>
+<<goto "career_advancement">>
+<</link>>
+
+
+:: innovation_path
+<h2>创新先锋</h2>
+            <p>你接受了张工的邀请，加入了他负责的创新项目，开始探索前沿技术。</p>
+            <p>这个项目虽然工作强度不高，但技术难度很大，充满了不确定性和挑战。</p>
+            <p>经过几个月的努力，你们成功开发了一个概念验证产品，引起了公司高层的关注。</p>
+            <p>在项目展示会上，CEO亲自过来与你们交流，对项目成果表示肯定。</p>
+
+<<link "继续深耕创新领域，成为技术先驱">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("前沿技术")>><<set $skills.push("前沿技术")>><</if>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<goto "tech_pioneer">>
+<</link>>
+
+<<link "将创新成果转化为实际产品">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("产品思维")>><<set $skills.push("产品思维")>><</if>>
+<<goto "product_development">>
+<</link>>
+
+
+:: balanced_networking
+<h2>人际平衡术</h2>
+            <p>你巧妙地平衡与李总和张工的关系，既不偏向任何一方，又从两边获取资源和支持。</p>
+            <p>这种策略需要细致的人际交往技巧，但也带来了双重保障和更全面的发展。</p>
+            <p>在一次部门间合作项目中，你成功地协调了两个团队的工作，展现了你的沟通能力。</p>
+            <p>公司开始将你视为能够跨团队工作的"桥梁人物"，这给了你独特的价值定位。</p>
+
+<<link "发展为跨部门协调专家">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("跨部门协作")>><<set $skills.push("跨部门协作")>><</if>>
+<<if !$skills.includes("冲突解决")>><<set $skills.push("冲突解决")>><</if>>
+<<goto "cross_department_expert">>
+<</link>>
+
+<<link "利用广泛人脉，寻找公司内更好的发展机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("机会识别")>><<set $skills.push("机会识别")>><</if>>
+<<goto "internal_opportunity">>
+<</link>>
+
+
+:: technical_depth
+<h2>专注技术</h2>
+            <p>在张工的指导下，你专注于提升技术深度，较少参与办公室政治。</p>
+            <p>你深入研究了公司核心系统的架构，发现并解决了几个长期存在的性能问题。</p>
+            <p>这些贡献虽然不是很显眼，但真正懂技术的人都认可你的实力。</p>
+            <p>张工私下对你说："在技术这条路上，真本事才是最重要的，那些政治手腕最终会被实力碾压。"</p>
+
+<<link "继续技术路线，成为公认的技术专家">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("核心技术")>><<set $skills.push("核心技术")>><</if>>
+<<if !$skills.includes("系统架构")>><<set $skills.push("系统架构")>><</if>>
+<<goto "tech_expert">>
+<</link>>
+
+<<link "开始分享技术经验，建立技术影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("技术分享")>><<set $skills.push("技术分享")>><</if>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<goto "tech_influence">>
+<</link>>
+
+
+:: accept_with_boundary
+<h2>设定边界的艺术</h2>
+            <p>面对王总紧急项目的邀请，你决定接受挑战，但同时设定明确的工作边界。</p>
+            <p>"王总，我很乐意参与这个项目，但我需要确保工作时间的合理性。我可以适当加班，但希望能维持基本的工作生活平衡。"</p>
+            <p>王总略显惊讶，但很快点头同意："理解。有边界的人往往更高效。我们可以合理安排你的工作量。"</p>
+            <p>在接下来的项目中，你不仅高效地完成了任务，还保持了良好的工作状态，避免了过度消耗。</p>
+            <p>王总对你的专业态度和高效表现印象深刻，项目也如期完成。</p>
+
+<<link "继续保持专业边界，成为团队榜样">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("边界管理")>><<set $skills.push("边界管理")>><</if>>
+<<if !$skills.includes("专业沟通")>><<set $skills.push("专业沟通")>><</if>>
+<<goto "boundary_example">>
+<</link>>
+
+<<link "向团队分享如何设定健康工作边界">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<if !$skills.includes("团队文化建设")>><<set $skills.push("团队文化建设")>><</if>>
+<<goto "share_techniques">>
+<</link>>
+
+<<link "寻求更多具有挑战性但尊重边界的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("项目选择眼光")>><<set $skills.push("项目选择眼光")>><</if>>
+<<goto "selective_projects">>
+<</link>>
+
+
+:: accept_with_plan
+<h2>策略性接受挑战</h2>
+            <p>你决定接受王总紧急项目的邀请，但提出了一套合理的工作安排建议。</p>
+            <p>"王总，我愿意承担这个挑战，但我有一些想法可能有助于提高效率并减少不必要的加班。"</p>
+            <p>你详细分析了项目需求，提出了优先级划分和资源分配的建议，以及一个详细的时间表。</p>
+            <p>王总对你的专业分析感到惊喜："没想到你不仅有执行力，还有这么强的规划能力。这个计划很好，就这么办吧。"</p>
+            <p>在你的规划下，项目进展顺利，团队加班明显减少，同时保证了交付质量。</p>
+
+<<link "将规划方法形成文档，在团队内推广">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("知识管理")>><<set $skills.push("知识管理")>><</if>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "spread_methods">>
+<</link>>
+
+<<link "向上级提议担任项目规划专家角色">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略规划")>><<set $skills.push("战略规划")>><</if>>
+<<if !$skills.includes("角色定位")>><<set $skills.push("角色定位")>><</if>>
+<<goto "planning_expert">>
+<</link>>
+
+<<link "利用这次成功，争取更多高级项目管理机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("项目管理")>><<set $skills.push("项目管理")>><</if>>
+<<goto "career_advancement">>
+<</link>>
+
+
+:: adapt_with_boundary
+<h2>灵活适应与自我保护</h2>
+            <p>在观察了团队的工作节奏后，你决定适应团队整体风格，但同时保持自己的边界。</p>
+            <p>你调整了自己的工作方式，与团队大体保持一致，但在关键健康问题上坚守原则。</p>
+            <p>当团队经常熬夜加班时，你会适度参与，但确保不影响自己的核心休息时间。</p>
+            <p>你还找到了提高效率的方法，使自己能在正常工作时间内完成更多任务。</p>
+            <p>随着时间推移，团队开始注意到你的平衡方式，有些同事甚至开始向你请教技巧。</p>
+
+<<link "分享你的效率技巧，影响团队文化">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (9)))>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<if !$skills.includes("效率管理")>><<set $skills.push("效率管理")>><</if>>
+<<goto "efficiency_mentor">>
+<</link>>
+
+<<link "争取在团队中推行更健康的工作方式">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("变革管理")>><<set $skills.push("变革管理")>><</if>>
+<<if !$skills.includes("团队健康")>><<set $skills.push("团队健康")>><</if>>
+<<goto "culture_change">>
+<</link>>
+
+<<link "保持低调，但坚定地维护自己的边界">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("自我管理")>><<set $skills.push("自我管理")>><</if>>
+<<if !$skills.includes("韧性")>><<set $skills.push("韧性")>><</if>>
+<<goto "quiet_boundary">>
+<</link>>
+
+
+:: alliance_defense
+<h2>联合防御</h2>
+            <p>面对不公指责，你决定寻求小张作证，并联合其他同事一起反击不实指控。</p>
+            <p>"我认为这种指责是不公平的，小张可以证明我的工作成果，我们团队的其他成员也清楚事实真相。"</p>
+            <p>小张站出来支持你："是的，这个问题其实是系统设计缺陷导致的，而不是执行问题。"</p>
+            <p>几位关键同事也提供了支持性证据，形成了一个有力的联盟。</p>
+            <p>面对团队的一致声音，批评者不得不收回指责，并重新评估问题本质。</p>
+
+<<link "巩固与盟友的关系，建立长期互助网络">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("盟友管理")>><<set $skills.push("盟友管理")>><</if>>
+<<if !$skills.includes("人际网络")>><<set $skills.push("人际网络")>><</if>>
+<<goto "strengthen_alliance">>
+<</link>>
+
+<<link "提出解决系统设计缺陷的方案，转危为机">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("问题解决")>><<set $skills.push("问题解决")>><</if>>
+<<if !$skills.includes("技术领导力")>><<set $skills.push("技术领导力")>><</if>>
+<<goto "problem_solver">>
+<</link>>
+
+<<link "低调行事，但记住谁是真正的盟友">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("策略思考")>><<set $skills.push("策略思考")>><</if>>
+<<if !$skills.includes("人际洞察")>><<set $skills.push("人际洞察")>><</if>>
+<<goto "silent_notes">>
+<</link>>
+
+
+:: apply_efficiency_methods
+<h2>效率方法的实践者</h2>
+            <p>受陈经理的工作方式启发，你决定在自己的工作中实践这些高效方法。</p>
+            <p>你开始采用番茄工作法管理时间，设置明确的专注时段和休息时间。</p>
+            <p>你优化了会议参与策略，只参加必要会议，并提前准备议题和问题。</p>
+            <p>你学会了委派任务和设置合理期望，不再事必躬亲。</p>
+            <p>几周后，你的工作效率显著提高，压力明显减轻，甚至有了更多创新思考的空间。</p>
+
+<<link "向团队分享你的效率经验">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<if !$skills.includes("团队影响力")>><<set $skills.push("团队影响力")>><</if>>
+<<goto "efficiency_sharing">>
+<</link>>
+
+<<link "进一步优化和系统化你的方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("系统思考")>><<set $skills.push("系统思考")>><</if>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "method_optimization">>
+<</link>>
+
+<<link "利用新增效率，发展更多职业技能">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (9)))>>
+<<if !$skills.includes("自我提升")>><<set $skills.push("自我提升")>><</if>>
+<<if !$skills.includes("时间管理")>><<set $skills.push("时间管理")>><</if>>
+<<goto "skill_development">>
+<</link>>
+
+
+:: approach_vp
+<h2>接近高层</h2>
+            <p>你决定尝试与技术VP赵总建立联系，这需要精心的策略和时机。</p>
+            <p>你注意到赵总经常参加公司的技术分享会，并且对创新解决方案特别感兴趣。</p>
+            <p>在一次全公司技术分享会上，你做了一个精心准备的简短演讲，介绍了你最近解决的一个复杂技术问题。</p>
+            <p>演讲结束后，赵总主动过来与你交流，对你的解决方案表示赞赏。</p>
+            <p>你把握住这个机会，简洁有力地表达了你对公司技术方向的一些见解，赵总给了你他的名片。</p>
+
+<<link "定期向赵总汇报有价值的技术见解">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("高层沟通")>><<set $skills.push("高层沟通")>><</if>>
+<<if !$skills.includes("战略思维")>><<set $skills.push("战略思维")>><</if>>
+<<goto "vp_mentor">>
+<</link>>
+
+<<link "请求加入赵总负责的核心技术项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("技术专长")>><<set $skills.push("技术专长")>><</if>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "core_project">>
+<</link>>
+
+<<link "在适当时机向赵总提出职业发展建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("职业导航")>><<set $skills.push("职业导航")>><</if>>
+<<if !$skills.includes("机会把握")>><<set $skills.push("机会把握")>><</if>>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: ask_raise
+<h2>薪资谈判</h2>
+            <p>在展现忠诚并取得李总信任后，你决定把握时机提出加薪申请。</p>
+            <p>你精心准备了一份详细的自我工作评估，包括你在过去几个月中的主要贡献和取得的成果。</p>
+            <p>"李总，考虑到我在上个季度的表现和对团队的贡献，我希望能够讨论一下薪资调整的可能性。"</p>
+            <p>李总仔细审阅了你的材料，表情严肃但并不意外。</p>
+            <p>"你的表现确实出色，特别是在公司困难时期的忠诚。让我考虑一下具体数字，下周给你答复。"</p>
+
+<<link "耐心等待结果，同时继续保持高绩效">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("耐心")>><<set $skills.push("耐心")>><</if>>
+<<if !$skills.includes("持续交付")>><<set $skills.push("持续交付")>><</if>>
+<<goto "maintain_performance">>
+<</link>>
+
+<<link "寻找更多为公司创造价值的方式">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("价值创造")>><<set $skills.push("价值创造")>><</if>>
+<<if !$skills.includes("商业敏感度")>><<set $skills.push("商业敏感度")>><</if>>
+<<goto "value_creation">>
+<</link>>
+
+<<link "开始秘密探索外部机会作为备选">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("风险管理")>><<set $skills.push("风险管理")>><</if>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "explore_options">>
+<</link>>
+
+
+:: balance_tasks
+<h2>任务平衡的艺术</h2>
+            <p>你向李总询问如何平衡"低垂果实"和有挑战性的任务，以实现职业长期发展。</p>
+            <p>李总思考片刻后回答："这是个好问题。成功的职业发展需要两者的平衡。"</p>
+            <p>他建议你采用"70/20/10"原则：70%时间用于核心工作，20%用于有挑战的新任务，10%用于创新尝试。</p>
+            <p>"低垂果实让你建立信誉和成就感，而挑战性任务则帮助你成长。关键是找到平衡点。"</p>
+            <p>李总还提出愿意每月与你进行一次指导会议，帮助你规划和调整任务组合。</p>
+
+<<link "立即应用70/20/10原则重组你的工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("时间管理")>><<set $skills.push("时间管理")>><</if>>
+<<if !$skills.includes("战略规划")>><<set $skills.push("战略规划")>><</if>>
+<<goto "work_reorganization">>
+<</link>>
+
+<<link "积极参与李总的月度指导会议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("接受指导")>><<set $skills.push("接受指导")>><</if>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "mentorship_program">>
+<</link>>
+
+<<link "提出建立团队内部的技能交换计划">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<if !$skills.includes("团队协作")>><<set $skills.push("团队协作")>><</if>>
+<<goto "skill_exchange">>
+<</link>>
+
+
+:: balanced_growth
+<h2>平衡发展之道</h2>
+            <p>在获得新的地位和认可后，你决定采取平衡的发展策略，避免过度消耗自己。</p>
+            <p>你开始有意识地规划工作与休息的节奏，设定合理的期望和目标。</p>
+            <p>你学会了适时说"不"，只接受真正重要且能带来成长的项目和任务。</p>
+            <p>同时，你注重自我提升，每周安排固定时间学习新技能或深入研究专业知识。</p>
+            <p>这种平衡策略使你的工作质量持续提高，同时保持了良好的心理状态和创造力。</p>
+
+<<link "分享你的平衡策略，影响团队文化">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (9)))>>
+<<if !$skills.includes("文化建设")>><<set $skills.push("文化建设")>><</if>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "culture_influencer">>
+<</link>>
+
+<<link "探索更高效的工作方法，进一步优化平衡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("效率优化")>><<set $skills.push("效率优化")>><</if>>
+<<if !$skills.includes("系统思考")>><<set $skills.push("系统思考")>><</if>>
+<<goto "efficiency_explorer">>
+<</link>>
+
+<<link "在保持平衡的同时，寻求更有挑战性的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("成长思维")>><<set $skills.push("成长思维")>><</if>>
+<<if !$skills.includes("自我管理")>><<set $skills.push("自我管理")>><</if>>
+<<goto "balanced_challenge">>
+<</link>>
+
+
+:: balanced_success
+<h2>低调成功</h2>
+            <p>在建立了一定声誉后，你选择保持低调，专注享受工作与生活的平衡。</p>
+            <p>你不追求显眼的成就或职位，而是在自己的专业领域默默耕耘，追求真正的满足感。</p>
+            <p>你合理安排工作时间，确保有足够空间发展个人兴趣和家庭生活。</p>
+            <p>随着时间推移，你成为团队中稳定可靠的力量，同事们尊重你的专业能力和生活哲学。</p>
+            <p>你发现这种平衡为你带来了持久的快乐和意义感，远胜于短暂的成就感和认可。</p>
+
+<<link "继续深耕专业领域，成为公认的专家">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("专业深度")>><<set $skills.push("专业深度")>><</if>>
+<<if !$skills.includes("自我满足")>><<set $skills.push("自我满足")>><</if>>
+<<goto "quiet_expert">>
+<</link>>
+
+<<link "指导新人平衡工作与生活">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (9)))>>
+<<if !$skills.includes("指导能力")>><<set $skills.push("指导能力")>><</if>>
+<<if !$skills.includes("情感智慧")>><<set $skills.push("情感智慧")>><</if>>
+<<goto "life_mentor">>
+<</link>>
+
+<<link "探索如何将个人兴趣与职业发展结合">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("创造性思维")>><<set $skills.push("创造性思维")>><</if>>
+<<if !$skills.includes("整合能力")>><<set $skills.push("整合能力")>><</if>>
+<<goto "passion_integration">>
+<</link>>
+
+
+:: befriend_pm
+<h2>产品经理的朋友</h2>
+            <p>你决定与产品经理小陈建立良好的工作关系，这对跨部门协作至关重要。</p>
+            <p>你主动邀请小陈共进午餐，了解产品团队的工作流程和挑战。</p>
+            <p>在项目合作中，你不仅完成自己的任务，还尝试从产品角度思考问题，提出建设性建议。</p>
+            <p>小陈对你的专业态度和合作精神印象深刻："难得遇到一个真正理解产品思维的技术同事。"</p>
+            <p>这种合作关系帮助你更早获取产品规划信息，也使你的开发工作更有前瞻性。</p>
+
+<<link "深入学习产品知识，成为技术与产品的桥梁">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("产品思维")>><<set $skills.push("产品思维")>><</if>>
+<<if !$skills.includes("跨部门协作")>><<set $skills.push("跨部门协作")>><</if>>
+<<goto "tech_product_bridge">>
+<</link>>
+
+<<link "与小陈合作提出创新产品功能">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<if !$skills.includes("提案能力")>><<set $skills.push("提案能力")>><</if>>
+<<goto "collaborative_innovation">>
+<</link>>
+
+<<link "扩大人脉，认识更多产品和设计团队成员">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("人脉建设")>><<set $skills.push("人脉建设")>><</if>>
+<<if !$skills.includes("沟通技巧")>><<set $skills.push("沟通技巧")>><</if>>
+<<goto "cross_team_network">>
+<</link>>
+
+
+:: cancel_interviews
+<h2>重新聚焦</h2>
+            <p>经过深思熟虑，你决定取消所有面试，重新专注于当前的工作。</p>
+            <p>你给几家公司的招聘人员发了礼貌的邮件，表示暂时不考虑跳槽。</p>
+            <p>做出这个决定后，你感到一种释然，你意识到当前工作环境其实有很多值得珍惜的方面。</p>
+            <p>你开始重新审视自己的职业发展路径，思考如何在现有岗位上发挥最大价值。</p>
+            <p>你制定了新的个人发展计划，包括需要加强的技能和想要参与的项目类型。</p>
+
+<<link "与上级讨论你的长期发展规划">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<if !$skills.includes("向上沟通")>><<set $skills.push("向上沟通")>><</if>>
+<<goto "career_planning">>
+<</link>>
+
+<<link "主动承担更有挑战性的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<if !$skills.includes("挑战精神")>><<set $skills.push("挑战精神")>><</if>>
+<<goto "seek_challenge">>
+<</link>>
+
+<<link "专注提升核心技术能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("技术专精")>><<set $skills.push("技术专精")>><</if>>
+<<if !$skills.includes("持续学习")>><<set $skills.push("持续学习")>><</if>>
+<<goto "technical_depth">>
+<</link>>
+
+
+:: career_advancement
+<h2>职业飞跃</h2>
+            <p>你决定利用项目成功的势头，正式申请晋升或加薪。</p>
+            <p>你精心准备了一份详尽的个人贡献报告，包括具体的业绩数据和项目成果。</p>
+            <p>你还收集了团队成员和跨部门合作伙伴的正面反馈，作为你能力的佐证。</p>
+            <p>在与主管的正式会议中，你自信地展示了自己的价值和未来潜力。</p>
+            <p>"我认为我的表现已经达到了下一级别的要求，希望公司能够认可我的贡献。"</p>
+
+<<link "耐心等待决定，同时继续高质量工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("耐心")>><<set $skills.push("耐心")>><</if>>
+<<if !$skills.includes("一致性")>><<set $skills.push("一致性")>><</if>>
+<<goto "prove_worth">>
+<</link>>
+
+<<link "制定备选计划，包括外部机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("策略思考")>><<set $skills.push("策略思考")>><</if>>
+<<if !$skills.includes("风险管理")>><<set $skills.push("风险管理")>><</if>>
+<<goto "plan_b">>
+<</link>>
+
+<<link "主动争取更多高曝光度的工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("自我营销")>><<set $skills.push("自我营销")>><</if>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<goto "visibility_projects">>
+<</link>>
+
+
+:: career_crossroad
+<h2>职业十字路口</h2>
+            <p>在稳步发展一段时间后，你开始思考是否应该更加积极进取，追求更快的职业发展。</p>
+            <p>你目前的工作稳定舒适，但你意识到自己可能进入了舒适区，缺乏真正的挑战和成长。</p>
+            <p>公司内部有几个新项目正在启动，一些关键职位也在招聘中，这些都可能是机会。</p>
+            <p>同时，行业内的发展趋势也在变化，一些新技术和领域正在兴起。</p>
+            <p>你感到自己站在职业发展的十字路口，需要做出重要决定。</p>
+
+<<link "寻求导师指导，明确职业目标">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<if !$skills.includes("自我认知")>><<set $skills.push("自我认知")>><</if>>
+<<goto "seek_mentor">>
+<</link>>
+
+<<link "主动申请公司内部有挑战的新项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<if !$skills.includes("适应能力")>><<set $skills.push("适应能力")>><</if>>
+<<goto "internal_challenge">>
+<</link>>
+
+<<link "投资学习新技能，为未来机会做准备">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("学习能力")>><<set $skills.push("学习能力")>><</if>>
+<<if !$skills.includes("前瞻性")>><<set $skills.push("前瞻性")>><</if>>
+<<goto "skill_investment">>
+<</link>>
+
+
+:: career_guidance
+<h2>职业指导</h2>
+            <p>你向经验丰富的领导请教职业发展建议，希望能够获得一些指引。</p>
+            <p>"我非常欣赏你的工作，但在职业道路上还感到一些迷茫，希望能听听您的建议。"</p>
+            <p>领导认真思考后给出了宝贵的反馈："你的技术能力很强，但可以更多关注业务影响力和领导力的培养。"</p>
+            <p>他分享了自己的职业经历和一些关键转折点的决策思考，这些都给你带来了新的视角。</p>
+            <p>"关键是找到自己真正热爱的领域，然后持续精进，同时不忘培养软技能和人际关系。"</p>
+
+<<link "制定详细的职业发展计划">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("规划能力")>><<set $skills.push("规划能力")>><</if>>
+<<if !$skills.includes("自我管理")>><<set $skills.push("自我管理")>><</if>>
+<<goto "career_planning">>
+<</link>>
+
+<<link "主动寻求提升领导力的机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<goto "leadership_growth">>
+<</link>>
+
+<<link "保持技术专长，同时增加业务理解">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("全面发展")>><<set $skills.push("全面发展")>><</if>>
+<<if !$skills.includes("战略思维")>><<set $skills.push("战略思维")>><</if>>
+<<goto "technical_business_balance">>
+<</link>>
+
+
+:: career_planning
+<h2>职业规划对话</h2>
+            <p>你选择在私下场合与主管讨论你的长期职业发展规划。</p>
+            <p>"我想了解在这个团队和公司，我未来的发展方向和可能性。"</p>
+            <p>主管对你的主动性表示赞赏，分享了公司的发展规划和可能出现的机会。</p>
+            <p>"以你的能力，可以考虑技术专家路线，也可以尝试技术管理方向，这取决于你的兴趣。"</p>
+            <p>他还提出了一个个人发展计划框架，帮助你更系统地思考自己的职业路径。</p>
+
+<<link "选择技术专家路线，深耕技术能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (9)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("技术深度")>><<set $skills.push("技术深度")>><</if>>
+<<if !$skills.includes("专业权威")>><<set $skills.push("专业权威")>><</if>>
+<<goto "technical_expert">>
+<</link>>
+
+<<link "探索技术管理路径，提升领导能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("团队领导")>><<set $skills.push("团队领导")>><</if>>
+<<if !$skills.includes("管理技能")>><<set $skills.push("管理技能")>><</if>>
+<<goto "tech_management">>
+<</link>>
+
+<<link "寻求平衡技术与管理的混合角色">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("多面发展")>><<set $skills.push("多面发展")>><</if>>
+<<if !$skills.includes("角色适应性")>><<set $skills.push("角色适应性")>><</if>>
+<<goto "hybrid_role">>
+<</link>>
+
+
+:: careful_interview
+<h2>谨慎面试</h2>
+            <p>虽然对现有工作有些不满，但你决定继续秘密进行外部面试，只是更加谨慎。</p>
+            <p>你选择在午休时间或请假的方式进行视频面试，避开公司监控。</p>
+            <p>你只向最有前景的几家公司投递简历，并明确告知面试官保密要求。</p>
+            <p>你在专业社交平台上更新了信息，但关闭了"正在找工作"的标志。</p>
+            <p>这种谨慎策略让你能够探索外部机会，同时不影响当前工作状态。</p>
+
+<<link "当找到理想机会时立即跳槽">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (9)))>>
+<<if !$skills.includes("决断力")>><<set $skills.push("决断力")>><</if>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "perfect_opportunity">>
+<</link>>
+
+<<link "利用外部offer与现公司谈判">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("谈判技巧")>><<set $skills.push("谈判技巧")>><</if>>
+<<if !$skills.includes("策略思考")>><<set $skills.push("策略思考")>><</if>>
+<<goto "negotiation_leverage">>
+<</link>>
+
+<<link "在外部了解行情后重新评估现有工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("分析能力")>><<set $skills.push("分析能力")>><</if>>
+<<if !$skills.includes("自我认知")>><<set $skills.push("自我认知")>><</if>>
+<<goto "market_perspective">>
+<</link>>
+
+
+:: challenge_request
+<h2>请求挑战</h2>
+            <p>经过一段时间的工作，你感到需要新的挑战来促进成长，于是主动向主管提出请求。</p>
+            <p>"我对目前的工作已经非常熟悉，希望能够承担一些更具挑战性的任务，帮助我更快成长。"</p>
+            <p>主管对你的进取心表示肯定，思考片刻后点头同意。</p>
+            <p>"正好有个新项目需要处理一些技术难题，之前几个团队都没能解决。你有兴趣尝试吗？"</p>
+            <p>这个项目充满挑战，但也是展示自己能力的绝佳机会。</p>
+
+<<link "欣然接受挑战，全力以赴">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("问题解决")>><<set $skills.push("问题解决")>><</if>>
+<<if !$skills.includes("技术攻坚")>><<set $skills.push("技术攻坚")>><</if>>
+<<goto "full_commitment">>
+<</link>>
+
+<<link "接受挑战，但请求适当的支持和资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("资源管理")>><<set $skills.push("资源管理")>><</if>>
+<<if !$skills.includes("团队协作")>><<set $skills.push("团队协作")>><</if>>
+<<goto "supported_challenge">>
+<</link>>
+
+<<link "建议组建小团队共同攻克难题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("团队领导")>><<set $skills.push("团队领导")>><</if>>
+<<if !$skills.includes("协作解决")>><<set $skills.push("协作解决")>><</if>>
+<<goto "team_challenge">>
+<</link>>
+
+
+:: new_friend
+<h2>新的同盟</h2>
+            <p>你与小林结成了互助搭档，对团队节奏有了更清晰的认知。</p>
+
+<<link "继续磨合合作方式">>
+<<goto "training_efficiency">>
+<</link>>
+
+
+:: keep_distance
+<h2>保持距离</h2>
+            <p>你决定谨慎行事，先观察团队文化，再逐步融入。</p>
+
+<<link "专注效率与观察">>
+<<goto "training_efficiency">>
+<</link>>
+
+
+:: team_insights
+<h2>圈内情报</h2>
+            <p>你收集了团队关键人物与节奏的关键信息，为后续适应做好准备。</p>
+
+<<link "将信息用于后续决策">>
+<<goto "training_efficiency">>
+<</link>>
+
+
+:: establish_system
+<h2>制度护身</h2>
+            <p>你提议建立周报与留痕机制，团队对透明度有了共识。</p>
+
+<<link "继续优化流程">>
+<<goto "document_contribution">>
+<</link>>
+
+
+:: self_promotion
+<h2>关键场合露面</h2>
+            <p>你在例会上简要展示成果，确保贡献被记录。</p>
+
+<<link "保持节奏，稳步推进">>
+<<goto "document_contribution">>
+<</link>>
+
+
+:: share_credit
+<h2>互惠共享</h2>
+            <p>你选择在部分场合共享功劳，换取后续的支持。</p>
+
+<<link "巩固关系网">>
+<<goto "document_contribution">>
+<</link>>
+
+
+:: identify_traps
+<h2>识别陷阱</h2>
+            <p>你标记了潜在的项目“坑”，决定择优而入。</p>
+
+<<link "选择安全且可见的任务">>
+<<goto "dashboard_project">>
+<</link>>
+
+
+:: overnight_fix
+<h2>硬扛一夜</h2>
+            <p>你通宵修复上线，短期赢得认可，但精力透支。</p>
+
+<<link "请求补资源/复盘">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<goto "project_crisis">>
+<</link>>
+
+
+:: report_delay
+<h2>如实报延</h2>
+            <p>你透明沟通风险，争取到24小时缓冲并拿到支援。</p>
+
+<<link "组织补救并同步">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("风险沟通")>><<set $skills.push("风险沟通")>><</if>>
+<<goto "project_crisis">>
+<</link>>
+
+
+:: team_effort
+<h2>拉群救火</h2>
+            <p>你快速分工、并行修复，效率翻倍，关系加深。</p>
+
+<<link "同步贡献留痕">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-4)))>>
+<<if !$allies.includes("救火同事")>><<set $allies.push("救火同事")>><</if>>
+<<goto "collaborate_boundary">>
+<</link>>
+
+
+:: project_inquiry
+<h2>打听细节</h2>
+            <p>你先确认范围、优先级和风险，再给出承接方案。</p>
+
+<<link "按计划承接">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (1)))>>
+<<goto "accept_with_plan">>
+<</link>>
+
+
+:: delay_project
+<h2>暂缓接单</h2>
+            <p>你请求先收尾当前任务，再设定合理排期，避免失控。</p>
+
+<<link "设边界再开工">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "accept_with_boundary">>
+<</link>>
+
+
+:: quick_project_join
+<h2>火线应战</h2>
+            <p>你立刻加入救火，准备快速切入需求。</p>
+
+<<link "直接投入交付">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "urgent_project_accept">>
+<</link>>
+
+
+:: efficiency_experiment
+<h2>效率试点</h2>
+            <p>你在小模块上用时间块+每日回顾，交付提前完成。</p>
+
+<<link "收集数据再扩展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("数据分析")>><<set $skills.push("数据分析")>><</if>>
+<<goto "self_experiment">>
+<</link>>
+
+
+:: self_experiment
+<h2>自我迭代</h2>
+            <p>你把试点方法嵌入日常，并记录效率波动原因。</p>
+
+<<link "小范围分享心得">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("复盘")>><<set $skills.push("复盘")>><</if>>
+<<goto "flexible_approach">>
+<</link>>
+
+
+:: flexible_approach
+<h2>灵活落地</h2>
+            <p>你针对不同类型需求选择不同力度的效率手段，避免“一刀切”。</p>
+
+<<link "向经理展示效果">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: accept_inform
+<h2>含蓄报备</h2>
+            <p>你接受高层任务，同时私下同步直属领导，减少被架空的风险。</p>
+
+<<link "两边平衡推进">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("权衡沟通")>><<set $skills.push("权衡沟通")>><</if>>
+<<goto "successor_path">>
+<</link>>
+
+
+:: politely_refuse
+<h2>礼貌拒绝</h2>
+            <p>你以优先级与资源为由婉拒，对方虽不悦但仍保持客气。</p>
+
+<<link "稳住现有阵地">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "build_trust">>
+<</link>>
+
+
+:: full_accept
+<h2>孤注一掷</h2>
+            <p>你决定完全押注高层任务，准备承担政治风险。</p>
+
+<<link "深水前行">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("冒险精神")>><<set $skills.push("冒险精神")>><</if>>
+<<goto "successor_path">>
+<</link>>
+
+
+:: perfect_demo
+<h2>极限打磨</h2>
+            <p>你通宵把演示做成“必过”版本，高层印象深刻。</p>
+
+<<link "趁热争取资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-6)))>>
+<<if !$skills.includes("临危不乱")>><<set $skills.push("临危不乱")>><</if>>
+<<goto "promotion">>
+<</link>>
+
+
+:: honest_presentation
+<h2>坦诚呈现</h2>
+            <p>你展示真实缺口并给出路线图，高层认可你的透明度。</p>
+
+<<link "稳步推进改进">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("期望管理")>><<set $skills.push("期望管理")>><</if>>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: investigate_truth
+<h2>背后目的</h2>
+            <p>你发现投资人另有考量，或与未来重组相关。</p>
+
+<<link "继续深挖情报">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-1)))>>
+<<if !$skills.includes("情报收集")>><<set $skills.push("情报收集")>><</if>>
+<<goto "investigate_motives">>
+<</link>>
+
+
+:: join_efficient_team
+<h2>高效小队</h2>
+            <p>团队推行“结果导向+少会多做”，你明显感到节奏变轻。</p>
+
+<<link "本地化方法论">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("高效工作")>><<set $skills.push("高效工作")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: strategic_overtime
+<h2>择机加班</h2>
+            <p>只在关键里程碑集中加班，平时维持正常节奏。</p>
+
+<<link "关键节点冲刺">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "urgent_project_accept">>
+<</link>>
+
+
+:: efficiency_workshop
+<h2>效率工作坊</h2>
+            <p>你召集团队分享节省时间的小技巧，获得支持。</p>
+
+<<link "写进流程">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: group_suggestion
+<h2>联名建议</h2>
+            <p>你和同事提交一页纸改进建议，经理愿意试点。</p>
+
+<<link "继续沟通资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("团队协作")>><<set $skills.push("团队协作")>><</if>>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: quiet_support
+<h2>静默盟友</h2>
+            <p>几位同事私下支持你，关键时刻能帮忙发声。</p>
+
+<<link "维护关系网">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (4)))>>
+<<if !$allies.includes("同事支持者")>><<set $allies.push("同事支持者")>><</if>>
+<<goto "build_trust">>
+<</link>>
+
+
+:: learn_from_efficient
+<h2>取经高手</h2>
+            <p>你跟着效率标杆 shadow，一周内记录了可复制的实践。</p>
+
+<<link "在小组落地">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("效率实践")>><<set $skills.push("效率实践")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: promote_task_oriented
+<h2>结果驱动</h2>
+            <p>你推动“先定成果再排节奏”，减少无效会议。</p>
+
+<<link "与经理对齐">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: more_survival_tips
+<h2>生存锦囊</h2>
+            <p>前辈给出“拒绝模板、周报留痕、节点露脸”等实战建议。</p>
+
+<<link "挑两条先试">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: efficiency_trainer
+<h2>效率教练</h2>
+            <p>你手把手辅导新人做时间管理，获得正反馈。</p>
+
+<<link "写成手册">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("培训能力")>><<set $skills.push("培训能力")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: leverage_reputation
+<h2>声誉杠杆</h2>
+            <p>口碑积累让你有底气谈资源与回报。</p>
+
+<<link "向上沟通争取">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("谈判")>><<set $skills.push("谈判")>><</if>>
+<<goto "ask_raise">>
+<</link>>
+
+
+:: efficiency_presentation
+<h2>效率复盘分享</h2>
+            <p>你用真实数据展示效率曲线，赢得听众信任。</p>
+
+<<link "推动组内落地">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("演讲")>><<set $skills.push("演讲")>><</if>>
+<<goto "tech_sharing_prepare">>
+<</link>>
+
+
+:: methodology_experiment
+<h2>方法试点</h2>
+            <p>你在双周迭代跑一次完整试点，收集客观指标。</p>
+
+<<link "沉淀试点手册">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: share_resources
+<h2>工具与模版</h2>
+            <p>你把常用脚本和文档模版集中共享，降低协作成本。</p>
+
+<<link "邀请同事补充">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("协作")>><<set $skills.push("协作")>><</if>>
+<<goto "collaborate_boundary">>
+<</link>>
+
+
+:: project_report
+<h2>项目复盘</h2>
+            <p>你对进度、质量、沟通做了复盘，形成改进清单。</p>
+
+<<link "申请更大项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("复盘")>><<set $skills.push("复盘")>><</if>>
+<<goto "bigger_project">>
+<</link>>
+
+
+:: team_expansion
+<h2>申请增援</h2>
+            <p>你用数据证明人手不足的影响，争取到增员名额。</p>
+
+<<link "组建核心小队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$allies.includes("新成员")>><<set $allies.push("新成员")>><</if>>
+<<goto "form_team">>
+<</link>>
+
+
+:: mentor_colleagues
+<h2>带人带心</h2>
+            <p>你辅导新人解决难题，团队对你的信任度提升。</p>
+
+<<link "继续输出影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("辅导")>><<set $skills.push("辅导")>><</if>>
+<<goto "help_others">>
+<</link>>
+
+
+:: optimize_workflow
+<h2>流程瘦身</h2>
+            <p>你与领导对齐后，获准精简审批与同步节奏，节省了沟通时间。</p>
+
+<<link "在团队落地试点">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "training_efficiency">>
+<</link>>
+
+
+:: flexible_arrangement
+<h2>灵活排期</h2>
+            <p>你争取到更合理的节奏和资源，个人压力显著下降。</p>
+
+<<link "保持平衡节奏">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (4)))>>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: promotion_advice
+<h2>晋升要点</h2>
+            <p>领导强调“影响力、可见度、稳定交付”是关键，你有了明确抓手。</p>
+
+<<link "围绕要点行动">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("向上管理")>><<set $skills.push("向上管理")>><</if>>
+<<goto "promotion">>
+<</link>>
+
+
+:: improve_process
+<h2>流程补强</h2>
+            <p>你把事故教训写成检查清单，拉上团队共建防线。</p>
+
+<<link "让团队共建并执行">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "build_trust">>
+<</link>>
+
+
+:: rebuild_trust
+<h2>修复信任</h2>
+            <p>你主动承担责任并补偿加班，公开复盘赢回口碑。</p>
+
+<<link "稳住团队关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-1)))>>
+<<goto "stay_loyal">>
+<</link>>
+
+
+:: position_change
+<h2>暂时转岗</h2>
+            <p>你被调去支援岗，压力下降但曝光降低，需要重新积累口碑。</p>
+
+<<link "从小任务重建声誉">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "small_tasks">>
+<</link>>
+
+
+:: private_report
+<h2>低调递交</h2>
+            <p>你把调查结果私下交给可信渠道，等待后续动作。</p>
+
+<<link "静观其变">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-1)))>>
+<<goto "loyalty_crisis">>
+<</link>>
+
+
+:: official_investigation
+<h2>介入审查</h2>
+            <p>公司启动正式调查，你需要配合取证并自证清白。</p>
+
+<<link "配合并提供证据">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "loyalty_crisis">>
+<</link>>
+
+
+:: partial_responsibility
+<h2>共同承担</h2>
+            <p>你说明问题是系统性成因，争取团队一起背书。</p>
+
+<<link "组织盟友作证">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (1)))>>
+<<if !$allies.includes("团队成员")>><<set $allies.push("团队成员")>><</if>>
+<<goto "alliance_defense">>
+<</link>>
+
+
+:: boundary_example
+<h2>边界示范</h2>
+            <p>你在例会上公开对齐工作时间、响应节奏和预期成果，团队发现效率反而提升。</p>
+
+<<link "整理成组内最佳实践">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<if !$skills.includes("边界管理")>><<set $skills.push("边界管理")>><</if>>
+<<if !$skills.includes("团队影响力")>><<set $skills.push("团队影响力")>><</if>>
+<<goto "share_techniques">>
+<</link>>
+
+<<link "保持个人节奏，择优接活">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("项目选择眼光")>><<set $skills.push("项目选择眼光")>><</if>>
+<<goto "selective_projects">>
+<</link>>
+
+
+:: share_techniques
+<h2>分享边界与效率技巧</h2>
+            <p>你把时间分块、期望对齐和“拒绝模板”写成一页纸，向团队演示。</p>
+
+<<link "推动组内落地">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+<<link "沉淀为流程文档">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (6)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (4)))>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+
+:: selective_projects
+<h2>择优接活</h2>
+            <p>你优先挑选高价值且可控的需求，避免被无效加班拖垮。</p>
+
+<<link "拿下高可见度任务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("任务筛选")>><<set $skills.push("任务筛选")>><</if>>
+<<goto "dashboard_project">>
+<</link>>
+
+<<link "保持节奏，先稳基本盘">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (6)))>>
+<<goto "training_efficiency">>
+<</link>>
+
+
+:: balance_loyalties
+<h2>两面周旋</h2>
+            <p>同时获得李总和赵总的信任让你感到一种特殊的重量。你学会了根据不同情境展示不同的侧面：在李总面前是忠实的执行者，在赵总面前是具有战略眼光的年轻人。</p>
+            <p>然而，公司内部开始流传一些关于你"两面人"的传言。有人开始注意到你的双重策略，这让你感到压力。</p>
+            <p>你必须做出选择，是继续维持这种平衡，还是选择其中一方站队？</p>
+
+<<link "坦白与两位领导沟通，明确自己的立场">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("诚信沟通")>><<set $skills.push("诚信沟通")>><</if>>
+<<goto "career_guidance">>
+<</link>>
+
+<<link "选择站队赵总，放弃对李总的维护">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("站队艺术")>><<set $skills.push("站队艺术")>><</if>>
+<<goto "vp_assistant">>
+<</link>>
+
+<<link "继续保持平衡，但更加低调谨慎">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("权衡之道")>><<set $skills.push("权衡之道")>><</if>>
+<<goto "strategic_patience">>
+<</link>>
+
+
+:: balanced_challenge
+<h2>分支：balanced_challenge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: clear_contribution
+<h2>分支：clear_contribution</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: collaborative_innovation
+<h2>分支：collaborative_innovation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: confront_vp
+<h2>分支：confront_vp</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: continued_loyalties
+<h2>分支：continued_loyalties</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: continued_loyalty
+<h2>分支：continued_loyalty</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: continuous_learning
+<h2>分支：continuous_learning</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: controlled_openness
+<h2>分支：controlled_openness</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: core_project
+<h2>分支：core_project</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: core_team_lowkey
+<h2>分支：core_team_lowkey</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: cross_department_expert
+<h2>分支：cross_department_expert</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: cross_team_network
+<h2>分支：cross_team_network</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: culture_change
+<h2>分支：culture_change</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: culture_influencer
+<h2>分支：culture_influencer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: decline_politely
+<h2>分支：decline_politely</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: decline_risk
+<h2>分支：decline_risk</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: decline_sharing
+<h2>分支：decline_sharing</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: double_strategy
+<h2>分支：double_strategy</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: efficiency_explorer
+<h2>分支：efficiency_explorer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: efficiency_focus
+<h2>分支：efficiency_focus</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: efficiency_mentor
+<h2>分支：efficiency_mentor</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: efficiency_sharing
+<h2>分支：efficiency_sharing</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: expand_influence
+<h2>分支：expand_influence</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: expand_network
+<h2>分支：expand_network</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: explore_options
+<h2>分支：explore_options</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: external_opportunity
+<h2>分支：external_opportunity</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: extract_info
+<h2>分支：extract_info</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: fast_track
+<h2>分支：fast_track</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: flagship_project
+<h2>分支：flagship_project</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "bigger_project">>
+<</link>>
+
+
+:: focus_execution
+<h2>分支：focus_execution</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: focus_project
+<h2>分支：focus_project</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "bigger_project">>
+<</link>>
+
+
+:: fresh_start
+<h2>分支：fresh_start</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "new_horizon">>
+<</link>>
+
+
+:: full_commitment
+<h2>分支：full_commitment</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: hasty_departure
+<h2>分支：hasty_departure</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: high_intensity
+<h2>分支：high_intensity</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: high_performer
+<h2>分支：high_performer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: hybrid_role
+<h2>分支：hybrid_role</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: information_dealer
+<h2>分支：information_dealer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: innovation_lab
+<h2>分支：innovation_lab</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: innovation_proposal
+<h2>分支：innovation_proposal</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: internal_challenge
+<h2>分支：internal_challenge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: internal_negotiation
+<h2>分支：internal_negotiation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: internal_opportunity
+<h2>分支：internal_opportunity</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: join_innovation
+<h2>分支：join_innovation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: join_zhang
+<h2>分支：join_zhang</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: joint_departure
+<h2>分支：joint_departure</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: keep_waiting
+<h2>分支：keep_waiting</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: lead_project
+<h2>分支：lead_project</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "promotion">>
+<</link>>
+
+
+:: leadership_growth
+<h2>分支：leadership_growth</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "promotion">>
+<</link>>
+
+
+:: leverage_influence
+<h2>分支：leverage_influence</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: leverage_network
+<h2>分支：leverage_network</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: life_mentor
+<h2>分支：life_mentor</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: maintain_balance
+<h2>分支：maintain_balance</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: maintain_performance
+<h2>分支：maintain_performance</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: market_perspective
+<h2>分支：market_perspective</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: mentorship_program
+<h2>分支：mentorship_program</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: method_optimization
+<h2>分支：method_optimization</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: negotiate_conditions
+<h2>分支：negotiate_conditions</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: negotiate_offer
+<h2>分支：negotiate_offer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: negotiate_terms
+<h2>分支：negotiate_terms</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: negotiation_leverage
+<h2>分支：negotiation_leverage</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: network_building
+<h2>分支：network_building</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: observe_rules
+<h2>分支：observe_rules</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: official_program
+<h2>分支：official_program</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: organic_growth
+<h2>分支：organic_growth</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: passion_integration
+<h2>分支：passion_integration</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: patience_virtue
+<h2>分支：patience_virtue</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: perfect_opportunity
+<h2>分支：perfect_opportunity</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: plan_b
+<h2>分支：plan_b</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "promotion">>
+<</link>>
+
+
+:: planning_expert
+<h2>分支：planning_expert</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "promotion">>
+<</link>>
+
+
+:: play_by_rules
+<h2>分支：play_by_rules</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: polite_refusal
+<h2>分支：polite_refusal</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: problem_solver
+<h2>分支：problem_solver</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "project_crisis">>
+<</link>>
+
+
+:: product_development
+<h2>分支：product_development</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "bigger_project">>
+<</link>>
+
+
+:: prove_worth
+<h2>分支：prove_worth</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: public_clarification
+<h2>分支：public_clarification</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: quiet_boundary
+<h2>分支：quiet_boundary</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: quiet_expert
+<h2>分支：quiet_expert</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "work_life_balance">>
+<</link>>
+
+
+:: reconnect_competitor
+<h2>分支：reconnect_competitor</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: reform_attempt
+<h2>分支：reform_attempt</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: regular_one_on_one
+<h2>分支：regular_one_on_one</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: request_challenge
+<h2>分支：request_challenge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: resignation
+<h2>分支：resignation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "new_horizon">>
+<</link>>
+
+
+:: seek_mentor
+<h2>分支：seek_mentor</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: seek_mentorship
+<h2>分支：seek_mentorship</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: seek_peace
+<h2>分支：seek_peace</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: seek_recognition
+<h2>分支：seek_recognition</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: selective_warning
+<h2>分支：selective_warning</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: share_methods
+<h2>分支：share_methods</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: sharing_research
+<h2>分支：sharing_research</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: show_talent
+<h2>分支：show_talent</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: silent_notes
+<h2>分支：silent_notes</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: skill_development
+<h2>分支：skill_development</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: skill_exchange
+<h2>分支：skill_exchange</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: skill_investment
+<h2>分支：skill_investment</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: solo_decision
+<h2>分支：solo_decision</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: solo_departure
+<h2>分支：solo_departure</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: spread_methods
+<h2>分支：spread_methods</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: stay_negotiate
+<h2>分支：stay_negotiate</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: stay_safe
+<h2>分支：stay_safe</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: stick_to_principles
+<h2>分支：stick_to_principles</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: strategic_alliance
+<h2>分支：strategic_alliance</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: strategic_move
+<h2>分支：strategic_move</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: strategic_patience
+<h2>分支：strategic_patience</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: strengthen_alliance
+<h2>分支：strengthen_alliance</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: supported_challenge
+<h2>分支：supported_challenge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: tactful_conversation
+<h2>分支：tactful_conversation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+
+:: team_building
+<h2>分支：team_building</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: team_challenge
+<h2>分支：team_challenge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: team_development
+<h2>分支：team_development</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: team_influence
+<h2>分支：team_influence</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "build_trust">>
+<</link>>
+
+
+:: tech_expert_path
+<h2>分支：tech_expert_path</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_focus
+<h2>分支：tech_focus</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_influence
+<h2>分支：tech_influence</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_management
+<h2>分支：tech_management</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_pioneer
+<h2>分支：tech_pioneer</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_product_bridge
+<h2>分支：tech_product_bridge</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: tech_sharing_prepare
+<h2>分支：tech_sharing_prepare</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: technical_business_balance
+<h2>分支：technical_business_balance</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: technical_defense
+<h2>分支：technical_defense</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: technical_expert
+<h2>分支：technical_expert</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "tech_expert">>
+<</link>>
+
+
+:: training_specialist
+<h2>分支：training_specialist</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: transparency_initiative
+<h2>分支：transparency_initiative</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: understand_colleague
+<h2>分支：understand_colleague</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: upward_management
+<h2>分支：upward_management</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "promotion">>
+<</link>>
+
+
+:: value_creation
+<h2>分支：value_creation</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: visibility_projects
+<h2>分支：visibility_projects</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "bigger_project">>
+<</link>>
+
+
+:: vision_sharing
+<h2>分支：vision_sharing</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: vp_assistant
+<h2>分支：vp_assistant</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: vp_mentor
+<h2>分支：vp_mentor</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "career_guidance">>
+<</link>>
+
+
+:: work_reorganization
+<h2>分支：work_reorganization</h2>
+            <p>你在此分支做出关键抉择，影响后续走向。</p>
+
+<<link "继续前进">>
+<<goto "start">>
+<</link>>
+
+
+:: urgent_project_accept
+<h2>深入虎穴</h2>
+            <p>你欣然接受了紧急项目的挑战，李总拍拍你的肩膀："好样的，我看好你！"</p>
+            <p>接下来的两周，你几乎每天都工作到凌晨，周末也泡在公司。</p>
+            <p>项目虽然压力山大，但你学到了很多技术知识，也引起了团队的注意。</p>
+            <p>项目即将截止，你发现一个严重的系统漏洞，修复需要至少两天，但截止日只剩一天了。</p>
+
+<<link "通宵达旦修复bug，确保按时交付">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("危机处理")>><<set $skills.push("危机处理")>><</if>>
+<<goto "overnight_fix">>
+<</link>>
+
+<<link "如实向李总报告情况，请求延期">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "report_delay">>
+<</link>>
+
+<<link "寻求团队帮助，集体攻关解决问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("团队协作")>><<set $skills.push("团队协作")>><</if>>
+<<goto "team_effort">>
+<</link>>
+
+
+:: urgent_project_inquire
+<h2>谨慎决策</h2>
+            <p>你询问了项目的详细情况，李总简要介绍了项目背景和时间安排。</p>
+            <p>"这是一个重要客户的项目，期限很紧，估计需要连续加班两周左右。"</p>
+            <p>李总的表情变得严肃："老实说，这个项目压力不小，但对新人来说是个锻炼的好机会。"</p>
+            <p>你能感觉到李总在等你的回应，这个决定可能会影响你在团队中的定位。</p>
+
+<<link "接受挑战，但提出合理的工作安排建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("项目管理")>><<set $skills.push("项目管理")>><</if>>
+<<goto "accept_with_plan">>
+<</link>>
+
+<<link "直接拒绝，表示作为新人需要时间适应">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "decline_politely">>
+<</link>>
+
+<<link "接受项目但设定边界，不接受过度加班">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("边界管理")>><<set $skills.push("边界管理")>><</if>>
+<<goto "accept_with_boundary">>
+<</link>>
+
+
+:: urgent_project_refuse
+<h2>稳扎稳打</h2>
+            <p>你礼貌地谢绝了李总的邀请，表示作为新人需要先熟悉公司环境和工作流程。</p>
+            <p>"李总，我很感谢您的信任，但我觉得我应该先打好基础，以免在紧急项目中拖团队后腿。"</p>
+            <p>李总的表情有些失望，但点了点头："理解。稳扎稳打也是一种态度，不过机会可不等人啊。"</p>
+            <p>在接下来的日子里，你注意到李总开始更多关注其他新人，而对你的交流明显减少了。</p>
+            <p>这个决定保护了你的个人时间，但可能影响了你在团队中的发展速度。</p>
+
+<<link "主动承担一些小任务，重新获得关注">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("循序渐进")>><<set $skills.push("循序渐进")>><</if>>
+<<goto "small_tasks">>
+<</link>>
+
+<<link "利用较少的加班时间自学提升技能">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("自主学习")>><<set $skills.push("自主学习")>><</if>>
+<<goto "self_improvement">>
+<</link>>
+
+<<link "寻找其他导师和发展路径">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("人脉拓展")>><<set $skills.push("人脉拓展")>><</if>>
+<<goto "find_mentor">>
+<</link>>
+
+
+:: collaborate_boundary
+<h2>明确的边界</h2>
+            <p>你主动邀请小明加入项目，但同时明确了职责分工："你可以负责数据可视化这块，我会在PR中注明你的贡献。"</p>
+            <p>小明看起来有些惊讶，但同意了这个安排。</p>
+            <p>在接下来的合作中，你发现小明确实在数据可视化方面有独到见解，为项目增色不少。</p>
+            <p>你按约定在项目文档和汇报中突出了他的贡献，这让他对你的印象也好了不少。</p>
+            <p>最终项目顺利完成，获得了管理层的一致好评。李总私下表示，你的团队协作能力让他印象深刻。</p>
+
+<<link "继续与小明保持良好的合作关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("团队合作")>><<set $skills.push("团队合作")>><</if>>
+<<if !$allies.includes("小明")>><<set $allies.push("小明")>><</if>>
+<<goto "strategic_alliance">>
+<</link>>
+
+<<link "利用这次成功向上管理，争取更多资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("向上管理")>><<set $skills.push("向上管理")>><</if>>
+<<goto "upward_management">>
+<</link>>
+
+<<link "深夜接到系统故障通知，事情不太寻常...">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "project_crisis">>
+<</link>>
+
+
+:: rush_completion
+<h2>争分夺秒</h2>
+            <p>看到小明有"摘桃子"的迹象，你决定加班加点提前完成项目。</p>
+            <p>连续三个晚上，你都工作到凌晨，优化了界面设计，增加了几个关键数据维度，甚至还开发了一个简单的预测模型。</p>
+            <p>原计划一周的工作，你在三天内就完成了。</p>
+            <p>你直接向李总提交了成果，并请求提前进行演示。李总很惊讶，但也很满意："没想到这么快就完成了，而且质量超出预期！"</p>
+            <p>当小明得知项目已经完成时，脸上闪过一丝尴尬。会议上，李总特别表扬了你的效率和主动性。</p>
+            <p>然而，连续的熬夜让你感到身体有些吃不消，你开始思考这种工作方式是否可持续。</p>
+
+<<link "继续保持高强度工作，争取更多关注">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("极限工作")>><<set $skills.push("极限工作")>><</if>>
+<<goto "high_intensity">>
+<</link>>
+
+<<link "适当放缓节奏，寻找更高效的工作方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("工作效率")>><<set $skills.push("工作效率")>><</if>>
+<<goto "efficiency_focus">>
+<</link>>
+
+<<link "与小明私下交流，了解他的想法和动机">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("人际洞察")>><<set $skills.push("人际洞察")>><</if>>
+<<if !$allies.includes("小明")>><<set $allies.push("小明")>><</if>>
+<<goto "understand_colleague">>
+<</link>>
+
+
+:: document_contribution
+<h2>留下足迹</h2>
+            <p>你决定采取预防措施，开始在团队工作群中详细记录自己每天的工作进展和设计思路。</p>
+            <p>"今日进度：完成了数据看板的核心图表功能，解决了历史数据加载慢的问题，设计了用户交互流程..."</p>
+            <p>你的日报既专业又详细，项目的每一步推进都有清晰记录。小明似乎注意到了你的策略，变得不那么积极地谈论"改进想法"了。</p>
+            <p>一周后，项目进展顺利，李总在查看群记录时对你的工作方法表示赞赏："记录得很详细，对项目管理很有帮助。"</p>
+            <p>高层汇报会上，你准备充分，自信展示了项目成果。赵总也点头表示认可。</p>
+            <p>会后，小明主动找到你："其实我有几个补充想法，不知道能不能和你讨论下？"他的态度明显比之前谦逊了许多。</p>
+
+<<link "欢迎小明的想法，但明确表示会记录各自贡献">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("边界管理")>><<set $skills.push("边界管理")>><</if>>
+<<goto "clear_contribution">>
+<</link>>
+
+<<link "委婉拒绝，表示项目已经接近尾声">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("拒绝艺术")>><<set $skills.push("拒绝艺术")>><</if>>
+<<goto "polite_refusal">>
+<</link>>
+
+<<link "战略性接纳部分建议，同时争取更大的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("战略思考")>><<set $skills.push("战略思考")>><</if>>
+<<if !$allies.includes("小明")>><<set $allies.push("小明")>><</if>>
+<<goto "strategic_move">>
+<</link>>
+
+
+:: bigger_project
+<h2>更高的平台</h2>
+            <p>乘着数据看板项目成功的东风，你在部门会议上主动请缨接手一个更大的挑战——公司的核心用户分析系统改造。</p>
+            <p>"基于上个项目的经验，我认为可以将同样的数据可视化方案应用到用户分析系统中，这将大大提升决策效率。"</p>
+            <p>李总有些犹豫："这个项目难度不小，通常我们会安排给有3年以上经验的同事..."</p>
+            <p>这时，赵总插话了："我看过数据看板的成果，做得不错。年轻人有冲劲，给他个机会试试也好。"</p>
+            <p>就这样，你获得了一个远超你资历的项目机会。然而，团队中有些老员工看你的眼神中流露出不满。</p>
+            <p>你意识到这个项目既是机遇，也是挑战——不仅要完成技术任务，还要处理好团队关系。</p>
+
+<<link "主动与资深同事沟通，寻求指导和支持">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("向上管理")>><<set $skills.push("向上管理")>><</if>>
+<<if !$allies.includes("老员工")>><<set $allies.push("老员工")>><</if>>
+<<goto "seek_mentorship">>
+<</link>>
+
+<<link "低调推进，用结果说话">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("稳健推进")>><<set $skills.push("稳健推进")>><</if>>
+<<goto "low_profile">>
+<</link>>
+
+<<link "组建&#x27;特别小组&#x27;，吸纳核心技术人才">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("团队组建")>><<set $skills.push("团队组建")>><</if>>
+<<if !$skills.includes("资源调配")>><<set $skills.push("资源调配")>><</if>>
+<<goto "form_team">>
+<</link>>
+
+
+:: small_tasks
+<h2>积少成多</h2>
+            <p>你开始主动承担一些小任务，虽然都不是核心工作，但你认真对待每一项任务。</p>
+            <p>渐渐地，你的勤恳和认真被团队注意到。李总在一次周会上表扬了你的工作态度。</p>
+            <p>"小步慢跑也能走远，"李总对团队说，"有些同事虽然不爱出风头，但做事扎实可靠。"</p>
+            <p>你感到自己的策略奏效了，虽然没有参与紧急项目那样的高强度工作，但也找到了自己的位置。</p>
+
+<<link "继续保持这种策略，稳步发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("踏实工作")>><<set $skills.push("踏实工作")>><</if>>
+<<goto "steady_growth">>
+<</link>>
+
+<<link "在站稳脚跟后，尝试申请更有挑战的任务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("循序渐进")>><<set $skills.push("循序渐进")>><</if>>
+<<goto "seek_challenge">>
+<</link>>
+
+<<link "分享你的经验，帮助其他新人融入">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("团队协作")>><<set $skills.push("团队协作")>><</if>>
+<<if !$allies.includes("新人团队")>><<set $allies.push("新人团队")>><</if>>
+<<goto "help_others">>
+<</link>>
+
+
+:: self_improvement
+<h2>自我投资</h2>
+            <p>你利用较少的加班时间系统地学习新技能，参加在线课程，阅读技术书籍。</p>
+            <p>几个月后，团队遇到一个技术难题，恰好是你最近学习的领域。</p>
+            <p>"这个问题我可能有思路，"你在会议上说，然后提出了一个创新的解决方案。</p>
+            <p>团队成员惊讶于你的专业知识，李总也对你刮目相看："没想到你私下里做了这么多功课。"</p>
+
+<<link "继续深耕技术，成为团队技术专家">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("技术精进")>><<set $skills.push("技术精进")>><</if>>
+<<goto "tech_specialist">>
+<</link>>
+
+<<link "分享你的学习方法，组建学习小组">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<if !$allies.includes("学习小组成员")>><<set $allies.push("学习小组成员")>><</if>>
+<<goto "learning_group">>
+<</link>>
+
+<<link "利用新技能，申请更有挑战性的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("机会把握")>><<set $skills.push("机会把握")>><</if>>
+<<goto "leverage_skills">>
+<</link>>
+
+
+:: find_mentor
+<h2>另辟蹊径</h2>
+            <p>你开始寻找团队中其他可能的导师和发展路径。很快，你注意到了技术总监张工。</p>
+            <p>虽然他不直接管理你的工作，但在技术社区很有声望，且似乎更注重技术本身而非办公室政治。</p>
+            <p>你开始在技术问题上向他请教，并主动参加他组织的技术分享会。</p>
+            <p>渐渐地，你与张工建立了良好的专业关系，他甚至邀请你参与他负责的一个创新项目。</p>
+
+<<link "接受邀请，转向创新项目方向发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("创新思维")>><<set $skills.push("创新思维")>><</if>>
+<<if !$allies.includes("张工")>><<set $allies.push("张工")>><</if>>
+<<goto "innovation_path">>
+<</link>>
+
+<<link "同时维持与李总和张工的关系，平衡发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("人际平衡")>><<set $skills.push("人际平衡")>><</if>>
+<<goto "balanced_networking">>
+<</link>>
+
+<<link "在张工指导下专注技术深度，少参与政治">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("技术专精")>><<set $skills.push("技术专精")>><</if>>
+<<goto "technical_depth">>
+<</link>>
+
+
+:: training_overtime_positive
+<h2>加班小能手</h2>
+            <p>你表达了对加班的积极态度，HR和部门经理看起来很满意。</p>
+            <p>培训结束后，你的直属领导李总找到你，说对你的态度很欣赏。</p>
+            <p>"年轻人有拼劲是好事，我们团队正好有个紧急项目，需要人手，你愿意加入吗？"</p>
+            <p>你意识到这可能是一个表现自己的机会，但也可能意味着接下来几周的无尽加班。</p>
+
+<<link "欣然接受挑战，表示会全力以赴">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("技术攻关")>><<set $skills.push("技术攻关")>><</if>>
+<<goto "urgent_project_accept">>
+<</link>>
+
+<<link "询问项目细节和时间安排后再决定">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("理性分析")>><<set $skills.push("理性分析")>><</if>>
+<<goto "urgent_project_inquire">>
+<</link>>
+
+<<link "礼貌拒绝，表示需要时间熟悉公司环境">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "urgent_project_refuse">>
+<</link>>
+
+
+:: training_efficiency
+<h2>效率优先</h2>
+            <p>你表达了效率优于时间的观点，引发了一些讨论。</p>
+            <p>部门经理张总对你的发言表现出了兴趣，培训结束后专门找到你交流。</p>
+            <p>"你的观点很有意思，不过在我们公司，有时候项目紧急，效率和时间都得要。你怎么看？"</p>
+            <p>你感觉这是一个测试，张总似乎在评估你的工作态度。</p>
+
+<<link "坚持自己的观点，但表示紧急情况会配合加班">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("张总")>><<set $allies.push("张总")>><</if>>
+<<goto "manager_chat_balanced">>
+<</link>>
+
+<<link "顺势改变立场，表示愿意付出更多时间">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "manager_chat_change">>
+<</link>>
+
+<<link "进一步解释高效工作方法，试图说服经理">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("沟通技巧")>><<set $skills.push("沟通技巧")>><</if>>
+<<goto "manager_chat_convince">>
+<</link>>
+
+
+:: training_overtime_negative
+<h2>工作与生活的平衡</h2>
+            <p>你直接表明了对过度加班的消极态度，引起了一阵尴尬的沉默。</p>
+            <p>HR小王和部门经理交换了一个意味深长的眼神。</p>
+            <p>培训结束后，一位资深员工王哥悄悄找到你："新人，话可不能这么直接说，小心被贴标签。"</p>
+            <p>他似乎想给你一些建议，但被经理叫走了。你感觉自己可能犯了个错误。</p>
+
+<<link "找HR私下解释自己的真实想法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "explain_to_hr">>
+<</link>>
+
+<<link "找那位资深员工继续请教职场经验">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("王哥")>><<set $allies.push("王哥")>><</if>>
+<<goto "senior_advice">>
+<</link>>
+
+<<link "保持观点但后续更加努力工作来证明自己">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "prove_yourself">>
+<</link>>
+
+
+:: explain_to_hr
+<h2>坦诚沟通</h2>
+            <p>你找到HR小王，希望解释自己对工作与生活平衡的真实想法。</p>
+            <p>"我并非不愿意努力工作，只是认为长期过度加班并不健康，也不利于工作效率和创新..."</p>
+            <p>HR小王面无表情地听完，只是微微点头："我理解你的想法，不过在我们公司，有时候项目进度确实需要大家多付出一些。"</p>
+            <p>她的语气很官方："希望你能理解公司文化，适当调整自己的期望。"</p>
+            <p>你感觉自己的解释不仅没有改善印象，反而可能强化了他们对你的看法。</p>
+
+<<link "表示理解并承诺会积极配合公司需求">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "hr_compromise">>
+<</link>>
+
+<<link "坚持自己的观点但表示会尽力平衡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("自我坚持")>><<set $skills.push("自我坚持")>><</if>>
+<<goto "hr_persistent">>
+<</link>>
+
+<<link "请HR给些建议如何更好融入团队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$allies.includes("HR小王")>><<set $allies.push("HR小王")>><</if>>
+<<goto "hr_advice">>
+<</link>>
+
+
+:: hr_compromise
+<h2>妥协</h2>
+            <p>你表示理解公司的要求，并承诺会积极配合公司的各项工作安排。</p>
+            <p>"我会调整自己的期望和工作方式，全力支持团队和项目需求。"</p>
+            <p>HR小王终于露出了一丝微笑："很高兴你能理解。相信你会是团队的好伙伴。"</p>
+            <p>临走前，她又补充道："年轻人嘛，刚开始都需要一段适应期。你会慢慢习惯的。"</p>
+            <p>虽然化解了尴尬，但回到工位的路上，你感到一丝失落和内心的不安。</p>
+
+<<link "决定低调做事，避免引起更多关注">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "low_profile">>
+<</link>>
+
+<<link "暗下决心，边适应边寻找更好的机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "secret_job_hunting">>
+<</link>>
+
+<<link "找同事了解公司实际的加班情况">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (1)))>>
+<<if !$skills.includes("信息收集")>><<set $skills.push("信息收集")>><</if>>
+<<goto "overtime_inquiry">>
+<</link>>
+
+
+:: hr_persistent
+<h2>坚持原则</h2>
+            <p>你礼貌但坚定地表达了自己的立场："我理解项目紧急的情况，也会尽力配合，但我认为长期的工作生活平衡对双方都更有益。"</p>
+            <p>HR小王的表情变得有些严肃："每个公司的文化不同，适应是新人的必修课。"</p>
+            <p>她暗示道："你的直属领导可能对这个话题有自己的看法，希望你能和团队保持一致。"</p>
+            <p>对话在略显紧张的氛围中结束，你感觉自己可能被贴上了"不好管理"的标签。</p>
+
+<<link "找直属领导坦诚交流你的工作理念">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("勇气")>><<set $skills.push("勇气")>><</if>>
+<<goto "talk_to_leader">>
+<</link>>
+
+<<link "默默接受现状，但在工作中展现高效率">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("高效工作")>><<set $skills.push("高效工作")>><</if>>
+<<goto "prove_efficiency">>
+<</link>>
+
+<<link "寻找公司中志同道合的同事建立支持网络">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("志同道合者")>><<set $allies.push("志同道合者")>><</if>>
+<<goto "find_allies">>
+<</link>>
+
+
+:: hr_advice
+<h2>寻求建议</h2>
+            <p>你请HR小王给些建议，如何更好地融入团队而不必完全放弃自己的原则。</p>
+            <p>她稍微放松了表情："这是个好问题。"</p>
+            <p>"每个团队的风格不同，我建议你先观察几周，了解团队实际的工作节奏。有时候看起来的'加班文化'其实没那么极端。"</p>
+            <p>她补充道："和直属领导建立良好沟通也很重要，让他知道你的工作状态和界限，但也展现你的责任心。"</p>
+            <p>这个建议听起来很中肯，你感觉HR对你的印象有所改观。</p>
+
+<<link "感谢建议，决定观察和适应团队节奏">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("观察力")>><<set $skills.push("观察力")>><</if>>
+<<goto "observe_team">>
+<</link>>
+
+<<link "主动约直属领导一对一沟通">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$allies.includes("直属领导")>><<set $allies.push("直属领导")>><</if>>
+<<goto "leader_one_on_one">>
+<</link>>
+
+<<link "请HR介绍团队中工作平衡做得好的榜样">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("人际智慧")>><<set $skills.push("人际智慧")>><</if>>
+<<goto "work_life_role_model">>
+<</link>>
+
+
+:: training_balance
+<h2>寻找平衡点</h2>
+            <p>你表达了平衡工作和生活的观点，获得了一些新同事的认同点头。</p>
+            <p>HR和经理的表情中性，似乎在评估你的真实态度。</p>
+            <p>培训结束后，一位同组的新同事小林找到你："我很欣赏你的观点，感觉我们能成为好同事。"</p>
+            <p>你们聊了几句，发现彼此都热爱技术但也重视个人生活。</p>
+
+<<link "和小林建立更深的友谊，组建自己的小圈子">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$allies.includes("小林")>><<set $allies.push("小林")>><</if>>
+<<goto "new_friend">>
+<</link>>
+
+<<link "保持礼貌但不过度亲近，避免被贴标签">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "keep_distance">>
+<</link>>
+
+<<link "请小林介绍团队中的关键人物和潜规则">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("办公室情报")>><<set $skills.push("办公室情报")>><</if>>
+<<goto "team_insights">>
+<</link>>
+
+
+:: manager_chat_balanced
+<h2>原则与灵活的平衡</h2>
+            <p>你坚持自己的效率优先观点，但也表达了在紧急情况下会配合加班的意愿。</p>
+            <p>张总微微点头："很好的态度。我欣赏有原则但也懂得灵活的人。"</p>
+            <p>他补充道："下周我们部门有个小型技术分享会，你要不要准备一个关于提高工作效率的主题？十分钟左右就行。"</p>
+            <p>这似乎是个展示自己的机会，但也需要额外的准备时间。</p>
+
+<<link "欣然接受，承诺准备精彩的分享">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("演讲技巧")>><<set $skills.push("演讲技巧")>><</if>>
+<<goto "tech_sharing_prepare">>
+<</link>>
+
+<<link "婉拒邀请，表示需要更多时间熟悉业务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "decline_sharing">>
+<</link>>
+
+<<link "谨慎接受，但要求先了解听众期望">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("战略思考")>><<set $skills.push("战略思考")>><</if>>
+<<goto "sharing_research">>
+<</link>>
+
+
+:: manager_chat_change
+<h2>顺势而为</h2>
+            <p>你迅速调整了自己的立场，表示愿意付出更多时间完成工作。</p>
+            <p>张总笑了笑："嗯，适应性强是好事。不过，你在培训时的观点其实也有道理。"</p>
+            <p>他若有所思地看着你："我们部门下周要启动一个新项目，时间比较紧，你愿意参与吗？"</p>
+            <p>你意识到这可能是一个证明自己的机会，但也可能是对你适应性的测试。</p>
+
+<<link "立即表示愿意加入，展现积极性">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-7)))>>
+<<goto "quick_project_join">>
+<</link>>
+
+<<link "询问项目细节后再做决定">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("谨慎决策")>><<set $skills.push("谨慎决策")>><</if>>
+<<goto "project_inquiry">>
+<</link>>
+
+<<link "委婉表示希望先完成培训期再接新项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "delay_project">>
+<</link>>
+
+
+:: manager_chat_convince
+<h2>高效工作法</h2>
+            <p>你详细解释了你的高效工作方法，包括合理规划、专注时间块和定期回顾等理念。</p>
+            <p>张总听完，若有所思："你的方法很系统，理论上确实能提高效率。但实际项目中，变数太多..."</p>
+            <p>他似乎半信半疑，但对你的思考方式有了兴趣："有机会可以在团队中试试你的方法，看看效果如何。"</p>
+            <p>你感觉他给了你一个证明自己理念的机会，但也隐含着挑战。</p>
+
+<<link "请求一个小型项目实践你的方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("工作方法论")>><<set $skills.push("工作方法论")>><</if>>
+<<goto "efficiency_experiment">>
+<</link>>
+
+<<link "提议先在自己工作中实践并记录数据">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("数据分析")>><<set $skills.push("数据分析")>><</if>>
+<<goto "self_experiment">>
+<</link>>
+
+<<link "表示理解现实的复杂性，会灵活应用">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-1)))>>
+<<goto "flexible_approach">>
+<</link>>
+
+
+:: form_team
+<h2>排兵布阵</h2>
+            <p>你决定采取"排兵布阵"的策略，组建一个高效的项目小组。</p>
+            <p>经过仔细观察，你确定了理想的团队成员：技术能力强的小张、与产品沟通顺畅的小李、以及测试经验丰富的老王。</p>
+            <p>你单独与每位成员交流，强调这个项目的重要性以及他们独特的价值："我特别欣赏你在XX方面的专长，这对项目至关重要。"</p>
+            <p>经过努力，你成功组建了理想团队。为了建立凝聚力，你组织了一次项目启动会，明确了目标、时间线和每个人的职责，还巧妙地让每位成员都能在自己擅长的领域发挥特长。</p>
+            <p>李总看到你的安排后点头称赞："没想到你还挺会用人的，把大家的积极性都调动起来了。"</p>
+            <p>项目开始推进，团队氛围融洽，效率高于预期。不过，你注意到公司政治斗争激烈的市场部门开始对你的项目表现出兴趣...</p>
+
+<<link "与市场部建立联盟，扩大项目影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("跨部门协作")>><<set $skills.push("跨部门协作")>><</if>>
+<<goto "cross_department">>
+<</link>>
+
+<<link "专注技术实现，避免卷入政治漩涡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("专注力")>><<set $skills.push("专注力")>><</if>>
+<<goto "focus_execution">>
+<</link>>
+
+<<link "做好防火墙，保护团队不受干扰">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("团队防护")>><<set $skills.push("团队防护")>><</if>>
+<<if !$allies.includes("项目组成员")>><<set $allies.push("项目组成员")>><</if>>
+<<goto "team_protection">>
+<</link>>
+
+
+:: cross_department
+<h2>跨界合作</h2>
+            <p>你敏锐地意识到市场部的兴趣既是机遇也是挑战，决定主动出击建立联盟。</p>
+            <p>你约市场部经理周总喝咖啡，了解他们的需求："我们的用户分析系统可以为市场策略提供数据支持，不知道贵部门有什么具体需求？"</p>
+            <p>周总显得很惊喜："难得有技术部门主动来问我们需求！实际上，我们一直希望能看到更精细的用户转化漏斗和营销活动效果分析..."</p>
+            <p>你迅速调整项目规划，增加了对市场部需求的支持，同时邀请周总派代表加入每周的项目例会。</p>
+            <p>这一举措产生了意想不到的效果：市场部成了你项目的坚定支持者，在管理层会议上多次为你的项目"背书"。</p>
+            <p>赵总在季度会上专门表扬了这种跨部门协作："这才是我们需要的团队合作精神。"</p>
+            <p>然而就在项目接近尾声时，你发现市场部在给高层的汇报中，把你团队的部分成果标注为"市场部创新"...</p>
+
+<<link "私下找周总沟通，委婉表达关切">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("冲突处理")>><<set $skills.push("冲突处理")>><</if>>
+<<goto "tactful_conversation">>
+<</link>>
+
+<<link "战略性让步，用局部利益换取长期盟友">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("政治智慧")>><<set $skills.push("政治智慧")>><</if>>
+<<if !$allies.includes("周总")>><<set $allies.push("周总")>><</if>>
+<<goto "strategic_concession">>
+<</link>>
+
+<<link "在下次高层会议上巧妙澄清贡献归属">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("危机公关")>><<set $skills.push("危机公关")>><</if>>
+<<goto "public_clarification">>
+<</link>>
+
+
+:: team_protection
+<h2>筑起防火墙</h2>
+            <p>看到公司内部复杂的政治环境，你决定优先保护团队免受干扰，做好"防火墙"。</p>
+            <p>你设立了明确的沟通渠道："所有外部需求必须通过我来协调"，并对团队成员解释："这样大家就能专注于技术实现，我来应对外部干扰。"</p>
+            <p>当市场部试图直接联系你的团队成员加塞需求时，你礼貌但坚定地进行了拦截，要求走正式流程。</p>
+            <p>你的防护措施很快得到了回报——团队工作效率大幅提升，成员们纷纷表示："终于能安心写代码了！"</p>
+            <p>李总注意到了你的管理方式，私下表示赞赏："你很会保护团队，这是个难得的品质。"</p>
+            <p>项目进展顺利，团队士气高涨。然而，你也听到了一些流言，说你"独断专行"、"筑起信息孤岛"...</p>
+
+<<link "组织团队建设活动，增强内部凝聚力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("团队建设")>><<set $skills.push("团队建设")>><</if>>
+<<if !$allies.includes("团队成员")>><<set $allies.push("团队成员")>><</if>>
+<<goto "team_building">>
+<</link>>
+
+<<link "适当开放沟通渠道，但保持关键决策控制">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("平衡术")>><<set $skills.push("平衡术")>><</if>>
+<<goto "controlled_openness">>
+<</link>>
+
+<<link "邀请关键部门领导参观项目进展，消除误解">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("公关能力")>><<set $skills.push("公关能力")>><</if>>
+<<goto "transparency_initiative">>
+<</link>>
+
+
+:: strategic_concession
+<h2>长远的棋局</h2>
+            <p>面对市场部"摘桃子"的行为，你决定从大局考虑，战略性地做出一些让步。</p>
+            <p>你私下找到周总："看到贵部在汇报中提到的创新点，很高兴我们的系统能支持市场部的工作。对了，我们下个季度准备开发客户画像功能，不知道贵部有没有兴趣深度合作？"</p>
+            <p>周总先是有些尴尬，随后表示非常感兴趣："我欣赏你的格局和远见，市场部会全力支持你的后续项目。"</p>
+            <p>在高层会议上，周总不仅澄清了前期工作的贡献归属，还大力推荐了你提出的新功能计划。</p>
+            <p>赵总看着你和周总的互动，意味深长地点了点头。</p>
+            <p>会后，一位副总悄悄对你说："你很聪明，懂得在小处让步赢得大局。公司需要你这样的人才。"</p>
+            <p>这次经历让你明白，职场上有时"吃小亏占大便宜"比斤斤计较更有价值。</p>
+
+<<link "继续深化与市场部的合作，打造跨部门标杆项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略合作")>><<set $skills.push("战略合作")>><</if>>
+<<if !$allies.includes("周总")>><<set $allies.push("周总")>><</if>>
+<<goto "flagship_project">>
+<</link>>
+
+<<link "借势向上发展，争取与更高层建立联系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (20)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("高层社交")>><<set $skills.push("高层社交")>><</if>>
+<<goto "upward_connection">>
+<</link>>
+
+<<link "保持当前成果，转向培养团队核心成员">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("人才培养")>><<set $skills.push("人才培养")>><</if>>
+<<if !$allies.includes("核心团队")>><<set $allies.push("核心团队")>><</if>>
+<<goto "team_development">>
+<</link>>
+
+
+:: upward_connection
+<h2>与高层建立联系</h2>
+            <p>你决定借着项目成功的东风，谋求与公司更高层建立联系。</p>
+            <p>你精心准备了一份项目总结报告，强调了系统对业务的实际价值和未来可能的发展方向。赵总收到报告后，邀请你参加了高管月度会议做项目分享。</p>
+            <p>会议上，你简洁有力地展示了项目成果，并巧妙地引出了几个战略性问题："我们的数据显示用户对新功能的接受度比预期高30%，这可能暗示我们低估了市场需求..."</p>
+            <p>你的分析引起了CEO的兴趣，他破例在会后留你单独交谈了15分钟，询问你对公司产品方向的看法。</p>
+            <p>第二天，你收到一封邮件，被邀请加入公司的"青年人才培养计划"，这个计划的参与者通常被视为未来管理层的储备人选。</p>
+            <p>然而，随着你与高层联系的增多，一些中层管理者开始对你产生戒备，你感受到了一些微妙的阻力...</p>
+
+<<link "全力投入人才计划，冲刺快速晋升">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (20)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("战略视野")>><<set $skills.push("战略视野")>><</if>>
+<<if !$skills.includes("高管思维")>><<set $skills.push("高管思维")>><</if>>
+<<goto "fast_track">>
+<</link>>
+
+<<link "平衡与各层级的关系，稳健发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("平衡术")>><<set $skills.push("平衡术")>><</if>>
+<<goto "balanced_growth">>
+<</link>>
+
+<<link "寻找盟友，组建自己的小核心圈">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("联盟建设")>><<set $skills.push("联盟建设")>><</if>>
+<<if !$allies.includes("高潜力同事")>><<set $allies.push("高潜力同事")>><</if>>
+<<goto "inner_circle">>
+<</link>>
+
+
+:: inner_circle
+<h2>建立自己的核心圈</h2>
+            <p>面对复杂的公司政治环境，你意识到需要建立自己的"小核心圈"，与志同道合的同事互相支持。</p>
+            <p>你开始有选择地与几位关键同事建立更深入的联系：技术过硬的架构师李明、深受CEO信任的产品总监张薇、以及在基层很有影响力的老王。</p>
+            <p>你为这个小圈子创造了共同的目标和价值观："我们不玩办公室政治，只做真正有价值的事，互相支持成长。"</p>
+            <p>在午餐和私下聚会中，你们分享信息、互通有无，逐渐形成了一个非正式但高效的支持网络。</p>
+            <p>当公司启动新一轮组织调整时，你的"核心圈"成员都得到了不错的位置，而你被提名为新成立的创新实验室负责人。</p>
+            <p>在内部公告发布前，有人告诉你这个提名引起了一些争议，某些中层管理者认为你资历尚浅...</p>
+
+<<link "动用核心圈资源，确保提名顺利通过">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("资源调动")>><<set $skills.push("资源调动")>><</if>>
+<<goto "leverage_network">>
+<</link>>
+
+<<link "主动找高层沟通，表达自己的规划和愿景">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("远见规划")>><<set $skills.push("远见规划")>><</if>>
+<<goto "vision_sharing">>
+<</link>>
+
+<<link "暂时低调，等待合适时机再谋求更大发展">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略耐心")>><<set $skills.push("战略耐心")>><</if>>
+<<goto "strategic_patience">>
+<</link>>
+
+
+:: industry_learning
+<h2>技术社区影响力</h2>
+            <p>你坚持每月撰写技术博客，分享工作中的经验和见解，慢慢在行业内积累了一定的影响力。</p>
+            <p>你的文章开始在技术社区获得广泛关注，甚至有人开始在面试中提到曾学习过你的文章。</p>
+            <p>这种影响力也反馈到了公司内部，同事们开始更尊重你的技术观点，你也被邀请在公司技术分享会上发言。</p>
+            <p>李总在绩效面谈中提到："你的技术影响力为团队和公司都带来了正面形象，这种软实力很难得。"</p>
+
+<<link "继续专注技术深耕，争取成为行业专家">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("技术影响力")>><<set $skills.push("技术影响力")>><</if>>
+<<goto "tech_expert_path">>
+<</link>>
+
+<<link "基于影响力拓展内部资源，推动更大项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("资源整合")>><<set $skills.push("资源整合")>><</if>>
+<<goto "leverage_influence">>
+<</link>>
+
+<<link "收到竞争对手的神秘联系...">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "headhunter_approach">>
+<</link>>
+
+
+:: promotion
+<div class="ending-icon icon-promotion"></div>
+            <h2>职场成功</h2>
+            <p>经过一年的努力工作，你成功晋升为团队负责人。</p>
+            <p>你的技术能力和人际关系管理得到了领导的认可。</p>
+            <p>虽然路途并不平坦，但你找到了在996科技生存并发展的方式。</p>
+            <p>未来，更大的挑战和机遇等待着你...</p>
+            <p><strong>恭喜你获得"职场赢家"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: burnout
+<div class="ending-icon icon-burnout"></div>
+            <h2>身心俱疲</h2>
+            <p>连续几个月的超负荷工作让你身心俱疲。</p>
+            <p>周一早上，你发现自己无法起床去上班，医生诊断你患上了严重的职业倦怠症。</p>
+            <p>你不得不申请长期病假，公司很快就招聘了新人替代你的位置。</p>
+            <p>也许，是时候重新思考自己的职业规划了...</p>
+            <p><strong>你获得了"职业倦怠"结局。</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: layoff
+<div class="ending-icon icon-layoff"></div>
+            <h2>裁员风波</h2>
+            <p>公司突然宣布新一轮组织优化，你所在的部门成为重点"优化"对象。</p>
+            <p>尽管你做出了不少努力，但由于种种原因，你的名字出现在了裁员名单上。</p>
+            <p>HR约你谈话，提出了N+1的赔偿方案。</p>
+            <p>职场就是如此无情，但这也许是一个新的开始...</p>
+            <p><strong>你获得了"被裁员"结局。</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: work_life_balance
+<div class="ending-icon icon-balance"></div>
+            <h2>平衡之道</h2>
+            <p>你成功在高压的互联网公司找到了工作与生活的平衡点。</p>
+            <p>虽然你没有成为升职最快的人，但你的技术能力得到认可，同时保持了健康的生活方式。</p>
+            <p>同事们都羡慕你能在996环境中保持心态平和，有些人甚至向你请教经验。</p>
+            <p>也许，这才是真正的职场成功...</p>
+            <p><strong>你获得了"平衡大师"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: political_master
+<div class="ending-icon icon-political"></div>
+            <h2>职场政治大师</h2>
+            <p>经过一系列精彩的职场操作，你成功在996科技建立了广泛的人际网络和影响力。</p>
+            <p>你精通各种职场策略，知道何时进取、何时退让，如何平衡各方关系，如何在不同部门之间游刃有余。</p>
+            <p>公司高层对你的评价是："不仅技术过硬，更懂得如何让事情顺利推进。"</p>
+            <p>你被提拔为部门总监，拥有了更大的决策权和资源配置能力。</p>
+            <p>回顾自己的职场之路，你不禁感慨：在复杂的企业环境中，技术只是基础，真正的成功需要理解并善用组织的运作规则。</p>
+            <p><strong>恭喜你获得"职场政治大师"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: tech_expert
+<div class="ending-icon icon-tech"></div>
+            <h2>技术专家</h2>
+            <p>你坚持专注于技术能力的提升，在职场博弈中保持了独立自主的态度。</p>
+            <p>虽然你没有刻意经营办公室政治，但你的专业能力让你成为了团队中不可或缺的核心人物。</p>
+            <p>"有些问题只有他能解决"成为同事们常说的话。</p>
+            <p>公司为了留住你，专门设立了技术专家岗位，给予你足够的自由度和优厚的薪资待遇。</p>
+            <p>你的成长证明了在技术驱动的行业中，真正的专业能力始终是最有价值的资本。</p>
+            <p><strong>恭喜你获得"技术专家"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: entrepreneur
+<div class="ending-icon icon-entrepreneur"></div>
+            <h2>自立门户</h2>
+            <p>在996科技的经历让你积累了丰富的经验和人脉，也让你看清了大公司的种种限制。</p>
+            <p>一次偶然的机会，你发现了市场上的一个空白点，决定辞职创业。</p>
+            <p>你的一些志同道合的同事也选择跟随你的脚步，成为创业团队的早期成员。</p>
+            <p>创业之路充满挑战，但你在大公司锻炼出的能力——技术、管理、资源整合、危机处理——都成为了宝贵的财富。</p>
+            <p>两年后，你的创业公司获得了A轮融资，你终于成为了自己命运的主宰者。</p>
+            <p><strong>恭喜你获得"创业者"结局！</strong></p>
+
+<<link "重新开始游戏">>
+<<goto "start">>
+<</link>>
+
+
+:: company_restructure
+<h2>地震来袭</h2>
+            <p>一个平静的周一早晨，公司内部群突然炸开了锅。</p>
+            <p>CEO发出全员邮件：由于战略调整，公司将进行大规模重组，你所在的部门面临解散或并入其他团队的可能。</p>
+            <p>办公室里弥漫着不安的气氛，同事们三三两两地聚在一起窃窃私语。</p>
+            <p>你的直属领导李总看起来也很忧虑，据说他可能在此次调整中被降职。</p>
+            <p>这场突如其来的变动打乱了你原有的职业规划。</p>
+
+<<link "主动联系其他部门的经理，探讨转岗可能性">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("危机管理")>><<set $skills.push("危机管理")>><</if>>
+<<goto "seek_transfer">>
+<</link>>
+
+<<link "保持冷静，向李总表达忠诚，共度难关">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$allies.includes("李总")>><<set $allies.push("李总")>><</if>>
+<<goto "loyalty_crisis">>
+<</link>>
+
+<<link "趁机更新简历，开始寻找新的工作机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("自我营销")>><<set $skills.push("自我营销")>><</if>>
+<<goto "update_resume">>
+<</link>>
+
+
+:: headhunter_approach
+<h2>意外的邀约</h2>
+            <p>一个陌生号码的微信请求引起了你的注意。</p>
+            <p>对方自称是"星辰科技"的HR，他们注意到了你在技术社区的活跃表现，想邀请你参加面试。</p>
+            <p>星辰科技是996科技的主要竞争对手，据说工作环境更好，薪资也更具竞争力。</p>
+            <p>这个邀请来得十分意外，尤其是在公司重组的敏感时期。</p>
+            <p>但你也听说过有同事因为与竞争对手接触而被公司以"违反职业道德"为由解雇的案例。</p>
+
+<<link "婉拒对方，保持职业忠诚">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "refuse_offer">>
+<</link>>
+
+<<link "秘密赴约，了解更多信息">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("信息获取")>><<set $skills.push("信息获取")>><</if>>
+<<goto "secret_interview">>
+<</link>>
+
+<<link "咨询可信赖的同事，寻求建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-1)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("人际网络")>><<set $skills.push("人际网络")>><</if>>
+<<goto "seek_advice_offer">>
+<</link>>
+
+
+:: project_crisis
+<h2>深夜警报</h2>
+            <p>凌晨2点，你的手机疯狂震动。</p>
+            <p>紧急群通知：公司核心服务器遭遇重大故障，用户数据面临丢失风险，所有技术人员需立即响应。</p>
+            <p>你匆忙登录系统，发现情况比想象的还要糟糕。这不是简单的技术故障，而是一次疑似内部人员操作失误导致的灾难。</p>
+            <p>更糟的是，你发现故障与你前几天审核通过的一段代码可能有关。</p>
+            <p>团队成员们紧急召开线上会议，气氛紧张，有人开始暗示这是你的责任。</p>
+
+<<link "主动承担责任，立即着手解决问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("危机处理")>><<set $skills.push("危机处理")>><</if>>
+<<goto "take_responsibility">>
+<</link>>
+
+<<link "仔细分析日志，找出真正的原因">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("技术调查")>><<set $skills.push("技术调查")>><</if>>
+<<goto "analyze_logs">>
+<</link>>
+
+<<link "保持沉默，等待更多信息再做判断">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "stay_silent">>
+<</link>>
+
+
+:: mysterious_investor
+<h2>意外的贵客</h2>
+            <p>公司突然迎来一位神秘的贵客，据说是来自硅谷的知名投资人。</p>
+            <p>为了展示公司实力，管理层临时决定由你负责演示最新的产品原型。</p>
+            <p>这个任务本应由产品经理小陈负责，但她突然"生病请假"。你怀疑这可能是一个圈套，因为产品还存在不少问题。</p>
+            <p>但这也是一个在高层面前展示自己能力的难得机会。</p>
+            <p>更让你惊讶的是，有同事悄悄告诉你，这位投资人其实是来评估公司价值的，可能与收购有关。</p>
+
+<<link "通宵加班完善产品，力求完美展示">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("临危不乱")>><<set $skills.push("临危不乱")>><</if>>
+<<goto "perfect_demo">>
+<</link>>
+
+<<link "诚实展示产品现状，并清晰说明未来规划">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("诚信沟通")>><<set $skills.push("诚信沟通")>><</if>>
+<<goto "honest_presentation">>
+<</link>>
+
+<<link "找小陈了解详情，怀疑背后有不为人知的原因">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("情报收集")>><<set $skills.push("情报收集")>><</if>>
+<<goto "investigate_truth">>
+<</link>>
+
+
+:: office_hidden_rules
+<h2>不明文的游戏</h2>
+            <p>在一次部门聚餐后，几位喝了酒的老员工开始畅谈公司的"潜规则"。</p>
+            <p>你才发现，公司晋升表面上看是靠绩效，实际却有一套不成文的评价体系。</p>
+            <p>"那个新来的技术总监，之所以能空降进来，是因为他是副总的大学室友..."</p>
+            <p>"去年评选优秀员工，名单在投票前就已经定好了，那些投票不过是走形式..."</p>
+            <p>这些信息让你对公司的认知产生了动摇，也让你意识到单纯靠技术和努力可能无法获得真正的晋升。</p>
+
+<<link "努力融入这套潜规则体系，寻找靠山">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("权术")>><<set $skills.push("权术")>><</if>>
+<<goto "play_by_rules">>
+<</link>>
+
+<<link "坚持自己的原则，用实力说话">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("专业精神")>><<set $skills.push("专业精神")>><</if>>
+<<goto "stick_to_principles">>
+<</link>>
+
+<<link "表面适应，暗中规划自己的出路">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("战略思考")>><<set $skills.push("战略思考")>><</if>>
+<<goto "double_strategy">>
+<</link>>
+
+
+:: workplace_trap
+<h2>看不见的陷阱</h2>
+            <p>在一次重要会议上，你的提案获得了高层的一致好评。</p>
+            <p>会后，总监亲自找到你，表示对你的赏识，并提出让你负责一个"特殊项目"。</p>
+            <p>"这是个重要机会，但需要保密，暂时不要告诉你的直属领导李总。"</p>
+            <p>这个提议让你感到既兴奋又忐忑。一方面，这是得到高层认可的机会；另一方面，绕过直属领导似乎违背了职场伦理。</p>
+            <p>更复杂的是，你听说这个"特殊项目"之前已经有两位员工尝试过，都以失败告终，随后离职了。</p>
+
+<<link "接受挑战，但婉转告知李总情况">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$allies.includes("李总")>><<set $allies.push("李总")>><</if>>
+<<goto "accept_inform">>
+<</link>>
+
+<<link "礼貌拒绝，表示需要专注当前工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("自我保护")>><<set $skills.push("自我保护")>><</if>>
+<<goto "politely_refuse">>
+<</link>>
+
+<<link "完全接受，把握难得的高层机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("冒险精神")>><<set $skills.push("冒险精神")>><</if>>
+<<goto "full_accept">>
+<</link>>
+
+
+:: prove_yourself
+<h2>用行动证明价值</h2>
+            <p>你决定不改变自己的工作与生活平衡的观点，但会通过更加努力的工作来证明自己的价值。</p>
+            <p>接下来的几周，你主动承担更多任务，提前完成各项工作，同时保持高质量的输出。</p>
+            <p>虽然你依然按时下班，但你的工作效率和成果开始引起团队的注意。</p>
+            <p>一个月后，项目经理在团队会议上特别表扬了你的贡献："有些人用结果说话，比单纯的加班更有价值。"</p>
+
+<<link "继续保持高效工作模式，树立个人品牌">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("高效工作")>><<set $skills.push("高效工作")>><</if>>
+<<goto "build_reputation">>
+<</link>>
+
+<<link "借势与经理深入交流工作方法论">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("项目经理")>><<set $allies.push("项目经理")>><</if>>
+<<goto "discuss_methodology">>
+<</link>>
+
+<<link "申请带领一个小型项目，展示领导力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "lead_small_project">>
+<</link>>
+
+
+:: low_profile
+<h2>谨言慎行</h2>
+            <p>接下来的几周，你选择了低调行事的策略。</p>
+            <p>你不再在公开场合发表关于加班的看法，而是默默地按时完成工作，偶尔配合团队加班，但也坚持维护必要的个人时间。</p>
+            <p>这种平衡的方式让你逐渐摆脱了"不合群"的标签，主管也开始注意到你扎实的工作能力。</p>
+            <p>一个月后，当团队讨论新项目人员分配时，你的名字出现在了核心成员列表中。</p>
+
+<<link "欣然接受并继续保持低调策略">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("职场智慧")>><<set $skills.push("职场智慧")>><</if>>
+<<goto "core_team_lowkey">>
+<</link>>
+
+<<link "趁机展现更多才能，提升影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "show_talent">>
+<</link>>
+
+<<link "在私下和主管沟通你的长期发展规划">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "career_planning">>
+<</link>>
+
+
+:: secret_job_hunting
+<h2>另谋出路</h2>
+            <p>虽然表面上你积极适应公司环境，但私下里你开始更新简历，关注市场上的其他机会。</p>
+            <p>你在招聘网站上设置了职位提醒，并联系了几位业内朋友打听更适合自己的公司。</p>
+            <p>两个月内，你参加了三场秘密面试，其中一家公司对你的技术能力和工作理念非常认可。</p>
+            <p>与此同时，你在当前公司的表现也很稳定，没有人察觉你的求职意图。</p>
+
+<<link "接受新公司的offer，提出辞职">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("决断力")>><<set $skills.push("决断力")>><</if>>
+<<goto "resignation">>
+<</link>>
+
+<<link "利用offer和现公司谈条件">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("谈判技巧")>><<set $skills.push("谈判技巧")>><</if>>
+<<goto "negotiate_conditions">>
+<</link>>
+
+<<link "继续观望，等待更好的机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("耐心")>><<set $skills.push("耐心")>><</if>>
+<<goto "keep_waiting">>
+<</link>>
+
+
+:: overtime_inquiry
+<h2>实情调查</h2>
+            <p>你找了个机会和几位老员工聊天，委婉地了解公司的实际加班情况。</p>
+            <p>"其实也没那么夸张，"一位在公司工作三年的同事说，"主要是季度末和大项目上线前比较忙。日常还好。"</p>
+            <p>你了解到，虽然公司文化倾向于加班，但实际执行会因团队和主管而异。有些团队鼓励高效率，有些则看重"在位时间"。</p>
+            <p>这些信息让你对公司有了更全面的认识，也明白了如何在不同场合做出适当的选择。</p>
+
+<<link "有针对性地选择更注重效率的团队加入">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略决策")>><<set $skills.push("战略决策")>><</if>>
+<<goto "join_efficient_team">>
+<</link>>
+
+<<link "和直属领导坦诚交流，了解他的期望">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$allies.includes("直属领导")>><<set $allies.push("直属领导")>><</if>>
+<<goto "talk_to_leader">>
+<</link>>
+
+<<link "适当展示加班，但提高工作效率保护自己">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("时间管理")>><<set $skills.push("时间管理")>><</if>>
+<<goto "strategic_overtime">>
+<</link>>
+
+
+:: talk_to_leader
+<h2>坦诚对话</h2>
+            <p>你找了个合适的时机，约直属领导李经理喝咖啡，坦诚地表达了你对工作与生活平衡的看法。</p>
+            <p>"我非常看重这份工作，也愿意为团队全力以赴，但我相信高效工作比长时间工作更重要。"</p>
+            <p>出乎意料的是，李经理很欣赏你的坦率："其实我个人也不太支持无效加班，但在这个环境下，有时必须做出一些妥协。"</p>
+            <p>他给了你一些在公司环境中平衡的实用建议，也表示会尽量按绩效而非工作时长来评价团队成员。</p>
+
+<<link "感谢理解，提议优化团队工作流程">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<if !$allies.includes("李经理")>><<set $allies.push("李经理")>><</if>>
+<<goto "optimize_workflow">>
+<</link>>
+
+<<link "承诺必要时会加班，但请求灵活安排">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "flexible_arrangement">>
+<</link>>
+
+<<link "询问如何在公司更好地发展晋升">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<goto "promotion_advice">>
+<</link>>
+
+
+:: prove_efficiency
+<h2>行动胜于言语</h2>
+            <p>你决定不再争论加班问题，而是通过高效率的工作方式来证明自己的价值。</p>
+            <p>你开始优化自己的工作流程，提前规划任务，减少无效会议，并学习使用各种提高效率的工具和技术。</p>
+            <p>一个月后，你不仅按时完成了所有分配的任务，还主动承担了额外的工作，同时比大多数同事更早下班。</p>
+            <p>你的主管开始注意到这种变化，在一次会议上还表扬了你的工作方法。</p>
+
+<<link "分享你的高效工作方法给团队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<if !$allies.includes("团队成员")>><<set $allies.push("团队成员")>><</if>>
+<<goto "share_methods">>
+<</link>>
+
+<<link "请求承担更有挑战性的项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<goto "request_challenge">>
+<</link>>
+
+<<link "保持现状，享受工作与生活的平衡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<goto "maintain_balance">>
+<</link>>
+
+
+:: find_allies
+<h2>志同道合</h2>
+            <p>在接下来的几周里，你开始有意识地寻找公司中与你持相似工作理念的同事。</p>
+            <p>通过午餐交流和项目协作，你发现市场部的小张、技术部的老王也都认同工作效率高于工作时长的理念。</p>
+            <p>你们逐渐形成了一个非正式的小圈子，不仅交流工作心得，还互相支持，共同抵抗无效加班的压力。</p>
+            <p>这种互相支持的关系让你在公司感到不再孤单，心理压力也减轻了许多。</p>
+
+<<link "组织效率提升研讨会，扩大影响">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("组织能力")>><<set $skills.push("组织能力")>><</if>>
+<<if !$allies.includes("效率联盟")>><<set $allies.push("效率联盟")>><</if>>
+<<goto "efficiency_workshop">>
+<</link>>
+
+<<link "与盟友一起向管理层提出改善建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("沟通谈判")>><<set $skills.push("沟通谈判")>><</if>>
+<<goto "group_suggestion">>
+<</link>>
+
+<<link "保持低调的盟友关系，互相支持">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$allies.includes("小张")>><<set $allies.push("小张")>><</if>>
+<<if !$allies.includes("老王")>><<set $allies.push("老王")>><</if>>
+<<goto "quiet_support">>
+<</link>>
+
+
+:: observe_team
+<h2>耐心观察</h2>
+            <p>按照HR的建议，你决定先不急于表态，而是花时间观察团队的实际工作模式。</p>
+            <p>经过几周的观察，你发现团队确实存在加班文化，但大多集中在项目关键节点。日常工作中，只要按时完成任务，适当弹性是可以接受的。</p>
+            <p>你还注意到不同的同事应对方式各异：有人选择高效率完成后提前离开，有人则习惯了打卡式工作。</p>
+            <p>这些发现让你开始调整自己的策略，在关键时刻全力投入，平时则注重效率和质量。</p>
+
+<<link "学习高效同事的工作方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("效率工作法")>><<set $skills.push("效率工作法")>><</if>>
+<<goto "learn_from_efficient">>
+<</link>>
+
+<<link "在团队中推广任务导向而非时间导向">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<goto "promote_task_oriented">>
+<</link>>
+
+<<link "适应团队节奏，但保持自己的边界">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("自我管理")>><<set $skills.push("自我管理")>><</if>>
+<<goto "adapt_with_boundary">>
+<</link>>
+
+
+:: leader_one_on_one
+<h2>一对一沟通</h2>
+            <p>你主动约了直属领导张总进行一对一沟通，表达了你对工作的理解和期望。</p>
+            <p>"我很重视这个工作机会，希望能在团队中发挥最大价值。我注重工作质量和效率，也愿意在关键时刻付出额外努力。"</p>
+            <p>张总对你的主动性表示赞赏："能看到你对工作的认真态度。我们需要的是结果，而不仅仅是时间投入。当然，团队合作有时需要灵活配合。"</p>
+            <p>通过这次坦诚的交流，你对团队的期望更加清晰，也建立了与领导的直接沟通渠道。</p>
+
+<<link "请教张总对你职业发展的建议">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("职业规划")>><<set $skills.push("职业规划")>><</if>>
+<<if !$allies.includes("张总")>><<set $allies.push("张总")>><</if>>
+<<goto "career_guidance">>
+<</link>>
+
+<<link "提议定期一对一会议保持沟通">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (4)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$allies.includes("张总")>><<set $allies.push("张总")>><</if>>
+<<goto "regular_one_on_one">>
+<</link>>
+
+<<link "请求参与更有挑战性的项目任务">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("主动性")>><<set $skills.push("主动性")>><</if>>
+<<goto "challenge_request">>
+<</link>>
+
+
+:: work_life_role_model
+<h2>成功典范</h2>
+            <p>你请HR介绍团队中在工作与生活平衡方面做得好的榜样，希望学习他们的经验。</p>
+            <p>HR提到了技术部的陈经理："他管理着公司最核心的项目之一，但很少加班，团队氛围却很好，绩效也是最稳定的。"</p>
+            <p>在HR的引荐下，你约了陈经理吃午饭。他分享了自己的方法："关键是合理规划、明确优先级、提高团队效率，而不是简单地延长工作时间。"</p>
+            <p>他还建议你："在这里生存，要学会平衡公司文化与个人原则，适当妥协但不失底线。"</p>
+
+<<link "主动申请加入陈经理的团队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("陈经理")>><<set $allies.push("陈经理")>><</if>>
+<<goto "join_efficient_team">>
+<</link>>
+
+<<link "在自己的工作中实践陈经理的方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("时间管理")>><<set $skills.push("时间管理")>><</if>>
+<<if !$skills.includes("效率工作法")>><<set $skills.push("效率工作法")>><</if>>
+<<goto "apply_efficiency_methods">>
+<</link>>
+
+<<link "向陈经理请教更多职场生存技巧">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$skills.includes("职场智慧")>><<set $skills.push("职场智慧")>><</if>>
+<<goto "more_survival_tips">>
+<</link>>
+
+
+:: build_reputation
+<h2>高效能员工</h2>
+            <p>你决定继续保持高效的工作模式，逐渐在公司内部树立"高产出、高质量"的个人品牌。</p>
+            <p>你不仅按时完成自己的任务，还善于帮助同事解决问题，分享工作经验和技巧。</p>
+            <p>三个月后，你的名字在季度总结会上被多次提及，成为了团队中公认的效率标杆。</p>
+            <p>有趣的是，尽管你很少加班，但没有人再质疑你对工作的投入，因为你的成果已经证明了一切。</p>
+
+<<link "接受公司内部效率培训师的邀请">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("知识分享")>><<set $skills.push("知识分享")>><</if>>
+<<goto "efficiency_trainer">>
+<</link>>
+
+<<link "利用良好声誉争取更好的项目和资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("资源争取")>><<set $skills.push("资源争取")>><</if>>
+<<goto "leverage_reputation">>
+<</link>>
+
+<<link "保持低调，享受工作与生活的平衡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<goto "balanced_success">>
+<</link>>
+
+
+:: discuss_methodology
+<h2>方法论交流</h2>
+            <p>得到认可后，你约项目经理李总吃了午饭，深入交流你的工作方法和效率理念。</p>
+            <p>"我发现合理规划任务、减少无效会议和干扰、专注时间块工作，比单纯延长工作时间更有效。"</p>
+            <p>李总对你的思考很感兴趣："你的方法有数据支持，我也一直觉得我们的工作方式可以优化。"</p>
+            <p>午餐结束时，他提议："要不你在下次团队建设日分享一下你的工作方法？我觉得对大家都有帮助。"</p>
+
+<<link "欣然接受，准备一份详尽的效率工作法分享">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("演讲能力")>><<set $skills.push("演讲能力")>><</if>>
+<<if !$skills.includes("影响力")>><<set $skills.push("影响力")>><</if>>
+<<goto "efficiency_presentation">>
+<</link>>
+
+<<link "建议先在小范围测试这套方法的效果">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<if !$skills.includes("实验精神")>><<set $skills.push("实验精神")>><</if>>
+<<goto "methodology_experiment">>
+<</link>>
+
+<<link "推荐相关书籍和资源给整个团队">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (7)))>>
+<<if !$allies.includes("知识分享者")>><<set $allies.push("知识分享者")>><</if>>
+<<goto "share_resources">>
+<</link>>
+
+
+:: lead_small_project
+<h2>初试领导力</h2>
+            <p>你向经理申请带领一个小型项目，希望进一步证明自己的能力。</p>
+            <p>"我想负责新功能模块的开发，我有一些提高效率和质量的想法。"</p>
+            <p>经理考虑了一下，同意了你的请求："这是个机会，让我们看看你的方法能否适用于团队协作。"</p>
+            <p>接下来的两个月，你带领三人小组，按照自己的高效工作理念推进项目，不仅提前完成了任务，团队成员也很少需要加班。</p>
+
+<<link "向管理层提交项目成功经验总结">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("项目管理")>><<set $skills.push("项目管理")>><</if>>
+<<if !$skills.includes("经验总结")>><<set $skills.push("经验总结")>><</if>>
+<<goto "project_report">>
+<</link>>
+
+<<link "申请扩大团队规模，接手更大项目">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (12)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("团队管理")>><<set $skills.push("团队管理")>><</if>>
+<<goto "team_expansion">>
+<</link>>
+
+<<link "指导其他团队成员应用你的方法">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (7)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("团队成员")>><<set $allies.push("团队成员")>><</if>>
+<<goto "mentor_colleagues">>
+<</link>>
+
+
+:: start
+<h2>新的开始</h2>
+            <p>恭喜你！在经历了数十场面试后，你终于收到了知名互联网公司"996科技"的offer。</p>
+            <p>作为一名新入职的员工，你即将面对各种职场挑战和人际关系。</p>
+            <p>你需要明智地做出选择，平衡工作表现和心理健康，以便在这个竞争激烈的环境中生存下来。</p>
+            <p>今天是你入职的第一天，HR已经发了邮件通知你去新员工培训...</p>
+
+<<link "准时到达培训地点">>
+<<goto "training_ontime">>
+<</link>>
+
+<<link "提前半小时到达，表现积极性">>
+<<goto "training_early">>
+<</link>>
+
+<<link "迟到10分钟，但带了咖啡给大家">>
+<<goto "training_late">>
+<</link>>
+
+
+:: training_ontime
+<h2>新员工培训</h2>
+            <p>你准时到达了培训地点，发现大部分新员工都已经到了。</p>
+            <p>HR小王微笑着记录你的到达时间，并邀请你找个位置坐下。</p>
+            <p>培训开始后，你了解到公司的文化强调"拼搏、创新和团队合作"，同时也提到了"能者多劳"的理念。</p>
+            <p>在培训的互动环节，主持人问道："对于加班，你有什么看法？"</p>
+
+<<link "表示愿意为项目加班，展现奉献精神">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "training_overtime_positive">>
+<</link>>
+
+<<link "委婉表示工作效率比时间更重要">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (3)))>>
+<<goto "training_efficiency">>
+<</link>>
+
+<<link "直接表明个人时间很重要，不想过度加班">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "training_overtime_negative">>
+<</link>>
+
+
+:: training_early
+<h2>提前到达的积极分子</h2>
+            <p>你提前半小时到达培训地点，发现只有HR小王和另外两名新员工在场。</p>
+            <p>HR小王对你的积极性表示赞赏，并请你帮忙分发培训材料。</p>
+            <p>这让你有机会提前和HR建立了良好的第一印象，也认识了几位新同事。</p>
+            <p>培训开始后，你了解到公司的文化强调"拼搏、创新和团队合作"，同时也提到了"能者多劳"的理念。</p>
+            <p>在培训的互动环节，主持人问道："对于加班，你有什么看法？"</p>
+
+<<link "热情表示愿意随时为公司加班">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("印象管理")>><<set $skills.push("印象管理")>><</if>>
+<<goto "training_overtime_positive">>
+<</link>>
+
+<<link "委婉表示工作效率比时间更重要">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "training_efficiency">>
+<</link>>
+
+<<link "表示会在需要时加班，但也要注意工作生活平衡">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "training_balance">>
+<</link>>
+
+
+:: training_late
+<h2>小小的迟到</h2>
+            <p>你迟到了10分钟，但带了咖啡给在场的人。</p>
+            <p>HR小王皱了皱眉，但接受了你的道歉和咖啡。</p>
+            <p>其他新员工对你的这个举动反应不一，有人觉得你很会来事，也有人觉得这是在贿赂HR。</p>
+            <p>培训已经开始，你急忙找了个位置坐下。当前话题是关于公司的996工作文化。</p>
+            <p>主持人注意到你的到来，直接问你："作为新员工，你愿意为项目经常加班工作吗？"</p>
+
+<<link "表示非常愿意加班，弥补迟到的不良印象">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<goto "training_overtime_positive">>
+<</link>>
+
+<<link "表示会在关键时刻加班，但平时希望提高效率">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<goto "training_balance">>
+<</link>>
+
+<<link "诚实地说偶尔可以，但不希望成为常态">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<goto "training_overtime_negative">>
+<</link>>
+
+

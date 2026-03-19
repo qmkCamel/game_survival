@@ -32,6 +32,8 @@
             <div id="story-text" class="story-container"></div>
             <div id="choices-container" class="choices-container"></div>
         </div>
+
+        <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
         
         <div class="inventory">
             <div class="inventory-section">
@@ -50,23 +52,18 @@
     </div>
     
     <!-- 场景文件 -->
+    <script>
+        // 默认启用 JSON 场景数据（更稳定、可维护）
+        window.USE_SCENE_DATA = true;
+    </script>
+    <script src="scenes/scenes_manifest.js"></script>
     <script src="scenes/scenes_loader.js"></script>
-    <script src="scenes/scenes_intro.js"></script>
-    <script src="scenes/scenes_training_responses.js"></script>
-    <script src="scenes/scenes_office_politics.js"></script>
-    <script src="scenes/scenes_projects.js"></script>
-    <script src="scenes/scenes_advanced.js"></script>
-    <script src="scenes/scenes_dramatic_events.js"></script>
-    <script src="scenes/scenes_dramatic_outcomes.js"></script>
-    <script src="scenes/scenes_missing_definitions.js"></script>
-    <script src="scenes/scenes_hr_followup.js"></script>
-    <script src="scenes/scenes_endings.js"></script>
-    <script src="scenes/scenes_index.js"></script>
+    <script src="scenes/scenes_data_loader.js"></script>
     
     <!-- 游戏逻辑 -->
     <script src="game.js"></script>
     
-    <!-- 测试框架 -->
-    <script src="../tests/game_tests.js"></script>
+    <!-- 测试框架（仅开发用，避免上线干扰） -->
+    <!-- <script src="../tests/game_tests.js"></script> -->
 </body>
 </html> 

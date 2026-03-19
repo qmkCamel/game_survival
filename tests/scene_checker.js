@@ -3,21 +3,15 @@
 // 使用方法：直接在浏览器中加载此脚本，同时加载所有场景文件和游戏核心逻辑
 // 在Node.js环境中运行时，需要加载游戏核心文件
 if (typeof window === 'undefined') {
-    // 在浏览器环境中，这些文件通过 HTML 加载
-    // 这里是为了支持潜在的命令行测试环境
-    require('../src/game.js');
-    require('../src/scenes/scenes_loader.js');
-    require('../src/scenes/scenes_intro.js');
-    require('../src/scenes/scenes_training_responses.js');
-    require('../src/scenes/scenes_office_politics.js');
-    require('../src/scenes/scenes_projects.js');
-    require('../src/scenes/scenes_advanced.js');
-    require('../src/scenes/scenes_dramatic_events.js');
-    require('../src/scenes/scenes_dramatic_outcomes.js');
-    require('../src/scenes/scenes_missing_definitions.js');
-    require('../src/scenes/scenes_hr_followup.js');
-    require('../src/scenes/scenes_endings.js');
-    require('../src/scenes/scenes_index.js');
+    // Node 环境下不应 require 前端引擎（依赖 document）。
+    // 直接读取 JSON 场景数据，提供“断链/不可达/结构问题”的命令行自检能力。
+    const fs = require('fs');
+    const path = require('path');
+
+    const jsonPath = path.join(__dirname, '..', 'src', 'scenes', 'data', 'scenes.generated.json');
+    const raw = fs.readFileSync(jsonPath, 'utf8');
+    const parsed = JSON.parse(raw);
+    global.window = { scenes: parsed.scenes || {} };
 }
 
 // 全局变量来存储检查结果
@@ -489,7 +483,7 @@ function displayResults() {
 }
 
 // 自动运行检查（如果在浏览器环境中）
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
     window.addEventListener('load', function() {
         // 等待游戏场景完全加载
         setTimeout(() => {

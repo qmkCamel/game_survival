@@ -1,0 +1,417 @@
+:: seek_transfer
+<h2>寻找新家</h2>
+            <p>你谨慎地联系了其他几个部门的经理，表达了自己的转岗意愿。</p>
+            <p>意外的是，产品研发部的张总对你非常感兴趣。"我正好需要一个了解技术又懂业务的人，明天下午有空聊聊吗？"</p>
+            <p>但就在你准备赴约时，李总把你叫到了一边。"我知道你最近在和其他部门接触，"他的表情有些复杂，"其实重组计划有变，我们部门不仅不会被裁撤，反而要扩编..."</p>
+            <p>他暗示如果你留下，将获得小组长的职位。但你已经答应了张总的面谈，处境变得有些尴尬。</p>
+
+<<link "向李总道歉，坚持赴约探索新机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("决断力")>><<set $skills.push("决断力")>><</if>>
+<<goto "new_department">>
+<</link>>
+
+<<link "婉拒张总，向李总表示忠诚">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<if !$skills.includes("忠诚度")>><<set $skills.push("忠诚度")>><</if>>
+<<if !$allies.includes("李总")>><<set $allies.push("李总")>><</if>>
+<<goto "stay_loyal">>
+<</link>>
+
+<<link "两边都见，多争取一些筹码">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("谈判技巧")>><<set $skills.push("谈判技巧")>><</if>>
+<<goto "negotiate_both">>
+<</link>>
+
+
+:: loyalty_crisis
+<h2>患难见真情</h2>
+            <p>在公司动荡之际，你选择向李总表达了忠诚，并主动加班帮他准备重组应对方案。</p>
+            <p>李总对你的支持非常感动："多谢你小王，现在才知道谁是真心的。"</p>
+            <p>一周后，重组名单公布，出人意料的是，李总不仅没有被降职，反而因为出色的应对方案获得了晋升。</p>
+            <p>在庆功宴上，李总当众感谢了你的贡献，并承诺会在未来给你更多发展机会。</p>
+            <p>其他曾经动摇过的同事看你的眼神中多了几分复杂。</p>
+
+<<link "继续低调做事，牢固与李总的信任关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$allies.includes("李总++")>><<set $allies.push("李总++")>><</if>>
+<<goto "build_trust">>
+<</link>>
+
+<<link "利用这个机会扩展自己在部门的影响力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("领导力")>><<set $skills.push("领导力")>><</if>>
+<<goto "expand_influence">>
+<</link>>
+
+<<link "主动提出带领新项目，展示自己的能力">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (0)))>>
+<<if !$skills.includes("项目管理")>><<set $skills.push("项目管理")>><</if>>
+<<goto "lead_project">>
+<</link>>
+
+
+:: update_resume
+<h2>未雨绸缪</h2>
+            <p>你悄悄更新了简历，并在几个招聘平台上设置了"隐性求职"状态。</p>
+            <p>很快，你收到了几家公司的面试邀请，其中包括996科技的竞争对手"星辰科技"。</p>
+            <p>然而，就在你准备参加第一场面试的前一天，公司内网突然公布了保留名单，你的名字赫然在列，甚至还有一个小小的加薪。</p>
+            <p>与此同时，你的一位同事被发现在工作时间参加竞争对手的面试，当场被HR约谈，随后被要求签署了自愿离职协议，没有获得任何补偿。</p>
+            <p>这个消息让你感到既庆幸又忐忑。</p>
+
+<<link "取消所有面试，专注当前工作">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<goto "cancel_interviews">>
+<</link>>
+
+<<link "继续秘密进行面试，但更加谨慎">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("风险管理")>><<set $skills.push("风险管理")>><</if>>
+<<goto "careful_interview">>
+<</link>>
+
+<<link "利用offer作为筹码，与公司谈判更好的待遇">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("谈判博弈")>><<set $skills.push("谈判博弈")>><</if>>
+<<goto "negotiate_offer">>
+<</link>>
+
+
+:: refuse_offer
+<h2>忠诚的代价</h2>
+            <p>你婉拒了星辰科技的邀请，表示目前不考虑跳槽。</p>
+            <p>一个月后，公司进行了新一轮裁员，同时宣布因业绩不佳，取消今年的年终奖。</p>
+            <p>更让你意外的是，拒绝星辰科技后，你在技术社区发布的文章开始遭遇莫名的举报和攻击，你怀疑这可能是星辰科技的"报复"。</p>
+            <p>午餐时，你得知曾经拒绝过的那个职位，最终以比你高30%的薪资成功挖走了你的同事小林。</p>
+            <p>你开始怀疑自己的决定是否明智。</p>
+
+<<link "坚持自己的选择，耐心等待公司好转">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "patience_virtue">>
+<</link>>
+
+<<link "主动联系星辰科技，看是否还有机会">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("机会把握")>><<set $skills.push("机会把握")>><</if>>
+<<goto "reconnect_competitor">>
+<</link>>
+
+<<link "向管理层表达自己的忠诚和付出，争取认可">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("沟通技巧")>><<set $skills.push("沟通技巧")>><</if>>
+<<goto "seek_recognition">>
+<</link>>
+
+
+:: secret_interview
+<h2>秘密会面</h2>
+            <p>你选择了秘密赴约，在一家远离公司的咖啡厅与星辰科技的HR见面。</p>
+            <p>面谈非常顺利，对方对你的能力非常认可，当场提出了比你目前高30%的薪资。</p>
+            <p>正当你考虑是否接受时，你惊讶地发现公司的产品经理小陈也在这家咖啡厅，似乎也在面试。</p>
+            <p>你们尴尬地对视一眼，随后都默契地假装没看见对方。</p>
+            <p>第二天，小陈在茶水间暗示她知道你在找工作，并表示自己也在考虑离职，问你是否有兴趣一起跳槽。</p>
+
+<<link "拒绝与小陈合作，独自考虑offer">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<goto "solo_decision">>
+<</link>>
+
+<<link "与小陈结盟，共享信息和资源">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("战略联盟")>><<set $skills.push("战略联盟")>><</if>>
+<<if !$allies.includes("小陈")>><<set $allies.push("小陈")>><</if>>
+<<goto "alliance_departure">>
+<</link>>
+
+<<link "向小陈套话，获取更多内部信息">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (2)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("情报分析")>><<set $skills.push("情报分析")>><</if>>
+<<goto "extract_info">>
+<</link>>
+
+
+:: seek_advice_offer
+<h2>前辈的建议</h2>
+            <p>你向信任的老同事王哥咨询了这个挖角邀约。</p>
+            <p>王哥沉思片刻："这件事比你想象的复杂。星辰最近在大规模挖人，但听说他们的投资人开始施压，可能不太稳定。"</p>
+            <p>他分享了自己曾经跳槽失败的经历："表面上的高薪可能伴随着更大的压力，有时候'看起来像天堂实际是地狱'。"</p>
+            <p>王哥建议你至少去了解一下情况："但千万小心，公司最近在严查与竞争对手接触的员工，HR小王就是专门负责这个的。"</p>
+            <p>正说着，HR小王走过茶水间，对你们投来探询的目光。</p>
+
+<<link "放弃面试机会，避免不必要的风险">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-2)))>>
+<<goto "stay_safe">>
+<</link>>
+
+<<link "制定周密计划，秘密参加面试">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("风险规避")>><<set $skills.push("风险规避")>><</if>>
+<<goto "covert_interview">>
+<</link>>
+
+<<link "直接与管理层沟通薪资问题，争取内部调整">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("直接沟通")>><<set $skills.push("直接沟通")>><</if>>
+<<goto "internal_negotiation">>
+<</link>>
+
+
+:: take_responsibility
+<h2>危机中的担当</h2>
+            <p>"这个问题与我审核的代码有关，我来负责解决。"你在紧急会议上主动发言。</p>
+            <p>接下来的36小时，你几乎没有合眼，带领团队一步步排查问题，最终找到了根源并成功修复。</p>
+            <p>事后调查显示，故障并非完全是你的责任，而是系统架构的历史遗留问题被你的代码意外触发。</p>
+            <p>你的担当和解决问题的能力得到了团队的认可，甚至连一向严厉的技术VP也对你刮目相看。</p>
+            <p>然而，这次事件也被记录在你的绩效档案中，成为一个"待观察"的风险点。</p>
+
+<<link "主动提出改进代码审核流程，避免类似问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (2)))>>
+<<if !$skills.includes("流程优化")>><<set $skills.push("流程优化")>><</if>>
+<<goto "improve_process">>
+<</link>>
+
+<<link "低调工作，努力挽回因事故损失的信任">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<goto "rebuild_trust">>
+<</link>>
+
+<<link "申请调职到更适合自己的岗位">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (8)))>>
+<<if !$skills.includes("自我认知")>><<set $skills.push("自我认知")>><</if>>
+<<goto "position_change">>
+<</link>>
+
+
+:: analyze_logs
+<h2>技术侦探</h2>
+            <p>面对指责，你没有急于辩解，而是冷静地投入到日志分析中。</p>
+            <p>经过几小时的深入调查，你发现了一个惊人的事实：故障源头是一段被刻意植入的恶意代码，目的是在特定时间触发系统崩溃。</p>
+            <p>更令人震惊的是，这段代码的提交记录显示来自于技术VP的账号，但时间点是凌晨3点，这与他的常规工作习惯不符。</p>
+            <p>你意识到这可能是一次黑客入侵或内部破坏，但指控技术VP是非常严重的事情。</p>
+            <p>与此同时，公司内部已经开始流传你疏忽大意导致系统崩溃的传言。</p>
+
+<<link "私下向技术VP汇报发现，寻求指导">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("危机汇报")>><<set $skills.push("危机汇报")>><</if>>
+<<goto "private_report">>
+<</link>>
+
+<<link "向公司安全团队报告，启动正式调查">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("勇气")>><<set $skills.push("勇气")>><</if>>
+<<goto "official_investigation">>
+<</link>>
+
+<<link "追查到底，发现更大的公司阴谋">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("深度调查")>><<set $skills.push("深度调查")>><</if>>
+<<goto "corporate_conspiracy">>
+<</link>>
+
+
+:: stay_silent
+<h2>暗流涌动</h2>
+            <p>面对同事的暗示和指责，你选择保持沉默，静观其变。</p>
+            <p>随着故障持续，公司损失不断扩大，管理层开始寻找"替罪羊"。由于你没有及时澄清，更多的怀疑指向了你。</p>
+            <p>第二天，你收到HR的面谈通知，主题是"关于近期系统故障的责任认定"。</p>
+            <p>此时，你的同事小张私下找到你："其实我知道真相，问题出在运维的自动更新脚本上，不是你的代码。但运维主管是副总的表弟..."</p>
+            <p>你面临艰难的抉择：据实已辩解可能得罪权贵，默认责任则可能影响职业发展。</p>
+
+<<link "在面谈中据实陈述，提供技术证据">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("原则立场")>><<set $skills.push("原则立场")>><</if>>
+<<goto "technical_defense">>
+<</link>>
+
+<<link "接受部分责任，同时委婉指出系统问题">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (3)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-3)))>>
+<<if !$skills.includes("策略妥协")>><<set $skills.push("策略妥协")>><</if>>
+<<goto "partial_responsibility">>
+<</link>>
+
+<<link "寻求小张作证，联合其他同事反击">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("政治反击")>><<set $skills.push("政治反击")>><</if>>
+<<if !$allies.includes("小张")>><<set $allies.push("小张")>><</if>>
+<<goto "alliance_defense">>
+<</link>>
+
+
+:: betrayal_ending
+<h2>信任的崩塌</h2>
+            <p>经过一系列复杂的职场博弈，你终于接近了真相：从一开始，你就是一个精心设计的局中人。</p>
+            <p>你最信任的导师李总，实际上一直在利用你为自己铺路。你帮他解决的那些"难题"，其实都是他自己制造的陷阱。</p>
+            <p>公司的重组、项目的危机、竞争对手的挖角，这一切都是他设计的剧本，目的是测试你的忠诚度和能力，同时借你的手清除异己。</p>
+            <p>当你终于识破这一切时，李总不但不否认，反而欣赏地说："你比我想象的聪明，现在你有两个选择：成为我的接班人，或者离开。"</p>
+            <p>这一刻，你对职场的认知彻底崩塌，也明白了成功的代价。</p>
+
+<<link "接受现实，成为下一个李总">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-15)))>>
+<<if !$skills.includes("权术大师")>><<set $skills.push("权术大师")>><</if>>
+<<goto "successor_path">>
+<</link>>
+
+<<link "拒绝妥协，带着真相离开">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("自我救赎")>><<set $skills.push("自我救赎")>><</if>>
+<<goto "truth_departure">>
+<</link>>
+
+<<link "假装接受，暗中策划反击">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("深谋远虑")>><<set $skills.push("深谋远虑")>><</if>>
+<<goto "revenge_plot">>
+<</link>>
+
+
+:: corporate_conspiracy
+<h2>公司阴谋</h2>
+            <p>通过一系列调查，你发现996科技的财务状况远比表面上看起来糟糕得多。</p>
+            <p>公司高层已经秘密抛售股票，而让中层管理者继续鼓吹"光明前景"，招揽新人。</p>
+            <p>更可怕的是，你无意中获取的内部邮件显示，下个月将有一次大规模裁员，覆盖40%的员工，而且补偿方案远低于法定标准。</p>
+            <p>你面临道德困境：保守秘密保全自己，还是冒险揭露真相？</p>
+            <p>与此同时，一位神秘人士联系你，表示愿意高价购买你手中的信息...</p>
+
+<<link "匿名向媒体爆料，揭露公司行为">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-20)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("正义感")>><<set $skills.push("正义感")>><</if>>
+<<goto "whistleblower">>
+<</link>>
+
+<<link "秘密警告关键同事，同时为自己谋划出路">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$allies.includes("良知圈")>><<set $allies.push("良知圈")>><</if>>
+<<goto "selective_warning">>
+<</link>>
+
+<<link "向神秘人出售信息，借机离开公司">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("灰色交易")>><<set $skills.push("灰色交易")>><</if>>
+<<goto "information_dealer">>
+<</link>>
+
+
+:: unexpected_ally
+<h2>意外盟友</h2>
+            <p>在职场迷宫中挣扎之际，你意外获得了一位强大盟友的支持。</p>
+            <p>一直被视为冷漠严厉的技术VP赵总，突然成为了你的职场导师。</p>
+            <p>"我看到了你的潜力，也经历过你现在的困境，"他在一次私下谈话中坦言，"这个公司需要真正有才华和原则的人。"</p>
+            <p>在他的指导下，你开始接触公司核心项目，也了解到更多高层运作的内幕。</p>
+            <p>然而，你也感受到其他同事投来的嫉妒和猜疑目光，以及李总微妙的态度变化。</p>
+
+<<link "全力把握这个难得机会，成为赵总的得力助手">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (15)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("高层思维")>><<set $skills.push("高层思维")>><</if>>
+<<if !$allies.includes("赵总")>><<set $allies.push("赵总")>><</if>>
+<<goto "vp_assistant">>
+<</link>>
+
+<<link "平衡与李总的关系，避免两面不是人">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (8)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("平衡之道")>><<set $skills.push("平衡之道")>><</if>>
+<<goto "balance_loyalties">>
+<</link>>
+
+<<link "保持警惕，调查赵总突然亲近的真实动机">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("深度思考")>><<set $skills.push("深度思考")>><</if>>
+<<goto "investigate_motives">>
+<</link>>
+
+
+:: alliance_departure
+<h2>联手出击</h2>
+            <p>你决定与小陈结盟，你们开始秘密交换信息，共同评估星辰科技的机会。</p>
+            <p>小陈透露："我负责的产品线可能要被砍掉，但管理层一直在隐瞒这个消息。而且我听说年底会有大裁员。"</p>
+            <p>你们互相帮助准备面试，甚至约好了同一天去面试，给对方提供情报支持。</p>
+            <p>出人意料的是，星辰科技对你们两人都很感兴趣，并暗示如果能一起加入，可以给你们组建新团队的机会。</p>
+            <p>与此同时，公司的氛围确实越来越紧张，各种猜疑和焦虑在蔓延。</p>
+
+<<link "与小陈一起接受offer，开启新篇章">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("职业决断")>><<set $skills.push("职业决断")>><</if>>
+<<if !$allies.includes("小陈++")>><<set $allies.push("小陈++")>><</if>>
+<<goto "joint_departure">>
+<</link>>
+
+<<link "独自接受offer，避免过度依赖关系">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (5)))>>
+<<if !$skills.includes("独立性")>><<set $skills.push("独立性")>><</if>>
+<<goto "solo_departure">>
+<</link>>
+
+<<link "得知更多内幕，发现这一切都是一场阴谋">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (0)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-10)))>>
+<<if !$skills.includes("真相洞察")>><<set $skills.push("真相洞察")>><</if>>
+<<goto "betrayal_ending">>
+<</link>>
+
+
+:: covert_interview
+<h2>秘密行动</h2>
+            <p>你精心策划了一次"完美犯罪"：请了半天病假，穿上平时不会穿的衣服，选择了一家偏远的咖啡馆与星辰科技的HR见面。</p>
+            <p>面试进行得很顺利，对方对你的能力表示认可，提出了一个看起来很有吸引力的职位。</p>
+            <p>正当你准备离开时，一个熟悉的身影出现在咖啡馆门口——是赵总的助理。她朝你的方向看了一眼，但似乎没有认出你。</p>
+            <p>接下来的几天，你忐忑不安，生怕自己的秘密被发现。</p>
+            <p>一周后，一位陌生人在你下班路上拦住你："我是赵总的朋友，他想和你私下聊聊。"</p>
+
+<<link "赴约见赵总，做好最坏的准备">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-5)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-8)))>>
+<<if !$skills.includes("危机应对")>><<set $skills.push("危机应对")>><</if>>
+<<goto "confront_vp">>
+<</link>>
+
+<<link "拒绝见面，加速跳槽进程">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (-10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (-5)))>>
+<<if !$skills.includes("果断决策")>><<set $skills.push("果断决策")>><</if>>
+<<goto "hasty_departure">>
+<</link>>
+
+<<link "赴约，却意外获得一位强大的盟友">>
+<<set $performance = Math.max(0, Math.min(100, $performance + (10)))>>
+<<set $mental = Math.max(0, Math.min(100, $mental + (10)))>>
+<<if !$skills.includes("逆势思维")>><<set $skills.push("逆势思维")>><</if>>
+<<goto "unexpected_ally">>
+<</link>>

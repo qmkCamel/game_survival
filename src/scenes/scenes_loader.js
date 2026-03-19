@@ -45,6 +45,11 @@ if (typeof endingScenes === 'undefined') {
     console.error("endingScenes 未定义，已初始化为空对象");
 }
 
+if (typeof hrFollowupScenes === 'undefined') {
+    var hrFollowupScenes = {};
+    console.error("hrFollowupScenes 未定义，已初始化为空对象");
+}
+
 // 确保start场景存在
 if (!introScenes.start) {
     console.error("start场景不存在，创建一个基本的start场景");
@@ -74,4 +79,31 @@ document.addEventListener('click', function(event) {
     if (event.target.textContent === "刷新页面") {
         window.location.reload();
     }
-}); 
+});
+
+// 动态加载场景脚本：减少 index.html 的维护成本
+// 约定：scenes_manifest.js 先于本文件加载，并提供 window.SCENE_FILES
+function loadSceneScriptsFromManifest() {
+    if (!Array.isArray(window.SCENE_FILES) || window.SCENE_FILES.length === 0) {
+        console.warn("SCENE_FILES 未配置，跳过动态加载场景脚本。");
+        return;
+    }
+
+    const base = "scenes/";
+    const head = document.head || document.getElementsByTagName('head')[0];
+
+    for (const file of window.SCENE_FILES) {
+        const script = document.createElement('script');
+        script.src = base + file;
+        script.defer = false;
+        head.appendChild(script);
+    }
+
+    // 所有场景包加载完后，再加载合并入口 scenes_index.js
+    const indexScript = document.createElement('script');
+    indexScript.src = base + "scenes_index.js";
+    indexScript.defer = false;
+    head.appendChild(indexScript);
+}
+
+loadSceneScriptsFromManifest();

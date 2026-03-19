@@ -1,0 +1,13 @@
+:: StoryTitle
+Game Survival (SugarCube)
+
+
+:: StoryData
+<<set $performance = 75>>
+<<set $mental = 80>>
+<<set $skills = []>>
+<<set $allies = []>>
+
+
+:: StoryInit
+<<run window.clamp = (v,min,max) => Math.max(min, Math.min(max, v))>>

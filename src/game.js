@@ -22,9 +22,32 @@ const mentalValue = document.getElementById('mental-value');
 const skillsList = document.getElementById('skills-list');
 const alliesList = document.getElementById('allies-list');
 const restartBtn = document.getElementById('restart-btn');
+const toastContainer = document.getElementById('toast-container');
+
+function showToast(title, message, type = 'info', durationMs = 2200) {
+    if (!toastContainer) return;
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    if (type === 'skill') toast.classList.add('toast-skill');
+    if (type === 'ally') toast.classList.add('toast-ally');
+    if (type === 'warning') toast.classList.add('toast-warning');
+
+    toast.innerHTML = `
+        <div class="toast-title">${title}</div>
+        <div class="toast-message">${message}</div>
+    `;
+
+    toastContainer.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+
+    window.setTimeout(() => {
+        toast.classList.remove('show');
+        window.setTimeout(() => toast.remove(), 250);
+    }, durationMs);
+}
 
 // 初始化游戏
-function initGame() {
+async function initGame() {
     gameState = {
         performance: 75,
         mental: 80,
@@ -34,6 +57,11 @@ function initGame() {
     };
     
     try {
+        // 如果启用 JSON 场景加载，则先加载再开始游戏
+        if (window.USE_SCENE_DATA === true && typeof window.initScenes === "function") {
+            await window.initScenes();
+        }
+
         loadScene(gameState.currentScene);
         updateStats();
     } catch (error) {
@@ -137,7 +165,7 @@ function loadScene(sceneId) {
     scene.choices.forEach((choice, index) => {
         const choiceBtn = document.createElement('button');
         choiceBtn.classList.add('choice-btn');
-        choiceBtn.textContent = choice.text;
+        choiceBtn.appendChild(renderChoiceContent(choice));
         
         // 添加选择效果
         choiceBtn.addEventListener('click', () => {
@@ -152,9 +180,66 @@ function loadScene(sceneId) {
     window.scrollTo(0, 0);
 }
 
+function renderChoiceContent(choice) {
+    const wrap = document.createElement('div');
+
+    const main = document.createElement('span');
+    main.classList.add('choice-main');
+    main.textContent = choice.text;
+    wrap.appendChild(main);
+
+    const tags = buildEffectTags(choice.effects);
+    if (tags.length > 0) {
+        const meta = document.createElement('div');
+        meta.classList.add('choice-meta');
+        tags.forEach(t => meta.appendChild(t));
+        wrap.appendChild(meta);
+    }
+
+    return wrap;
+}
+
+function buildEffectTags(effects) {
+    if (!effects) return [];
+    const tags = [];
+
+    if (typeof effects.performance === 'number' && effects.performance !== 0) {
+        tags.push(makeTag(`工作表现 ${formatDelta(effects.performance)}`, effects.performance));
+    }
+    if (typeof effects.mental === 'number' && effects.mental !== 0) {
+        tags.push(makeTag(`心理健康 ${formatDelta(effects.mental)}`, effects.mental));
+    }
+
+    if (Array.isArray(effects.skills)) {
+        effects.skills.forEach(skill => tags.push(makeTag(`+${skill}`, 1, 'neutral')));
+    }
+    if (Array.isArray(effects.allies)) {
+        effects.allies.forEach(ally => tags.push(makeTag(`+盟友 ${ally}`, 1, 'neutral')));
+    }
+
+    return tags;
+}
+
+function formatDelta(n) {
+    return n > 0 ? `+${n}` : `${n}`;
+}
+
+function makeTag(text, delta, overrideKind) {
+    const tag = document.createElement('span');
+    tag.classList.add('choice-tag');
+    tag.textContent = text;
+
+    const kind = overrideKind || (delta > 0 ? 'good' : delta < 0 ? 'bad' : 'neutral');
+    tag.classList.add(kind);
+    return tag;
+}
+
 // 处理选择
 function handleChoice(choice) {
     console.log("处理选择:", choice);
+
+    const newlyAddedSkills = [];
+    const newlyAddedAllies = [];
     
     // 应用选项效果
     if (choice.effects) {
@@ -182,6 +267,7 @@ function handleChoice(choice) {
             choice.effects.skills.forEach(skill => {
                 if (!gameState.skills.includes(skill)) {
                     gameState.skills.push(skill);
+                    newlyAddedSkills.push(skill);
                 }
             });
         }
@@ -192,9 +278,18 @@ function handleChoice(choice) {
             choice.effects.allies.forEach(ally => {
                 if (!gameState.allies.includes(ally)) {
                     gameState.allies.push(ally);
+                    newlyAddedAllies.push(ally);
                 }
             });
         }
+    }
+
+    // UI 提示：获得新技能/盟友
+    if (newlyAddedSkills.length > 0) {
+        showToast('获得技能', newlyAddedSkills.join('、'), 'skill');
+    }
+    if (newlyAddedAllies.length > 0) {
+        showToast('结识盟友', newlyAddedAllies.join('、'), 'ally');
     }
     
     // 检查特殊结局条件
