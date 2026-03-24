@@ -52,6 +52,10 @@
 
 直接在浏览器中打开`index.html`文件即可开始游戏！
 
+## 在线发布（GitHub Pages）
+
+推荐使用 GitHub Pages 发布在线可玩链接，详见 `README_DEPLOY.md`。
+
 ## 游戏开发
 
 本游戏使用纯HTML、CSS和JavaScript开发，无需任何额外的依赖。

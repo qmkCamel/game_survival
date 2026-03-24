@@ -10,6 +10,13 @@
     <div class="game-container">
         <div class="header">
             <h1>互联网职场生存</h1>
+            <div class="difficulty-bar">
+                <label for="difficulty-select">难度:</label>
+                <select id="difficulty-select">
+                    <option value="normal" selected>普通</option>
+                    <option value="hardcore">硬核</option>
+                </select>
+            </div>
             <div class="stats-container">
                 <div class="stat">
                     <span class="stat-label">工作表现:</span>
@@ -25,12 +32,24 @@
                     </div>
                     <span id="mental-value">80%</span>
                 </div>
+                <div class="stat">
+                    <span class="stat-label">精力:</span>
+                    <div class="progress-bar">
+                        <div id="energy-bar" class="progress"></div>
+                    </div>
+                    <span id="energy-value">70%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">人情:</span>
+                    <span id="favors-value">0</span>
+                </div>
             </div>
         </div>
         
         <div class="game-content">
             <div id="story-text" class="story-container"></div>
             <div id="choices-container" class="choices-container"></div>
+            <div id="hint-text" class="hint-text" aria-live="polite"></div>
         </div>
 
         <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
@@ -48,8 +67,14 @@
         
         <div class="footer">
             <button id="restart-btn">重新开始</button>
+            <button id="achievements-btn">称号图鉴</button>
         </div>
     </div>
+
+    <script>
+        // 默认配置：可按需改为 true 观察行为
+        window.DEBUG = false;
+    </script>
     
     <!-- 场景文件 -->
     <script>

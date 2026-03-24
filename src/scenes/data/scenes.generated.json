@@ -354,6 +354,13 @@
       "text": "<h2>秘密会面</h2>\n            <p>你选择了秘密赴约，在一家远离公司的咖啡厅与星辰科技的HR见面。</p>\n            <p>面谈非常顺利，对方对你的能力非常认可，当场提出了比你目前高30%的薪资。</p>\n            <p>正当你考虑是否接受时，你惊讶地发现公司的产品经理小陈也在这家咖啡厅，似乎也在面试。</p>\n            <p>你们尴尬地对视一眼，随后都默契地假装没看见对方。</p>\n            <p>第二天，小陈在茶水间暗示她知道你在找工作，并表示自己也在考虑离职，问你是否有兴趣一起跳槽。</p>",
       "choices": [
         {
+          "text": "（终局门）把 offer 摆上桌：终局选择",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "拒绝与小陈合作，独自考虑offer",
           "nextScene": "solo_decision",
           "effects": {
@@ -392,6 +399,13 @@
       "id": "seek_advice_offer",
       "text": "<h2>前辈的建议</h2>\n            <p>你向信任的老同事王哥咨询了这个挖角邀约。</p>\n            <p>王哥沉思片刻：\"这件事比你想象的复杂。星辰最近在大规模挖人，但听说他们的投资人开始施压，可能不太稳定。\"</p>\n            <p>他分享了自己曾经跳槽失败的经历：\"表面上的高薪可能伴随着更大的压力，有时候'看起来像天堂实际是地狱'。\"</p>\n            <p>王哥建议你至少去了解一下情况：\"但千万小心，公司最近在严查与竞争对手接触的员工，HR小王就是专门负责这个的。\"</p>\n            <p>正说着，HR小王走过茶水间，对你们投来探询的目光。</p>",
       "choices": [
+        {
+          "text": "（终局门）把风险算清：终局选择",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
         {
           "text": "放弃面试机会，避免不必要的风险",
           "nextScene": "stay_safe",
@@ -870,6 +884,13 @@
       "text": "<h2>权术继承者</h2>\n            <p>\"我接受。\"你平静地说道。李总露出满意的微笑，拍了拍你的肩膀。</p>\n            <p>接下来的几个月，李总开始有意识地将你引荐给公司高层，并教你一些不会出现在任何管理书籍上的\"潜规则\"。</p>\n            <p>你学会了如何在不留痕迹的情况下排除异己，如何建立自己的信息网络，以及如何在关键时刻做出表面上公正但实际上对自己有利的决策。</p>\n            <p>半年后，李总升职，而你顺理成章地接替了他的位置。</p>\n            <p>当你坐在曾经属于李总的办公室里，你意识到自己已经成为了曾经最害怕成为的那种人。</p>",
       "choices": [
         {
+          "text": "（终局门）把筹码换成位置：终局选择",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "这就是职场的本质，接受现实",
           "nextScene": "political_master",
           "effects": {
@@ -1055,7 +1076,7 @@
     },
     "career_change": {
       "id": "career_change",
-      "text": "<div class=\"ending-icon icon-career-change\"></div>\n            <h2>职业转型</h2>\n            <p>离开互联网行业后，你经过一段时间的探索和学习，找到了新的职业方向。</p>\n            <p>虽然起点重新归零，但不受过去束缚的感觉让你倍感轻松。</p>\n            <p>在新的领域里，你的部分经验和技能仍然适用，而你也带着从前职场学到的教训，更加明智地规划自己的职业道路。</p>\n            <p>有时候，重新开始也是一种幸运。</p>\n            <p><strong>恭喜你获得\"职业转型\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-career-change\"></div>\n<h2>职业转型</h2>\n<p>你把工牌放进抽屉，像把一段人生合上。</p>\n<p>新领域里，你重新从零开始：笨拙、缓慢，但心里很安静。</p>\n<p>你偶尔会想起以前的会议室、KPI、校准会，然后又很快放下——你不再需要用别人的评价来定义自己。</p>\n<p>有一天你走在路上，突然意识到：你已经很久没有胃痛过了。</p>\n<p><strong>你获得了“职业转型”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -1075,7 +1096,7 @@
     },
     "reform_leader": {
       "id": "reform_leader",
-      "text": "<div class=\"ending-icon icon-reform\"></div>\n            <h2>改革者</h2>\n            <p>在李总离开后，你接管了他的部门，但采取了完全不同的管理风格。</p>\n            <p>你建立了透明的晋升机制，鼓励开放沟通，打破了原有的小圈子文化。</p>\n            <p>起初，一些习惯了旧制度的员工有所抵触，但随着改革的深入，团队的创新能力和凝聚力都有了显著提升。</p>\n            <p>半年后，你的部门成为了公司效率和员工满意度最高的团队，甚至影响了整个公司的文化。</p>\n            <p><strong>恭喜你获得\"改革者\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-reform\"></div>\n<h2>改革者</h2>\n<p>你接过位置之后做的第一件事，是把“潜规则”写成明规则：晋升标准、评估口径、复盘机制、留痕流程。</p>\n<p>反对的人很多：有人说你天真，有人说你动了蛋糕。</p>\n<p>你扛住了几次硬仗，也失去了一些“朋友”。</p>\n<p>半年后，新人敢说真话，老问题有了机制，会议不再只是表演。</p>\n<p>你终于明白：改革不是善良，改革是你愿意为规则付出代价。</p>\n<p><strong>你获得了“改革者”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -1085,7 +1106,7 @@
     },
     "new_horizon": {
       "id": "new_horizon",
-      "text": "<div class=\"ending-icon icon-horizon\"></div>\n            <h2>新的地平线</h2>\n            <p>完成对李总的反击后，你意识到是时候彻底离开这个复杂的环境了。</p>\n            <p>你递交了辞职信，开始寻找新的机会。很快，你收到了几个颇具吸引力的offer。</p>\n            <p>在充分评估后，你选择了一家海外公司的远程工作机会，这让你既能继续专业发展，又能获得更健康的工作环境。</p>\n            <p>回顾这段经历，你意识到有些战斗值得一打，但知道何时全身而退同样重要。</p>\n            <p><strong>恭喜你获得\"新的地平线\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-horizon\"></div>\n<h2>新的地平线</h2>\n<p>你把交接清单写到最后一行，关掉电脑，抬头看见办公室的灯还亮着。</p>\n<p>你没有回头。</p>\n<p>新公司给你的不是更少的工作，而是更清晰的边界：目标、资源、节奏、回报。</p>\n<p>背调电话那一刻，你用同一个版本讲完了你的故事：为什么做、做成了什么、为什么离开。</p>\n<p>你走得很稳。稳到你突然明白：体面不是天生的，体面是你提前写好的。</p>\n<p><strong>你获得了“新的地平线”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -1138,6 +1159,13 @@
       "text": "<h2>深厚信任</h2>\n            <p>你继续低调做事，同时与李总建立了更加牢固的信任关系。</p>\n            <p>在一次私下交谈中，李总向你透露了他对公司未来的看法和自己的职业规划。</p>\n            <p>\"我很欣赏你的忠诚和能力，\"李总说，\"如果将来我有机会升职，一定会把你带上。\"</p>\n            <p>这种信任不仅体现在言语上，还表现在他逐渐将一些重要但敏感的任务交给你处理。</p>\n            <p>你感觉自己已经成为了李总核心圈子中的一员。</p>",
       "choices": [
         {
+          "text": "（周期节点）月底月度复盘：别让功劳被稀释",
+          "nextScene": "monthly_review",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "继续保持低调忠诚的策略",
           "nextScene": "continued_loyalty",
           "effects": {
@@ -1186,6 +1214,13 @@
           "effects": {
             "performance": 1,
             "mental": -1
+          }
+        },
+        {
+          "text": "（路线事件）口径与站位：政治线开始",
+          "nextScene": "pol_arc_side",
+          "effects": {
+            "energy": -1
           }
         }
       ]
@@ -1276,6 +1311,13 @@
       "id": "tech_specialist",
       "text": "<h2>技术精英</h2>\n            <p>你继续深耕技术领域，逐渐成为团队中的技术权威。</p>\n            <p>当遇到复杂问题时，同事们开始自然而然地向你寻求建议和指导。</p>\n            <p>公司年度技术大会上，你受邀做了主题演讲，分享你的专业见解。</p>\n            <p>技术VP在会后找到你：\"我们考虑组建一个技术专家小组，专门解决关键技术难题，你有兴趣加入吗？\"</p>",
       "choices": [
+        {
+          "text": "（终局门）在技术路线里做最后选择",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "energy": -1
+          }
+        },
         {
           "text": "欣然接受，加入技术专家小组",
           "nextScene": "tech_expert",
@@ -2036,6 +2078,25 @@
       "id": "career_guidance",
       "text": "<h2>职业指导</h2>\n            <p>你向经验丰富的领导请教职业发展建议，希望能够获得一些指引。</p>\n            <p>\"我非常欣赏你的工作，但在职业道路上还感到一些迷茫，希望能听听您的建议。\"</p>\n            <p>领导认真思考后给出了宝贵的反馈：\"你的技术能力很强，但可以更多关注业务影响力和领导力的培养。\"</p>\n            <p>他分享了自己的职业经历和一些关键转折点的决策思考，这些都给你带来了新的视角。</p>\n            <p>\"关键是找到自己真正热爱的领域，然后持续精进，同时不忘培养软技能和人际关系。\"</p>",
       "choices": [
+        {
+          "text": "（调试入口）随机事件池演练",
+          "nextScene": "random_event_hub",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）裁员边缘演练",
+          "nextScene": "layoff_edge",
+          "effects": {
+            "performance": -30
+          }
+        },
+        {
+          "text": "（调试入口）崩溃边缘演练",
+          "nextScene": "burnout_edge",
+          "effects": {
+            "mental": -30
+          }
+        },
         {
           "text": "制定详细的职业发展计划",
           "nextScene": "career_planning",
@@ -4084,6 +4145,34 @@
       "id": "high_performer",
       "text": "<h2>高绩效者</h2>\n            <p>你继续积极表现，争取更多关键任务，逐渐成为团队里的“高绩效者”。</p>\n            <p>但你也发现：高绩效很容易被当成“能者多劳”的理由。</p>\n            <p>你要怎么把高绩效变成更好的位置？</p>\n",
       "choices": [
+        {
+          "text": "（终局门）离场路线：开始认真准备跳槽",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（终局门）政治路线：把筹码换成位置",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（终局门）技术路线：把救火变成机制",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（周期节点）参加季度绩效校准会",
+          "nextScene": "quarterly_calibration",
+          "effects": {
+            "energy": -1
+          }
+        },
         {
           "text": "把战绩转成明确晋升路径",
           "nextScene": "career_guidance",
@@ -6346,6 +6435,20 @@
       "text": "<h2>更高的平台</h2>\n            <p>乘着数据看板项目成功的东风，你在部门会议上主动请缨接手一个更大的挑战——公司的核心用户分析系统改造。</p>\n            <p>\"基于上个项目的经验，我认为可以将同样的数据可视化方案应用到用户分析系统中，这将大大提升决策效率。\"</p>\n            <p>李总有些犹豫：\"这个项目难度不小，通常我们会安排给有3年以上经验的同事...\"</p>\n            <p>这时，赵总插话了：\"我看过数据看板的成果，做得不错。年轻人有冲劲，给他个机会试试也好。\"</p>\n            <p>就这样，你获得了一个远超你资历的项目机会。然而，团队中有些老员工看你的眼神中流露出不满。</p>\n            <p>你意识到这个项目既是机遇，也是挑战——不仅要完成技术任务，还要处理好团队关系。</p>",
       "choices": [
         {
+          "text": "（周期节点）月底月度复盘：先把口径写清",
+          "nextScene": "monthly_review",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（周期节点）绩效校准临近：先准备战报",
+          "nextScene": "quarterly_calibration",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "提前准备转正评估（试用期最后一战）",
           "nextScene": "probation_review_invite",
           "effects": {
@@ -6396,6 +6499,13 @@
           "effects": {
             "performance": 1,
             "mental": -1
+          }
+        },
+        {
+          "text": "（路线事件）值班与事故：技术线开始",
+          "nextScene": "tech_arc_oncall_page",
+          "effects": {
+            "energy": -1
           }
         }
       ]
@@ -6822,6 +6932,20 @@
       "text": "<h2>原则与灵活的平衡</h2>\n            <p>你坚持自己的效率优先观点，但也表达了在紧急情况下会配合加班的意愿。</p>\n            <p>张总微微点头：\"很好的态度。我欣赏有原则但也懂得灵活的人。\"</p>\n            <p>他补充道：\"下周我们部门有个小型技术分享会，你要不要准备一个关于提高工作效率的主题？十分钟左右就行。\"</p>\n            <p>这似乎是个展示自己的机会，但也需要额外的准备时间。</p>",
       "choices": [
         {
+          "text": "（周期节点）月底复盘：把边界说清楚",
+          "nextScene": "monthly_review",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（终局门）把节奏与边界走到最后",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "欣然接受，承诺准备精彩的分享",
           "nextScene": "tech_sharing_prepare",
           "effects": {
@@ -6849,6 +6973,13 @@
             "skills": [
               "战略思考"
             ]
+          }
+        },
+        {
+          "text": "（路线事件）精力告警：边界线开始",
+          "nextScene": "boundary_arc_energy",
+          "effects": {
+            "energy": -1
           }
         }
       ]
@@ -7213,7 +7344,7 @@
     },
     "promotion": {
       "id": "promotion",
-      "text": "<div class=\"ending-icon icon-promotion\"></div>\n            <h2>职场成功</h2>\n            <p>经过一年的努力工作，你成功晋升为团队负责人。</p>\n            <p>你的技术能力和人际关系管理得到了领导的认可。</p>\n            <p>虽然路途并不平坦，但你找到了在996科技生存并发展的方式。</p>\n            <p>未来，更大的挑战和机遇等待着你...</p>\n            <p><strong>恭喜你获得\"职场赢家\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-promotion\"></div>\n<h2>职场成功</h2>\n<p>那天的晋升通知很短：你的名字在名单里，级别提升，职责调整，下周生效。</p>\n<p>你站在会议室门口，听见有人说：\"他这一路确实扛过硬仗。\"</p>\n<p>你知道这不是童话，这是交换：你用战绩换位置，用位置换更大的责任。</p>\n<p>你打开日程，看见下周已经排满：校准、招聘、跨部门对齐、事故演练。你笑了一下，像是终于进入了下一关。</p>\n<p>你也在那一刻想清楚：晋升不是终点，晋升只是你第一次拥有了“选择别人怎么活”的权力。</p>\n<p><strong>恭喜你获得“职场赢家”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7223,7 +7354,7 @@
     },
     "burnout": {
       "id": "burnout",
-      "text": "<div class=\"ending-icon icon-burnout\"></div>\n            <h2>身心俱疲</h2>\n            <p>连续几个月的超负荷工作让你身心俱疲。</p>\n            <p>周一早上，你发现自己无法起床去上班，医生诊断你患上了严重的职业倦怠症。</p>\n            <p>你不得不申请长期病假，公司很快就招聘了新人替代你的位置。</p>\n            <p>也许，是时候重新思考自己的职业规划了...</p>\n            <p><strong>你获得了\"职业倦怠\"结局。</strong></p>",
+      "text": "<div class=\"ending-icon icon-burnout\"></div>\n<h2>身心俱疲</h2>\n<p>周一早上，你盯着天花板，闹钟响了三轮，你却连抬手按掉的力气都没有。</p>\n<p>手机里是未读的群消息：@你、@你、再@你。你突然发现自己对“响声”产生了生理性的恐惧。</p>\n<p>医生把诊断写得很平静：<strong>职业倦怠，伴随焦虑与睡眠障碍</strong>。</p>\n<p>你申请了病假。公司也很平静：一周后，新人进组，你的工位被重新贴上了名字牌。</p>\n<p>你终于明白：你曾经拿命换来的“可靠”，在组织里只是一个可替换的标签。</p>\n<p><strong>你获得了“职业倦怠”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7233,7 +7364,7 @@
     },
     "layoff": {
       "id": "layoff",
-      "text": "<div class=\"ending-icon icon-layoff\"></div>\n            <h2>裁员风波</h2>\n            <p>公司突然宣布新一轮组织优化，你所在的部门成为重点\"优化\"对象。</p>\n            <p>尽管你做出了不少努力，但由于种种原因，你的名字出现在了裁员名单上。</p>\n            <p>HR约你谈话，提出了N+1的赔偿方案。</p>\n            <p>职场就是如此无情，但这也许是一个新的开始...</p>\n            <p><strong>你获得了\"被裁员\"结局。</strong></p>",
+      "text": "<div class=\"ending-icon icon-layoff\"></div>\n<h2>裁员风波</h2>\n<p>HR把门带上，笑得很职业：\"这是组织调整，不是针对个人。\"</p>\n<p>你听着那句熟练的话术，突然想起自己做过的所有努力、熬过的所有夜。</p>\n<p>桌上是一份“标准包”：N+1、签字、走流程。你的名字被打印得很清晰，像一行最终结论。</p>\n<p>你问了几个问题：解除性质、社保、年假、竞业、期限。对方的笑容没有变，只是回答变得更短。</p>\n<p>走出会议室时，你感到一种荒诞：职场最残忍的地方不是无情，而是它<strong>可以把无情说得很温柔</strong>。</p>\n<p><strong>你获得了“被裁员”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7243,8 +7374,15 @@
     },
     "work_life_balance": {
       "id": "work_life_balance",
-      "text": "<div class=\"ending-icon icon-balance\"></div>\n            <h2>平衡之道</h2>\n            <p>你成功在高压的互联网公司找到了工作与生活的平衡点。</p>\n            <p>虽然你没有成为升职最快的人，但你的技术能力得到认可，同时保持了健康的生活方式。</p>\n            <p>同事们都羡慕你能在996环境中保持心态平和，有些人甚至向你请教经验。</p>\n            <p>也许，这才是真正的职场成功...</p>\n            <p><strong>你获得了\"平衡大师\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-balance\"></div>\n<h2>平衡之道</h2>\n<p>你开始把“可持续”当成KPI：睡眠、运动、专注时间、每周复盘。</p>\n<p>你没有成为升得最快的人，但你成为了少数还能长跑的人。</p>\n<p>有人羡慕你，也有人嘲笑你不够拼。你都不再解释——你用稳定输出回答一切。</p>\n<p>某个周五傍晚，你按时关掉电脑，走出公司大门，风很轻。你突然意识到：你已经很久没有靠透支来证明自己了。</p>\n<p><strong>你获得了“平衡大师”结局。</strong></p>",
       "choices": [
+        {
+          "text": "（终局门）在平衡里做最后选择",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "energy": -1
+          }
+        },
         {
           "text": "重新开始游戏",
           "nextScene": "start"
@@ -7253,7 +7391,7 @@
     },
     "political_master": {
       "id": "political_master",
-      "text": "<div class=\"ending-icon icon-political\"></div>\n            <h2>职场政治大师</h2>\n            <p>经过一系列精彩的职场操作，你成功在996科技建立了广泛的人际网络和影响力。</p>\n            <p>你精通各种职场策略，知道何时进取、何时退让，如何平衡各方关系，如何在不同部门之间游刃有余。</p>\n            <p>公司高层对你的评价是：\"不仅技术过硬，更懂得如何让事情顺利推进。\"</p>\n            <p>你被提拔为部门总监，拥有了更大的决策权和资源配置能力。</p>\n            <p>回顾自己的职场之路，你不禁感慨：在复杂的企业环境中，技术只是基础，真正的成功需要理解并善用组织的运作规则。</p>\n            <p><strong>恭喜你获得\"职场政治大师\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-political\"></div>\n<h2>职场政治大师</h2>\n<p>你学会了口径、站位、交换与退让。你也学会了：很多事不是做出来的，是校准出来的。</p>\n<p>你不再纠结“公平”，你只关心“可控”。你把冲突变成会议纪要，把风险变成别人的选择题，把锅变成可谈的代价。</p>\n<p>你被提拔那天，祝贺的人很多。你回了一圈消息，语气都很稳。</p>\n<p>深夜你独自站在窗前，发现自己已经很久没有说过一句真心话。</p>\n<p>你获得了位置，也失去了一部分自己。</p>\n<p><strong>你获得了“职场政治大师”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7263,7 +7401,7 @@
     },
     "tech_expert": {
       "id": "tech_expert",
-      "text": "<div class=\"ending-icon icon-tech\"></div>\n            <h2>技术专家</h2>\n            <p>你坚持专注于技术能力的提升，在职场博弈中保持了独立自主的态度。</p>\n            <p>虽然你没有刻意经营办公室政治，但你的专业能力让你成为了团队中不可或缺的关键人物。</p>\n            <p>\"有些问题只有他能解决\"成为同事们常说的话。</p>\n            <p>公司为了留住你，专门设立了技术专家岗位，给予你足够的自由度和优厚的薪资待遇。</p>\n            <p>你的成长证明了在技术驱动的行业中，真正的专业能力始终是最有价值的资本。</p>\n            <p><strong>恭喜你获得\"技术专家\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-tech\"></div>\n<h2>技术专家</h2>\n<p>你没有学会讨好所有人，但你学会了让系统不再靠你一个人活着。</p>\n<p>你把救火写成机制：演练、门禁、回滚预案、可观测性。你开始拒绝“凭感觉”的承诺，只接受“有资源”的目标。</p>\n<p>某次事故后，群里有人说：\"有他在，至少我们不会瞎。\"</p>\n<p>公司给了你一个更自由的岗位与更高的待遇。你也给自己定了一个更硬的底线：不透支换稳定。</p>\n<p>你终于明白：技术路线的胜利，不是被需要，而是<strong>可被替代但仍被尊重</strong>。</p>\n<p><strong>你获得了“技术专家”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7273,7 +7411,7 @@
     },
     "entrepreneur": {
       "id": "entrepreneur",
-      "text": "<div class=\"ending-icon icon-entrepreneur\"></div>\n            <h2>自立门户</h2>\n            <p>在996科技的经历让你积累了丰富的经验和人脉，也让你看清了大公司的种种限制。</p>\n            <p>一次偶然的机会，你发现了市场上的一个空白点，决定辞职创业。</p>\n            <p>你的一些志同道合的同事也选择跟随你的脚步，成为创业团队的早期成员。</p>\n            <p>创业之路充满挑战，但你在大公司锻炼出的能力——技术、管理、资源整合、危机处理——都成为了宝贵的财富。</p>\n            <p>两年后，你的创业公司获得了A轮融资，你终于成为了自己命运的主宰者。</p>\n            <p><strong>恭喜你获得\"创业者\"结局！</strong></p>",
+      "text": "<div class=\"ending-icon icon-entrepreneur\"></div>\n<h2>自立门户</h2>\n<p>你离开时，带走的不是代码仓库，而是一套你亲身试错过的规则：如何选人、如何谈资源、如何把口径写清、如何让团队不靠英雄主义运转。</p>\n<p>办公室很小，桌子很挤，预算很紧，但你第一次觉得：决定权在你手里。</p>\n<p>你也知道：创业没有童话，它只是把所有问题都还给你自己。</p>\n<p>某个凌晨，你看着空荡的会议室，突然想起以前的自己——那个以为努力就够的人。</p>\n<p>你笑了笑，继续写下一页计划。</p>\n<p><strong>你获得了“自立门户”结局。</strong></p>",
       "choices": [
         {
           "text": "重新开始游戏",
@@ -7325,6 +7463,20 @@
       "text": "<h2>意外的邀约</h2>\n            <p>一个陌生号码的微信请求引起了你的注意。</p>\n            <p>对方自称是\"星辰科技\"的HR，他们注意到了你在技术社区的活跃表现，想邀请你参加面试。</p>\n            <p>星辰科技是996科技的主要竞争对手，据说工作环境更好，薪资也更具竞争力。</p>\n            <p>这个邀请来得十分意外，尤其是在公司重组的敏感时期。</p>\n            <p>但你也听说过有同事因为与竞争对手接触而被公司以\"违反职业道德\"为由解雇的案例。</p>",
       "choices": [
         {
+          "text": "（周期节点）月底复盘将至：先把叙事稳住",
+          "nextScene": "monthly_review",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "（终局门）认真考虑离场：终局选择",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
           "text": "婉拒对方，保持职业忠诚",
           "nextScene": "refuse_offer",
           "effects": {
@@ -7352,6 +7504,13 @@
             "skills": [
               "人际网络"
             ]
+          }
+        },
+        {
+          "text": "（路线事件）把离场做稳：跳槽线开始",
+          "nextScene": "jump_arc_offer",
+          "effects": {
+            "energy": -1
           }
         }
       ]
@@ -8984,8 +9143,33 @@
     },
     "severance_negotiate": {
       "id": "severance_negotiate",
-      "text": "<h2>赔偿谈判</h2>\n<p>HR给出一个“标准包”：N+1，但希望你签一份“自愿离职”说明，并附带保密/竞业条款。</p>\n<p>你知道：签字的那一刻，很多权利就没了。</p>",
+      "text": "<h2>赔偿谈判</h2>\n<p>HR递过来一个“标准包”：N+1。但她希望你签的是“自愿离职”，并顺手塞进保密/竞业条款。</p>\n<p>你知道：签字那一刻，很多权利会从“可谈”变成“没了”。</p>\n<p>你现在要做的不是争吵，是把这次谈判变成一份<strong>能落地的书面结果</strong>。</p>",
       "choices": [
+        {
+          "text": "（盟友硬解锁）请盟友介绍靠谱渠道，快速做一次条款核对（消耗人情）",
+          "nextScene": "legal_consult",
+          "effects": {
+            "mental": 2,
+            "favors": -1,
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（证据链硬解锁）指出条款风险：拒签“自愿离职”，并要求补偿细则写清",
+          "nextScene": "exit_clean",
+          "effects": {
+            "mental": 1,
+            "favors": 0,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
         {
           "text": "（用谈判话术）先确认解除性质与流程，再谈钱",
           "nextScene": "exit_clean",
@@ -9175,8 +9359,21 @@
     },
     "incident_blame_game": {
       "id": "incident_blame_game",
-      "text": "<h2>归因游戏</h2>\n<p>会上有人说：\"这不就是你改的？\"</p>\n<p>你看着投屏，知道如果你现在只是辩解，结果会很糟；但如果你背锅，后续更糟。</p>",
+      "text": "<h2>归因游戏</h2>\n<p>会上有人抛出一句话：\"这不就是你改的？\"</p>\n<p>你看着投屏，突然明白今天讨论的不是技术细节，而是<strong>责任归属</strong>。</p>\n<p>你如果只辩解，会输；你如果背锅，后面会输得更惨。</p>",
       "choices": [
+        {
+          "text": "（证据链硬解锁）把变更评审/灰度记录打包发关键人，提前锁定事实",
+          "nextScene": "process_optimization",
+          "effects": {
+            "performance": 3,
+            "mental": 0,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
         {
           "text": "（用留痕）把时间线和评审记录发群里，先统一事实",
           "nextScene": "process_optimization",
@@ -9303,6 +9500,2644 @@
             "skills": [
               "留痕"
             ]
+          }
+        }
+      ]
+    },
+    "quarterly_calibration": {
+      "id": "quarterly_calibration",
+      "text": "<h2>季度校准会</h2>\n<p>消息传开：本周要开季度绩效校准会。你第一次真正意识到：绩效不是“算出来的”，而是“校准出来的”。</p>\n<p>你要怎么应对这场看不见的分配？</p>",
+      "choices": [
+        {
+          "text": "提前准备一页纸战报（数据+影响+证据链）",
+          "nextScene": "quarterly_calibration_prep",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "留痕",
+              "证据链"
+            ]
+          }
+        },
+        {
+          "text": "找关键人预对齐：先把口径统一",
+          "nextScene": "quarterly_calibration_prep",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "口径",
+              "预期对齐"
+            ]
+          }
+        },
+        {
+          "text": "硬扛到会上再说（赌运气）",
+          "nextScene": "quarterly_calibration_room",
+          "effects": {
+            "mental": -2,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "quarterly_calibration_prep": {
+      "id": "quarterly_calibration_prep",
+      "text": "<h2>校准前夜</h2>\n<p>你把事实写清楚：做了什么、带来什么影响、风险怎么控的。</p>\n<p>你知道这不是“炫耀”，而是给自己留一条路。</p>",
+      "choices": [
+        {
+          "text": "把材料发给直属领导，请他帮你定口径",
+          "nextScene": "quarterly_calibration_room",
+          "effects": {
+            "performance": 1,
+            "mental": 0,
+            "energy": -1,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "把材料同步给盟友，换一个支持位",
+          "nextScene": "quarterly_calibration_room",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "allies": [
+              "小林"
+            ]
+          }
+        },
+        {
+          "text": "收敛表达：只保最硬的三条，避免被挑刺",
+          "nextScene": "quarterly_calibration_room",
+          "effects": {
+            "mental": 1,
+            "performance": 0
+          }
+        }
+      ]
+    },
+    "quarterly_calibration_room": {
+      "id": "quarterly_calibration_room",
+      "text": "<h2>校准现场</h2>\n<p>同一场校准，不同盘面。你要走哪条盘？</p>",
+      "choices": [
+        {
+          "text": "走技术盘（稳定性/事故/成本）",
+          "nextScene": "quarterly_room_tech",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走站位盘（口径/定性/可控）",
+          "nextScene": "quarterly_room_politics",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走离场盘（交接/条件/体面）",
+          "nextScene": "quarterly_room_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走节奏盘（边界/节奏/长期交付）",
+          "nextScene": "quarterly_room_boundary",
+          "effects": {
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "quarterly_calibration_result": {
+      "id": "quarterly_calibration_result",
+      "text": "<h2>校准结果</h2>\n<p>会后你得到一个结论：你没被“定死”，但你也没被“抬起来”。</p>\n<p>这意味着：你的下一步更关键了。</p>",
+      "choices": [
+        {
+          "text": "回到主线：继续推进关键项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1,
+            "mental": 0
+          }
+        },
+        {
+          "text": "回到主线：把关系经营做厚",
+          "nextScene": "build_trust",
+          "effects": {
+            "mental": 1
+          }
+        },
+        {
+          "text": "回到主线：把职业规划写成可执行计划",
+          "nextScene": "career_guidance",
+          "effects": {
+            "mental": 1
+          }
+        }
+      ]
+    },
+    "burnout_edge": {
+      "id": "burnout_edge",
+      "text": "<div class=\"ending-icon icon-burnout\"></div>\n<h2>崩溃边缘</h2>\n<p>你开始出现明显的躯体化反应：心悸、失眠、注意力涣散。</p>\n<p>你突然害怕的不是工作，而是<strong>你已经没有余量去应对任何意外</strong>。</p>\n<p>你知道如果继续硬扛，结局会很难看；但你也知道：只要你愿意停一下，你还有一次转弯的机会。</p>\n<p><strong>这是一次“挽救窗口”。</strong></p>",
+      "choices": [
+        {
+          "text": "（盟友硬解锁）如果你有盟友：帮你顶一班/扛一段（消耗人情）",
+          "nextScene": "burnout_recover",
+          "effects": {
+            "mental": 10,
+            "energy": 10,
+            "favors": -1,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（用精力）立刻请假/调休，先把身体拉回线以上",
+          "nextScene": "burnout_recover",
+          "effects": {
+            "mental": 8,
+            "performance": -2,
+            "energy": 10
+          }
+        },
+        {
+          "text": "（找盟友）求助：把任务切出去，别一个人扛",
+          "nextScene": "burnout_recover",
+          "effects": {
+            "mental": 6,
+            "performance": 0,
+            "energy": 6,
+            "allies": [
+              "小林"
+            ]
+          }
+        },
+        {
+          "text": "继续硬扛（不建议）",
+          "nextScene": "burnout",
+          "effects": {
+            "mental": -6,
+            "energy": -6
+          }
+        }
+      ]
+    },
+    "burnout_recover": {
+      "id": "burnout_recover",
+      "text": "<h2>把自己救回来</h2>\n<p>你做了你最难做的一件事：停下来。</p>\n<p>你没能立刻变强，但你至少没有把自己交出去。</p>",
+      "choices": [
+        {
+          "text": "回到主线：以可持续节奏继续",
+          "nextScene": "career_guidance",
+          "effects": {
+            "mental": 2,
+            "energy": 2
+          }
+        },
+        {
+          "text": "回到主线：把边界说清楚",
+          "nextScene": "manager_chat_balanced",
+          "effects": {
+            "mental": 1,
+            "energy": 1
+          }
+        }
+      ]
+    },
+    "layoff_edge": {
+      "id": "layoff_edge",
+      "text": "<div class=\"ending-icon icon-layoff\"></div>\n<h2>被动名单</h2>\n<p>你收到一个信号：你可能会被放进“优化名单”。</p>\n<p>这还不是终局，但已经是警报。你突然明白：他们不是在评估你，他们是在评估<strong>成本</strong>。</p>\n<p>你还有一次窗口去把成本抬上来，或者给自己留后手。</p>\n<p><strong>这是一次“挽救窗口”。</strong></p>",
+      "choices": [
+        {
+          "text": "（盟友硬解锁）如果你有盟友：给你一份内部口径/名单情报（消耗人情）",
+          "nextScene": "layoff_recover",
+          "effects": {
+            "performance": 6,
+            "mental": 1,
+            "energy": -1,
+            "favors": -1,
+            "skills": [
+              "办公室情报",
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（用证据链）把范围变更/资源缺口写清楚并同步",
+          "nextScene": "layoff_recover",
+          "effects": {
+            "performance": 4,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "（谈判）明确目标与资源：不背不清不接盘",
+          "nextScene": "layoff_recover",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "什么也不做（不建议）",
+          "nextScene": "layoff",
+          "effects": {
+            "performance": -6,
+            "mental": -2,
+            "energy": -4
+          }
+        }
+      ]
+    },
+    "layoff_recover": {
+      "id": "layoff_recover",
+      "text": "<h2>把成本抬上来</h2>\n<p>你没能控制局势，但你控制了“叙事”。</p>\n<p>至少在这一次，你不是任人随口定性。</p>",
+      "choices": [
+        {
+          "text": "回到主线：继续推进关键项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1
+          }
+        },
+        {
+          "text": "回到主线：观察外部机会，保持体面",
+          "nextScene": "headhunter_approach",
+          "effects": {
+            "mental": 1
+          }
+        }
+      ]
+    },
+    "ending_gate_tech": {
+      "id": "ending_gate_tech",
+      "text": "<div class=\"ending-icon icon-tech\"></div>\n<h2>终局门：技术路线</h2>\n<p>你手里已经有了一套稳定的“专家叙事”：你能扛住关键链路，你也能把救火沉淀成机制。</p>\n<p>最后一步不是写代码，而是选择你要的生活方式。</p>",
+      "choices": [
+        {
+          "text": "继续深耕：做不可替代的技术专家",
+          "nextScene": "tech_expert",
+          "effects": {
+            "performance": 6,
+            "mental": -2,
+            "energy": -3,
+            "skills": [
+              "流程优化"
+            ]
+          }
+        },
+        {
+          "text": "往上走：争取成为技术负责人（高风险高回报）",
+          "nextScene": "promotion",
+          "effects": {
+            "performance": 8,
+            "mental": -5,
+            "energy": -4,
+            "skills": [
+              "口径",
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "换一条更可持续的路：保住节奏与边界",
+          "nextScene": "work_life_balance",
+          "effects": {
+            "mental": 6,
+            "performance": -2,
+            "energy": 4
+          }
+        }
+      ]
+    },
+    "ending_gate_politics": {
+      "id": "ending_gate_politics",
+      "text": "<div class=\"ending-icon icon-political\"></div>\n<h2>终局门：政治路线</h2>\n<p>你已经学会了站队、换筹码、讲口径。你知道“位置”从来不是奖励，而是责任与风险。</p>\n<p>现在你要选的是：你想成为什么样的人。</p>",
+      "choices": [
+        {
+          "text": "接受现实：成为政治大师，拿到更大权力",
+          "nextScene": "political_master",
+          "effects": {
+            "performance": 6,
+            "mental": -4,
+            "energy": -3
+          }
+        },
+        {
+          "text": "利用权力改变规则（更难，但更干净）",
+          "nextScene": "reform_leader",
+          "effects": {
+            "performance": 4,
+            "mental": -2,
+            "energy": -2
+          }
+        },
+        {
+          "text": "见好就收：带着筹码体面离场",
+          "nextScene": "fresh_start",
+          "effects": {
+            "mental": 4,
+            "performance": -2,
+            "energy": 3
+          }
+        }
+      ]
+    },
+    "ending_gate_jump": {
+      "id": "ending_gate_jump",
+      "text": "<div class=\"ending-icon icon-horizon\"></div>\n<h2>终局门：跳槽/离场</h2>\n<p>你终于承认：这家公司不会变，但你可以变。</p>\n<p>离场不是逃跑，离场是把未来还给自己。</p>",
+      "choices": [
+        {
+          "text": "稳妥跳槽：拿到更好的 offer（保口碑）",
+          "nextScene": "new_horizon",
+          "effects": {
+            "mental": 5,
+            "performance": 0,
+            "energy": 3
+          }
+        },
+        {
+          "text": "硬刚到底：把成本抬上来再走（消耗很大）",
+          "nextScene": "exit_fight",
+          "effects": {
+            "mental": -2,
+            "energy": -4,
+            "skills": [
+              "证据链"
+            ]
+          }
+        },
+        {
+          "text": "彻底转型：离开互联网，换一条路",
+          "nextScene": "career_change",
+          "effects": {
+            "mental": 8,
+            "performance": -6,
+            "energy": 4
+          }
+        }
+      ]
+    },
+    "ending_gate_balance": {
+      "id": "ending_gate_balance",
+      "text": "<div class=\"ending-icon icon-balance\"></div>\n<h2>终局门：可持续路线</h2>\n<p>你学会了在高压环境里保护自己：不透支、不硬扛、不把命交给 KPI。</p>\n<p>最后一步是承认：你不需要用燃烧证明价值。</p>",
+      "choices": [
+        {
+          "text": "把节奏做成长期：获得平衡结局",
+          "nextScene": "work_life_balance",
+          "effects": {
+            "mental": 6,
+            "energy": 4
+          }
+        },
+        {
+          "text": "在平衡里继续赢：把成果换位置",
+          "nextScene": "promotion",
+          "effects": {
+            "performance": 6,
+            "mental": -2,
+            "energy": -3
+          }
+        },
+        {
+          "text": "保持独立：做技术专家但不透支",
+          "nextScene": "tech_expert",
+          "effects": {
+            "performance": 4,
+            "mental": 2,
+            "energy": 1
+          }
+        }
+      ]
+    },
+    "tech_arc_oncall_page": {
+      "id": "tech_arc_oncall_page",
+      "text": "<h2>技术线：值班制度的真相</h2>\n<p>你被拉进了值班群：报警、升级、复盘，像一张看不见的网。</p>\n<p>你意识到：如果你只会救火，你会被永远安排去救火。</p>",
+      "choices": [
+        {
+          "text": "先把时间线留痕：报警→处理→恢复（减少扯皮）",
+          "nextScene": "tech_arc_oncall_week",
+          "effects": {
+            "performance": 1,
+            "mental": 0,
+            "energy": -2,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "先把监控补齐：让问题“看得见”",
+          "nextScene": "tech_arc_observability",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -3,
+            "skills": [
+              "流程优化"
+            ]
+          }
+        },
+        {
+          "text": "先求助盟友：把升级路径和责任边界问清楚",
+          "nextScene": "tech_arc_oncall_week",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "allies": [
+              "小林"
+            ]
+          }
+        }
+      ]
+    },
+    "tech_arc_oncall_week": {
+      "id": "tech_arc_oncall_week",
+      "text": "<h2>一周之后</h2>\n<p>你发现最可怕的不是报警，而是“没有标准”：每次都是你来扛。</p>\n<p>你要把这件事变成制度，还是把它当成你的战绩？</p>",
+      "choices": [
+        {
+          "text": "（流程优化硬解锁）把值班痛点变成机制：轮值/演练/门禁/回滚预案",
+          "nextScene": "tech_arc_postmortem",
+          "effects": {
+            "performance": 3,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "流程优化",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "把“谁负责什么”写成升级SOP并发群（留痕）",
+          "nextScene": "tech_arc_postmortem",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "留痕",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "继续英雄主义：用战绩换更硬的位置",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 3,
+            "mental": -3,
+            "energy": -4
+          }
+        },
+        {
+          "text": "把痛点拆成改造项：从可观测性开始",
+          "nextScene": "tech_arc_observability",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -3,
+            "skills": [
+              "流程优化"
+            ]
+          }
+        },
+        {
+          "text": "继续英雄主义：再扛一周（可能把自己搭进去）",
+          "nextScene": "tech_arc_failure",
+          "effects": {
+            "performance": 1,
+            "mental": -4,
+            "energy": -5
+          }
+        }
+      ]
+    },
+    "tech_arc_observability": {
+      "id": "tech_arc_observability",
+      "text": "<h2>可观测性改造</h2>\n<p>你加了指标、日志、告警收敛，把“猜”变成“看见”。</p>\n<p>但产品和业务会问：这能带来什么？</p>",
+      "choices": [
+        {
+          "text": "用数据讲清收益：故障时长下降、回滚更快",
+          "nextScene": "tech_arc_postmortem",
+          "effects": {
+            "performance": 3,
+            "mental": -1,
+            "energy": -2
+          }
+        },
+        {
+          "text": "拉关键人评审：让资源承诺写下来（证据链）",
+          "nextScene": "tech_arc_resource_fight",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "低调推进：先做一小段，别引火烧身",
+          "nextScene": "tech_arc_postmortem",
+          "effects": {
+            "performance": 1,
+            "mental": 1,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "tech_arc_postmortem": {
+      "id": "tech_arc_postmortem",
+      "text": "<h2>复盘会上</h2>\n<p>有人说：\"你挺强，但团队不能总靠你。\"</p>\n<p>你听懂了另一层意思：他们既想继续用你，又想把风险写成“你负责”。</p>\n<p>今天你要决定的不是态度，是路线：<strong>带机制</strong>，还是继续当<strong>个人英雄</strong>。</p>",
+      "choices": [
+        {
+          "text": "（盟友硬解锁）找盟友一起背书行动项：让机制有人撑（消耗人情）",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 2,
+            "mental": 1,
+            "energy": -1,
+            "favors": -1,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "把行动项固化：轮值、演练、门禁、回滚预案",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "流程优化"
+            ]
+          }
+        },
+        {
+          "text": "把功劳分出去：换团队支持与更稳的边界",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 1,
+            "mental": 2,
+            "energy": 1
+          }
+        },
+        {
+          "text": "把问题说狠一点：不加资源就别要稳定性",
+          "nextScene": "tech_arc_resource_fight",
+          "effects": {
+            "performance": 1,
+            "mental": -2,
+            "energy": -2,
+            "skills": [
+              "谈判"
+            ]
+          }
+        }
+      ]
+    },
+    "tech_arc_resource_fight": {
+      "id": "tech_arc_resource_fight",
+      "text": "<h2>资源之争</h2>\n<p>你把风险、成本、收益摆出来：要人、要时间、要权限。</p>\n<p>对面笑了一下：\"现在大家都紧，你先顶一顶。\"</p>\n<p>你听懂了：他们想要<strong>承诺</strong>，但不想给<strong>筹码</strong>。</p>\n<p>你要把这场对话变成交换，而不是乞求。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）用事故数据与对照组压实资源承诺（邮件抄送关键人）",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 3,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "留痕",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "（用谈判/口径）要到一个试点窗口：先做再扩",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "（用证据链）把风险邮件抄送关键人，抬高成本",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "见好就收：先保命，别把自己压爆",
+          "nextScene": "tech_arc_choose",
+          "effects": {
+            "mental": 2,
+            "energy": 2,
+            "performance": -1
+          }
+        }
+      ]
+    },
+    "tech_arc_choose": {
+      "id": "tech_arc_choose",
+      "text": "<h2>技术路线：下一站</h2>\n<p>你已经把“能救火”变成了“能让火少一点”。</p>\n<p>这意味着你终于有资格提条件：你要的不是掌声，是资源与边界。</p>\n<p>你可以更早、更稳地走进技术终局选择。</p>",
+      "choices": [
+        {
+          "text": "（不可逆抉择）把技术路线锁定下来",
+          "nextScene": "lockin_tech",
+          "effects": {}
+        },
+        {
+          "text": "进入终局门：技术路线",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "performance": 1,
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：继续推进关键项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1
+          }
+        },
+        {
+          "text": "回到主线：先把节奏稳住",
+          "nextScene": "manager_chat_balanced",
+          "effects": {
+            "mental": 1,
+            "energy": 1
+          }
+        }
+      ]
+    },
+    "pol_arc_side": {
+      "id": "pol_arc_side",
+      "text": "<h2>政治线：站位开始</h2>\n<p>一次会后，你发现同一件事被讲成两种口径。</p>\n<p>你突然明白：你不只是做事，你还在被“分配叙事”。</p>",
+      "choices": [
+        {
+          "text": "先统一口径：把事实写成纪要发出去（留痕）",
+          "nextScene": "pol_arc_message",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "留痕",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "先找关键人私聊：谁在推、谁在卡？",
+          "nextScene": "pol_arc_trade",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "办公室情报"
+            ]
+          }
+        },
+        {
+          "text": "保持沉默：先观察风向再下注",
+          "nextScene": "pol_arc_message",
+          "effects": {
+            "mental": 1,
+            "energy": 0
+          }
+        }
+      ]
+    },
+    "pol_arc_message": {
+      "id": "pol_arc_message",
+      "text": "<h2>口径反噬</h2>\n<p>你发出去的纪要很快被人“修订”。</p>\n<p>你意识到：有人在把锅往你身上引。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）保留被篡改版本：时间线+截图+原始纪要，防反咬",
+          "nextScene": "pol_arc_backstab",
+          "effects": {
+            "performance": 1,
+            "mental": 0,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "（用证据链）保留版本与时间线，别让事实被改写",
+          "nextScene": "pol_arc_backstab",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "（找盟友）拉一个见证人：别让你单挑全场",
+          "nextScene": "pol_arc_backstab",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "allies": [
+              "小林"
+            ]
+          }
+        },
+        {
+          "text": "先不硬刚：转到私下对齐关键人",
+          "nextScene": "pol_arc_trade",
+          "effects": {
+            "mental": 0,
+            "energy": -1
+          }
+        },
+        {
+          "text": "忍一忍算了：别把事情闹大（可能被定性）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "pol_arc_trade": {
+      "id": "pol_arc_trade",
+      "text": "<h2>交换</h2>\n<p>你被明确暗示：\"你支持我，我就支持你。\"</p>\n<p>你知道这不是道德题，这是成本题。</p>",
+      "choices": [
+        {
+          "text": "（谈判硬解锁）把交换写成边界：你支持什么、不支持什么、需要什么",
+          "nextScene": "pol_arc_counter",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "接受交换：换一个更稳的位置",
+          "nextScene": "pol_arc_choose",
+          "effects": {
+            "performance": 2,
+            "mental": -2,
+            "energy": -2
+          }
+        },
+        {
+          "text": "谈条件：支持可以，但要边界与资源（谈判）",
+          "nextScene": "pol_arc_counter",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "拒绝站队：把筹码留给自己",
+          "nextScene": "pol_arc_counter",
+          "effects": {
+            "mental": 2,
+            "performance": -1
+          }
+        }
+      ]
+    },
+    "pol_arc_backstab": {
+      "id": "pol_arc_backstab",
+      "text": "<h2>背刺</h2>\n<p>果然，有人开始在会议上“顺手”补了一句：\"这事是你推动的。\"</p>\n<p>语气很轻，刀很重。</p>\n<p>你现在要选：把事实钉死、把关系换掉，还是把自己抽出来。</p>",
+      "choices": [
+        {
+          "text": "（盟友硬解锁）让盟友做见证：关键会议别让你单挑（消耗人情）",
+          "nextScene": "pol_arc_counter",
+          "effects": {
+            "mental": 2,
+            "energy": -1,
+            "favors": -1,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "反击：把证据链摆出来，公开统一事实",
+          "nextScene": "pol_arc_counter",
+          "effects": {
+            "performance": 2,
+            "mental": -2,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "交换：用一次妥协换一次保护",
+          "nextScene": "pol_arc_choose",
+          "effects": {
+            "performance": 1,
+            "mental": -2,
+            "energy": -1
+          }
+        },
+        {
+          "text": "抽身：把自己从争斗里拿出来",
+          "nextScene": "pol_arc_choose",
+          "effects": {
+            "mental": 2,
+            "energy": 2,
+            "performance": -1
+          }
+        }
+      ]
+    },
+    "pol_arc_counter": {
+      "id": "pol_arc_counter",
+      "text": "<h2>反制</h2>\n<p>你不再讲情绪，只讲事实、边界、代价。</p>\n<p>你把一件事说成三段：发生了什么、为什么会这样、接下来谁负责什么。</p>\n<p>对方意识到：你不是好甩锅的那种人。</p>",
+      "choices": [
+        {
+          "text": "把这次局面变成筹码：进入政治终局门",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "performance": 1,
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：继续做高绩效（但更谨慎）",
+          "nextScene": "high_performer",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "pol_arc_choose": {
+      "id": "pol_arc_choose",
+      "text": "<h2>政治路线：下一站</h2>\n<p>你已经学会：位置不是奖励，位置是交换。</p>\n<p>你可以更早进入政治终局选择，或者退回主线继续积累。</p>",
+      "choices": [
+        {
+          "text": "（不可逆抉择）把政治路线锁定下来",
+          "nextScene": "lockin_politics",
+          "effects": {}
+        },
+        {
+          "text": "进入终局门：政治路线",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：把关系经营做厚",
+          "nextScene": "build_trust",
+          "effects": {
+            "mental": 1
+          }
+        },
+        {
+          "text": "回到主线：继续推进关键项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1
+          }
+        }
+      ]
+    },
+    "jump_arc_offer": {
+      "id": "jump_arc_offer",
+      "text": "<h2>离场线：offer 摆上桌</h2>\n<p>你拿到一个口头 offer。对方很热情，但你也听说过“反悔”和“背调翻车”。</p>\n<p>你要怎么把离场做得体面、稳妥？</p>",
+      "choices": [
+        {
+          "text": "先把条款问清：薪资结构/试用/竞业/期权",
+          "nextScene": "jump_arc_backcheck",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "先找证据链：把你在当前公司的战绩整理好",
+          "nextScene": "jump_arc_backcheck",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "先别兴奋：把手头工作收尾，保住口碑",
+          "nextScene": "jump_arc_backcheck",
+          "effects": {
+            "mental": 2,
+            "performance": 0,
+            "energy": 1
+          }
+        }
+      ]
+    },
+    "jump_arc_backcheck": {
+      "id": "jump_arc_backcheck",
+      "text": "<h2>背调来电</h2>\n<p>电话那头问得很细：你做了什么？为什么离开？有没有纠纷？</p>\n<p>每个问题都像在问一个东西：你是“稳定的人”，还是“麻烦的人”。</p>\n<p>你知道：背调不是考试，是<strong>叙事筛选</strong>。</p>",
+      "choices": [
+        {
+          "text": "（口径硬解锁）把离职动机讲成“发展选择”，不暴露情绪与冲突细节",
+          "nextScene": "jump_arc_counter",
+          "effects": {
+            "mental": 2,
+            "energy": 0,
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "（用口径）把离开原因讲成“发展选择”",
+          "nextScene": "jump_arc_counter",
+          "effects": {
+            "mental": 1,
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "（用证据链）用事实讲贡献：数据、上线、复盘",
+          "nextScene": "jump_arc_counter",
+          "effects": {
+            "performance": 1,
+            "mental": 0,
+            "skills": [
+              "证据链"
+            ]
+          }
+        },
+        {
+          "text": "紧张失误：说多了、说乱了",
+          "nextScene": "jump_arc_compete",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        },
+        {
+          "text": "随口聊聊：把细节都说出来（风险很大）",
+          "nextScene": "jump_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "jump_arc_counter": {
+      "id": "jump_arc_counter",
+      "text": "<h2>反向要价</h2>\n<p>对方问你期望，你意识到这是一次谈判：你要的是钱、时间，还是确定性？</p>",
+      "choices": [
+        {
+          "text": "（谈判硬解锁）反向要价：用条件换确定性（试用/竞业/赔付写清）",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "要确定性：把关键条款写进 offer（谈判）",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "要现金：提高 base，但接受更多不确定",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1
+          }
+        },
+        {
+          "text": "要空间：争取团队/项目选择权",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "performance": 1,
+            "mental": 0,
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "jump_arc_compete": {
+      "id": "jump_arc_compete",
+      "text": "<h2>风声</h2>\n<p>你听说公司内部可能有人知道你在面试。</p>\n<p>你突然理解了很多人离不开：不是能力不够，是风声起来以后，成本太高。</p>\n<p>你要压住风声，还是把路摆明？</p>",
+      "choices": [
+        {
+          "text": "（盟友硬解锁）让盟友帮你压住风声：内部别被针对（消耗人情）",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "mental": 2,
+            "energy": 1,
+            "favors": -1,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "压住风声：只做必要沟通，减少被针对",
+          "nextScene": "jump_arc_choose",
+          "effects": {
+            "mental": 1,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "把路摆明：用离场当筹码谈内部调整",
+          "nextScene": "internal_negotiation",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "被动扩散：陷入焦虑与消耗",
+          "nextScene": "burnout_edge",
+          "effects": {
+            "mental": -4,
+            "energy": -4
+          }
+        }
+      ]
+    },
+    "jump_arc_choose": {
+      "id": "jump_arc_choose",
+      "text": "<h2>离场路线：下一站</h2>\n<p>你已经把“冲动跳槽”变成了“可控离场”。</p>\n<p>你现在更像一个在收尾的人：交接清单、背调口径、风险留痕。</p>\n<p>你可以进入离场终局门，或者再稳一稳。</p>",
+      "choices": [
+        {
+          "text": "（不可逆抉择）把离场路线锁定下来",
+          "nextScene": "lockin_jump",
+          "effects": {}
+        },
+        {
+          "text": "进入终局门：离场路线",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：把季度校准过完再走",
+          "nextScene": "quarterly_calibration",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：继续推进手头项目，保口碑",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1
+          }
+        }
+      ]
+    },
+    "boundary_arc_energy": {
+      "id": "boundary_arc_energy",
+      "text": "<h2>边界线：精力告警</h2>\n<p>你发现自己开始靠咖啡续命，效率在掉，脾气在涨。</p>\n<p>你终于正视：精力是资源，透支会还债。</p>",
+      "choices": [
+        {
+          "text": "先休息：调休/请假/运动，把精力拉回线以上",
+          "nextScene": "boundary_arc_no",
+          "effects": {
+            "mental": 3,
+            "energy": 8,
+            "performance": -1
+          }
+        },
+        {
+          "text": "先沟通：把边界说清楚，提前对齐预期",
+          "nextScene": "boundary_arc_no",
+          "effects": {
+            "mental": 2,
+            "energy": 2,
+            "skills": [
+              "预期对齐",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "继续硬扛：用短期冲刺换短期战绩",
+          "nextScene": "burnout_edge",
+          "effects": {
+            "performance": 2,
+            "mental": -4,
+            "energy": -6
+          }
+        }
+      ]
+    },
+    "boundary_arc_no": {
+      "id": "boundary_arc_no",
+      "text": "<h2>学会说“不”</h2>\n<p>你发现真正难的不是拒绝，而是拒绝之后还能把事推进。</p>\n<p>你要拒绝的不是工作，而是“无边界的责任”。</p>\n<p>你要给出的不是情绪，而是可替代的方案与证据。</p>",
+      "choices": [
+        {
+          "text": "（留痕硬解锁）拒绝也要留痕：把范围/责任/依赖写清，避免秋后算账",
+          "nextScene": "boundary_arc_trade",
+          "effects": {
+            "mental": 2,
+            "energy": 1,
+            "skills": [
+              "留痕",
+              "预期对齐"
+            ]
+          }
+        },
+        {
+          "text": "给替代方案：我不接盘，但我给路径",
+          "nextScene": "boundary_arc_trade",
+          "effects": {
+            "performance": 1,
+            "mental": 1,
+            "energy": 1
+          }
+        },
+        {
+          "text": "用留痕保护自己：把范围和责任写清楚",
+          "nextScene": "boundary_arc_trade",
+          "effects": {
+            "mental": 1,
+            "energy": 1,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "把风险抬给关键人：让拍板的人拍板",
+          "nextScene": "boundary_arc_trade",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "硬拒绝：不解释也不留痕（可能秋后算账）",
+          "nextScene": "boundary_arc_failure",
+          "effects": {
+            "mental": -2,
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "boundary_arc_trade": {
+      "id": "boundary_arc_trade",
+      "text": "<h2>边界的代价</h2>\n<p>你能感觉到：有人更喜欢“好用的人”。</p>\n<p>当你开始有边界，你就不再那么好用。</p>\n<p>但你也能感觉到：你活过来了。</p>",
+      "choices": [
+        {
+          "text": "（不可逆抉择）把边界路线锁定下来",
+          "nextScene": "lockin_boundary",
+          "effects": {}
+        },
+        {
+          "text": "（谈判硬解锁）把边界谈成交换：我保交付，但你给资源/优先级",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "进入终局门：可持续路线",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "回到主线：继续做高绩效，但不透支",
+          "nextScene": "high_performer",
+          "effects": {
+            "performance": 1,
+            "energy": 1
+          }
+        },
+        {
+          "text": "回到主线：把工作方式沉淀成机制",
+          "nextScene": "apply_efficiency_methods",
+          "effects": {
+            "performance": 1,
+            "energy": 1,
+            "skills": [
+              "流程优化"
+            ]
+          }
+        }
+      ]
+    },
+    "monthly_review": {
+      "id": "monthly_review",
+      "text": "<h2>月度复盘</h2>\n<p>月底到了，你被拉进了一场“月度复盘”。表面是复盘，实际是：谁背锅、谁拿功、谁被记录在案。</p>\n<p>你要怎么进这场会？</p>",
+      "choices": [
+        {
+          "text": "先写周报/月报：把事实与贡献留痕",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "energy": -1,
+            "performance": 1,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "先找盟友对齐口径：别让自己单挑全场",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "energy": -1,
+            "mental": 1,
+            "allies": [
+              "小林"
+            ],
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "先把精力保住：收敛战线，只保关键一件事",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "energy": 2,
+            "performance": -1,
+            "mental": 1
+          }
+        }
+      ]
+    },
+    "monthly_review_prepare": {
+      "id": "monthly_review_prepare",
+      "text": "<h2>复盘材料</h2>\n<p>你把这一月拆成三块：做了什么、影响是什么、风险怎么控。</p>\n<p>你也发现：有人把你的贡献写成“团队共同完成”，而把锅写得很具体。</p>",
+      "choices": [
+        {
+          "text": "（用证据链）把关键截图/数据/评审记录补齐",
+          "nextScene": "monthly_review_meeting",
+          "effects": {
+            "energy": -2,
+            "performance": 2,
+            "skills": [
+              "证据链"
+            ]
+          }
+        },
+        {
+          "text": "（用口径）把“我做了什么”写得既清楚又不刺人",
+          "nextScene": "monthly_review_meeting",
+          "effects": {
+            "energy": -1,
+            "performance": 1,
+            "mental": 1,
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "（用边界）只写你愿意负责的范围，其他写风险与依赖",
+          "nextScene": "monthly_review_meeting",
+          "effects": {
+            "energy": 1,
+            "mental": 1,
+            "skills": [
+              "预期对齐"
+            ]
+          }
+        }
+      ]
+    },
+    "monthly_review_meeting": {
+      "id": "monthly_review_meeting",
+      "text": "<h2>复盘会上</h2>\n<p>同一场复盘，不同会场。你要走进哪间会议室？</p>",
+      "choices": [
+        {
+          "text": "走进技术会场（事故/稳定性/成本）",
+          "nextScene": "monthly_review_tech",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走进口径会场（定性/锅/功劳）",
+          "nextScene": "monthly_review_politics",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走进离场会场（交接/背调/叙事）",
+          "nextScene": "monthly_review_jump",
+          "effects": {
+            "energy": -1
+          }
+        },
+        {
+          "text": "走进边界会场（拒绝/资源/节奏）",
+          "nextScene": "monthly_review_boundary",
+          "effects": {
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "monthly_review_after": {
+      "id": "monthly_review_after",
+      "text": "<h2>会后</h2>\n<p>你感到一种清晰：职场不是一次选择，而是一种“月度重复”。</p>\n<p>你可以把这份重复变成你的筹码，也可以被它磨掉。</p>",
+      "choices": [
+        {
+          "text": "（调试入口）HR背刺演练",
+          "nextScene": "ally_betray_hr",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）HR救场演练",
+          "nextScene": "ally_rescue_hr",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）小陈背刺演练",
+          "nextScene": "ally_betray_xiaochen",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）小陈救场演练",
+          "nextScene": "ally_rescue_xiaochen",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）王哥背刺演练",
+          "nextScene": "ally_betray_wangge",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）王哥救场演练",
+          "nextScene": "ally_rescue_wangge",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）盟友背刺事件演练",
+          "nextScene": "ally_betray_event",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）盟友救场事件演练",
+          "nextScene": "ally_rescue_event",
+          "effects": {}
+        },
+        {
+          "text": "（调试入口）关系反噬事件演练",
+          "nextScene": "ally_debt_event",
+          "effects": {
+            "favors": 0
+          }
+        },
+        {
+          "text": "（人情债）有人来找你“还一次人情”",
+          "nextScene": "favor_repay",
+          "effects": {}
+        },
+        {
+          "text": "（人情）复盘后找盟友顶一下，让自己缓过来",
+          "nextScene": "ally_favor_call",
+          "effects": {}
+        },
+        {
+          "text": "回到主线：继续推进项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1
+          }
+        },
+        {
+          "text": "回到主线：把关系经营做厚",
+          "nextScene": "build_trust",
+          "effects": {
+            "mental": 1
+          }
+        },
+        {
+          "text": "回到主线：进入季度校准（更大的分配）",
+          "nextScene": "quarterly_calibration",
+          "effects": {
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "ally_favor_call": {
+      "id": "ally_favor_call",
+      "text": "<h2>人情债</h2>\n<p>你想起一个事实：盟友不是“拥有”，盟友是“互相欠”。</p>\n<p>你可以开口求助，但这会消耗你的一次人情。</p>\n<p>你要把这次求助当成交换，而不是理所当然。</p>",
+      "choices": [
+        {
+          "text": "请盟友帮你顶一次（消耗人情）",
+          "nextScene": "monthly_review",
+          "effects": {
+            "mental": 3,
+            "energy": 3,
+            "favors": -1
+          }
+        },
+        {
+          "text": "不麻烦别人：自己扛下去",
+          "nextScene": "monthly_review",
+          "effects": {
+            "mental": -2,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "favor_repay": {
+      "id": "favor_repay",
+      "text": "<h2>还人情</h2>\n<p>你收到盟友一句轻描淡写的消息：\"上次我帮你扛了一下，你也帮我看个问题？\"</p>\n<p>对方没有催你，但你能感觉到：这不是请求，这是结算。</p>\n<p>你明白：人情不是免费的。</p>",
+      "choices": [
+        {
+          "text": "立刻帮忙（消耗精力，但保住盟友）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": -3,
+            "mental": 1,
+            "favors": 0,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "先拖一拖（省精力，但关系变薄）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": 1,
+            "mental": -1,
+            "favors": 0,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": -1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "拒绝（短期爽，但可能失去盟友）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": 2,
+            "mental": -2,
+            "favors": 0,
+            "removeAllies": true,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": -3,
+              "debt": 2
+            }
+          }
+        }
+      ]
+    },
+    "tech_arc_failure": {
+      "id": "tech_arc_failure",
+      "text": "<h2>技术线：英雄的代价</h2>\n<p>你又一次把事故救回来，但你发现自己开始被默认成“随叫随到”。</p>\n<p>更糟的是：你没有留下清晰的证据链和机制化行动项，复盘最后变成了“你下次注意”。</p>\n<p>你赢了当下，但你正在输掉未来。</p>\n<p>你突然明白：在这里，英雄是消耗品。</p>",
+      "choices": [
+        {
+          "text": "咬牙回主线：继续推进，但先把精力拉回线以上",
+          "nextScene": "boundary_arc_energy",
+          "effects": {
+            "mental": -2,
+            "energy": -6,
+            "performance": 1
+          }
+        },
+        {
+          "text": "转入终局门：技术路线（别再用透支证明价值）",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "energy": -1,
+            "mental": -1
+          }
+        }
+      ]
+    },
+    "pol_arc_failure": {
+      "id": "pol_arc_failure",
+      "text": "<h2>政治线：叙事被改写</h2>\n<p>你以为你在谈事实，但对方在谈“定性”。</p>\n<p>因为你没有证据链/口径留痕，你的纪要被改写，你的贡献被稀释，你的锅被写实。</p>\n<p>你第一次感到：在这里，沉默等于被分配。</p>\n<p>而最可怕的是——你甚至说不清自己错在了哪一句。</p>",
+      "choices": [
+        {
+          "text": "回主线：去做一次月度复盘，把事实重新写出来",
+          "nextScene": "monthly_review",
+          "effects": {
+            "mental": -2,
+            "energy": -2,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "转入终局门：政治路线（要么拿位置，要么离场）",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "energy": -1,
+            "mental": -1
+          }
+        }
+      ]
+    },
+    "jump_arc_failure": {
+      "id": "jump_arc_failure",
+      "text": "<h2>离场线：背调翻车</h2>\n<p>你在背调里说多了，情绪也露出来了。</p>\n<p>对方开始犹豫：\"我们再考虑一下。\"</p>\n<p>你意识到：离场不只是勇气，离场更是叙事与筹码。</p>\n<p>你不是输在能力，你输在“没把话写成同一个版本”。</p>",
+      "choices": [
+        {
+          "text": "回主线：把口径写下来，重新准备背调与材料",
+          "nextScene": "jump_arc_backcheck",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "口径",
+              "证据链"
+            ]
+          }
+        },
+        {
+          "text": "转入终局门：离场路线（接受代价，尽快走稳）",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "energy": -1,
+            "mental": -1
+          }
+        }
+      ]
+    },
+    "boundary_arc_failure": {
+      "id": "boundary_arc_failure",
+      "text": "<h2>边界线：秋后算账</h2>\n<p>你当时拒绝得很干脆，但没有把范围/责任/依赖写清。</p>\n<p>一个月后，问题爆了。对方只说一句：\"当时你怎么不提醒？\"</p>\n<p>你突然明白：边界不是情绪，是证据。</p>\n<p>没有证据的边界，在别人眼里只是“你不配合”。</p>",
+      "choices": [
+        {
+          "text": "回主线：进入月度复盘，把边界写成可留痕的口径",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "留痕",
+              "预期对齐"
+            ]
+          }
+        },
+        {
+          "text": "转入终局门：可持续路线（别再用裸奔守边界）",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "ally_debt_event": {
+      "id": "ally_debt_event",
+      "text": "<h2>关系反噬</h2>\n<p>你发现盟友的语气变了：不再热情、开始拖延、甚至不回消息。</p>\n<p>你突然意识到：你把“求助”当成了习惯，而对方把它当成了成本。</p>\n<p>这一次，你不只是在处理一件事，你是在处理<strong>一段关系</strong>。</p>",
+      "choices": [
+        {
+          "text": "立刻还一次人情：帮对方顶一个坑（耗精力）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": -4,
+            "mental": 1,
+            "allyImpact": {
+              "ally": "__worst__",
+              "trust": 1,
+              "debt": -2
+            }
+          }
+        },
+        {
+          "text": "谈交换：我可以帮，但需要你也帮我一次（谈判）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": -2,
+            "mental": -1,
+            "skills": [
+              "谈判"
+            ],
+            "allyImpact": {
+              "ally": "__worst__",
+              "trust": 0,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "硬扛：这次不求助了（关系继续变薄）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "mental": -2,
+            "energy": -2,
+            "allyImpact": {
+              "ally": "__worst__",
+              "trust": -2,
+              "debt": 1
+            }
+          }
+        }
+      ]
+    },
+    "monthly_review_tech": {
+      "id": "monthly_review_tech",
+      "text": "<h2>月度复盘：技术会场</h2>\n<p>投屏上是四条曲线：故障次数、MTTR、成本、投诉。没人关心你多辛苦，大家只关心一句话：<strong>下个月还能不能稳</strong>。</p>\n<p>你知道你要交付的不是解释，是方案。</p>",
+      "choices": [
+        {
+          "text": "（流程优化硬解锁）把行动项写成机制：演练/门禁/回滚预案",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 3,
+            "energy": -2,
+            "mental": -1,
+            "skills": [
+              "流程优化",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "用数据讲收益：时长下降/告警收敛/成本下降",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 2,
+            "energy": -2,
+            "mental": -1
+          }
+        },
+        {
+          "text": "硬扛：先把锅背了再说（风险）",
+          "nextScene": "tech_arc_failure",
+          "effects": {
+            "performance": 1,
+            "energy": -4,
+            "mental": -4
+          }
+        }
+      ]
+    },
+    "monthly_review_politics": {
+      "id": "monthly_review_politics",
+      "text": "<h2>月度复盘：口径会场</h2>\n<p>这场复盘的“事实”只是底稿，真正要被校准的是：<strong>谁可靠、谁可控、谁该背锅</strong>。</p>\n<p>你听着一句句“建议”和“提醒”，像在听别人给你写评语。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）把版本与时间线摆出来，统一事实",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 2,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "把责任边界讲清：可控/不可控分开",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "忍一忍：少说少错（风险）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "monthly_review_jump": {
+      "id": "monthly_review_jump",
+      "text": "<h2>月度复盘：离场会场</h2>\n<p>你已经在准备离场，但你仍要把这一局收好。</p>\n<p>复盘对你来说只剩一个目标：<strong>别留冲突叙事，别留烂尾工程</strong>。你要带走的是口碑，不是骂名。</p>",
+      "choices": [
+        {
+          "text": "（口径硬解锁）只讲必要信息：把离开原因压成“发展选择”",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "mental": 2,
+            "energy": 1,
+            "skills": [
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "把工作收尾写清：交接清单+风险点（留痕）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "mental": 1,
+            "energy": 0,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "随口吐槽：情绪上头（风险）",
+          "nextScene": "jump_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "monthly_review_boundary": {
+      "id": "monthly_review_boundary",
+      "text": "<h2>月度复盘：边界会场</h2>\n<p>你要在这里学会一件事：拒绝不是摆烂，拒绝是把“你不做什么”说清楚，同时把“你会怎么推进”讲明白。</p>\n<p>边界如果没有证据，只会被当成情绪。</p>",
+      "choices": [
+        {
+          "text": "（留痕硬解锁）把范围/依赖/风险写清，避免秋后算账",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "mental": 2,
+            "energy": 1,
+            "skills": [
+              "留痕",
+              "预期对齐"
+            ]
+          }
+        },
+        {
+          "text": "给替代方案：我不接盘，但我给路径",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 1,
+            "mental": 1,
+            "energy": 1
+          }
+        },
+        {
+          "text": "硬拒绝不留痕（风险）",
+          "nextScene": "boundary_arc_failure",
+          "effects": {
+            "mental": -2,
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "quarterly_room_tech": {
+      "id": "quarterly_room_tech",
+      "text": "<h2>校准会：技术盘</h2>\n<p>对面问得很直：\"你能保证下季度不炸吗？\"</p>\n<p>你听懂了潜台词：他们要的是<strong>承诺</strong>，但不给你<strong>资源</strong>。</p>\n<p>你现在要做的，是把“技术问题”变成“管理选择题”。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）用数据+对照组回答：风险已被机制化",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 3,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "证据链",
+              "流程优化"
+            ]
+          }
+        },
+        {
+          "text": "承诺冲刺：我来扛（高风险）",
+          "nextScene": "tech_arc_failure",
+          "effects": {
+            "performance": 1,
+            "mental": -4,
+            "energy": -5
+          }
+        },
+        {
+          "text": "把资源写成条件：不给资源就别要承诺（谈判）",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 2,
+            "mental": -2,
+            "energy": -2,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        }
+      ]
+    },
+    "quarterly_room_politics": {
+      "id": "quarterly_room_politics",
+      "text": "<h2>校准会：站位盘</h2>\n<p>你听到一句很轻的定性：\"你很能干，但不太可控。\"</p>\n<p>这不是评价能力，这是在讨论你该被放在哪个格子里。</p>\n<p>你要么把“可控”写成边界与口径，要么就被别人替你写。</p>",
+      "choices": [
+        {
+          "text": "（口径硬解锁）把“不可控”拆成边界：我能扛，但要授权",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "口径",
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "（证据链硬解锁）把事实摆出来：你担心的点我都有记录",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "沉默接受（风险）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "quarterly_room_jump": {
+      "id": "quarterly_room_jump",
+      "text": "<h2>校准会：离场盘</h2>\n<p>你知道这场校准跟你关系不大了，但你也知道：一个人走不走得稳，往往取决于<strong>最后一个月的叙事</strong>。</p>\n<p>你要的是体面离开，不是把桌子掀了再走。</p>",
+      "choices": [
+        {
+          "text": "（留痕硬解锁）把交接与风险写清：别留尾巴",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "mental": 2,
+            "energy": 1,
+            "skills": [
+              "留痕"
+            ]
+          }
+        },
+        {
+          "text": "借校准谈条件：要么给调整，要么我走（谈判）",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -2,
+            "skills": [
+              "谈判"
+            ]
+          }
+        },
+        {
+          "text": "说漏嘴（风险）",
+          "nextScene": "jump_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "quarterly_room_boundary": {
+      "id": "quarterly_room_boundary",
+      "text": "<h2>校准会：节奏盘</h2>\n<p>你要在这里证明：可持续不是摆烂，可持续是长期交付。</p>\n<p>对面会用一句话逼你站队：\"要不要冲？\"</p>\n<p>你要做的是把“冲刺”拆成可控的资源与边界，而不是把命押上去。</p>",
+      "choices": [
+        {
+          "text": "（谈判硬解锁）把目标与资源写成交换：我保交付，你保节奏",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 2,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "用稳定输出证明：我不是快，但我可靠",
+          "nextScene": "quarterly_calibration_result",
+          "effects": {
+            "performance": 1,
+            "mental": 2,
+            "energy": 1
+          }
+        },
+        {
+          "text": "硬扛冲刺（风险）",
+          "nextScene": "burnout_edge",
+          "effects": {
+            "mental": -4,
+            "energy": -4
+          }
+        }
+      ]
+    },
+    "random_budget_freeze": {
+      "id": "random_budget_freeze",
+      "text": "<h2>随机事件：预算冻结</h2>\n<p>财务通知：预算暂缓。你突然明白很多承诺会变成空气。</p>",
+      "choices": [
+        {
+          "text": "收敛范围：保交付",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1
+          }
+        },
+        {
+          "text": "找关键人要口径：别让你背锅",
+          "nextScene": "manager_chat_balanced",
+          "effects": {
+            "mental": 0,
+            "skills": [
+              "口径"
+            ],
+            "energy": -1
+          }
+        }
+      ]
+    },
+    "random_new_leader": {
+      "id": "random_new_leader",
+      "text": "<h2>随机事件：空降领导</h2>\n<p>群里通知：新负责人下周到岗。风向可能要变。</p>",
+      "choices": [
+        {
+          "text": "提前准备一页纸自我介绍（留痕）",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "performance": 1,
+            "skills": [
+              "留痕"
+            ],
+            "energy": -1
+          }
+        },
+        {
+          "text": "保持低调观察",
+          "nextScene": "build_trust",
+          "effects": {
+            "mental": 1,
+            "energy": 0
+          }
+        }
+      ]
+    },
+    "random_scope_creep": {
+      "id": "random_scope_creep",
+      "text": "<h2>随机事件：范围膨胀</h2>\n<p>需求又加了两个“顺手做一下”。你知道这是典型 scope creep。</p>",
+      "choices": [
+        {
+          "text": "（谈判硬解锁）把范围写成取舍表，谁要谁签字",
+          "nextScene": "monthly_review",
+          "effects": {
+            "skills": [
+              "谈判",
+              "留痕"
+            ],
+            "energy": -2,
+            "mental": -1
+          }
+        },
+        {
+          "text": "先接着做：用透支换短期安稳",
+          "nextScene": "burnout_edge",
+          "effects": {
+            "energy": -4,
+            "mental": -3,
+            "performance": 1
+          }
+        }
+      ]
+    },
+    "random_office_rumor": {
+      "id": "random_office_rumor",
+      "text": "<h2>随机事件：小道消息</h2>\n<p>茶水间有人说：下个月可能要“调整组织”。你不知道真假，但你知道要留后手。</p>",
+      "choices": [
+        {
+          "text": "悄悄补证据链：把贡献写清",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "skills": [
+              "证据链"
+            ],
+            "energy": -1
+          }
+        },
+        {
+          "text": "先不信：继续推进手头项目",
+          "nextScene": "bigger_project",
+          "effects": {
+            "performance": 1,
+            "mental": -1
+          }
+        }
+      ]
+    },
+    "random_event_hub": {
+      "id": "random_event_hub",
+      "text": "<h2>变动</h2>\n<p>职场里总有一些不在你掌控中的小变动。</p>",
+      "choices": [
+        {
+          "text": "预算冻结",
+          "nextScene": "random_budget_freeze",
+          "effects": {}
+        },
+        {
+          "text": "空降领导",
+          "nextScene": "random_new_leader",
+          "effects": {}
+        },
+        {
+          "text": "范围膨胀",
+          "nextScene": "random_scope_creep",
+          "effects": {}
+        },
+        {
+          "text": "小道消息",
+          "nextScene": "random_office_rumor",
+          "effects": {}
+        }
+      ]
+    },
+    "ally_betray_event": {
+      "id": "ally_betray_event",
+      "text": "<h2>背刺：顺手一刀</h2>\n<p>你以为是一次普通同步，结果对方在群里“顺手”补了一句：把责任轻轻推到你这边。</p>\n<p>语气很客气，落点很准确。</p>\n<p>你终于明白：当关系账本透支到某个程度，别人不会吵架，别人会“顺手”。</p>",
+      "choices": [
+        {
+          "text": "（留痕硬解锁）把事实与时间线发出来，先钉住版本",
+          "nextScene": "monthly_review",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "小林",
+              "trust": -2,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（谈判硬解锁）私下谈交换：我不追究，但你要还我一次",
+          "nextScene": "favor_repay",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判"
+            ],
+            "allyImpact": {
+              "ally": "小林",
+              "trust": -1,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "忍下去（关系继续坏）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -3,
+            "energy": -2,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": -3,
+              "debt": 2
+            }
+          }
+        }
+      ]
+    },
+    "ally_rescue_event": {
+      "id": "ally_rescue_event",
+      "text": "<h2>救场：一句话</h2>\n<p>会议里气氛很危险，你差点被定性。</p>\n<p>就在这时，盟友插了一句很短的话：把事实说回了你这边，也把锅推回了该负责的人。</p>\n<p>你突然明白：关系不是装饰，关系是保险。</p>",
+      "choices": [
+        {
+          "text": "接住救场：把口径写成纪要发出去（留痕）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 2,
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "留痕",
+              "口径"
+            ],
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 2,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "立刻还一次人情（别让债再堆）",
+          "nextScene": "favor_repay",
+          "effects": {
+            "energy": -2,
+            "mental": 1,
+            "favors": 0,
+            "allyImpact": {
+              "ally": "小林",
+              "trust": 1,
+              "debt": -2
+            }
+          }
+        }
+      ]
+    },
+    "ally_rescue_wangge": {
+      "id": "ally_rescue_wangge",
+      "text": "<h2>救场：王哥一句“老江湖”</h2>\n<p>你被问到一个很刁钻的问题，话说不好就是“能力不足”。</p>\n<p>王哥在旁边笑着补了一句：把问题从“你行不行”换成了“资源与流程”。</p>\n<p>他没替你争功，他替你保命。</p>",
+      "choices": [
+        {
+          "text": "接住救场：把关键点写成邮件抄送（留痕）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 1,
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "留痕",
+              "口径"
+            ],
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": 2,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "立刻还人情：帮王哥顶一次复盘材料（耗精力）",
+          "nextScene": "favor_repay",
+          "effects": {
+            "energy": -3,
+            "mental": 1,
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": 1,
+              "debt": -2
+            }
+          }
+        }
+      ]
+    },
+    "ally_betray_wangge": {
+      "id": "ally_betray_wangge",
+      "text": "<h2>背刺：王哥的“提醒”</h2>\n<p>王哥在会上说得很客气：\"新人冲劲很足，但也要注意风险控制。\"</p>\n<p>听起来像夸奖，落地是定性：风险在你身上。</p>\n<p>你突然意识到：老江湖不一定坏，但老江湖永远先保自己。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）把风险与依赖写清：别让定性落你身上",
+          "nextScene": "monthly_review",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": -1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "私下问清楚：你到底想要什么（谈判）",
+          "nextScene": "ally_debt_event",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判"
+            ],
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": -1,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "忍下去（风险）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -2,
+            "energy": -2,
+            "allyImpact": {
+              "ally": "王哥",
+              "trust": -2,
+              "debt": 1
+            }
+          }
+        }
+      ]
+    },
+    "ally_rescue_xiaochen": {
+      "id": "ally_rescue_xiaochen",
+      "text": "<h2>救场：小陈的产品口径</h2>\n<p>你快被“为什么做这个”问到墙角。</p>\n<p>小陈把话接过去：用用户与业务的语言把你的工作变成“必须做”。</p>\n<p>你第一次感到：技术不是护身符，口径才是。</p>",
+      "choices": [
+        {
+          "text": "把口径写下来：形成对外统一版本（口径+留痕）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "performance": 2,
+            "mental": 1,
+            "energy": -1,
+            "skills": [
+              "口径",
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "小陈",
+              "trust": 2,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "还一次人情：替小陈顶一次需求对齐会（耗精力）",
+          "nextScene": "favor_repay",
+          "effects": {
+            "energy": -3,
+            "mental": 1,
+            "allyImpact": {
+              "ally": "小陈",
+              "trust": 1,
+              "debt": -2
+            }
+          }
+        }
+      ]
+    },
+    "ally_betray_xiaochen": {
+      "id": "ally_betray_xiaochen",
+      "text": "<h2>背刺：小陈的“顺手改口径”</h2>\n<p>你以为大家口径一致，结果小陈在对上汇报里把“你负责的风险”讲得很具体，把“她推动的价值”讲得很抽象。</p>\n<p>你没法当场撕破脸，但你也不能当没发生。</p>",
+      "choices": [
+        {
+          "text": "（留痕硬解锁）把评审与结论补齐：用事实纠偏",
+          "nextScene": "monthly_review_prepare",
+          "effects": {
+            "performance": 1,
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "小陈",
+              "trust": -2,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（谈判硬解锁）私下交换：口径给你，她要什么你来谈",
+          "nextScene": "pol_arc_trade",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径"
+            ],
+            "allyImpact": {
+              "ally": "小陈",
+              "trust": -1,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "忍下去（风险）",
+          "nextScene": "pol_arc_failure",
+          "effects": {
+            "mental": -2,
+            "energy": -2,
+            "allyImpact": {
+              "ally": "小陈",
+              "trust": -3,
+              "debt": 2
+            }
+          }
+        }
+      ]
+    },
+    "ally_rescue_hr": {
+      "id": "ally_rescue_hr",
+      "text": "<h2>救场：HR小王的“流程提醒”</h2>\n<p>你快被一句“流程不规范”按死时，HR小王插了一句：\"这个事情按流程应该怎么走，我们先把材料补齐。\"</p>\n<p>她不是在帮你争输赢，她是在把你从“情绪战”里拉回“流程战”。</p>",
+      "choices": [
+        {
+          "text": "接住救场：把流程与材料补齐（证据链+留痕）",
+          "nextScene": "legal_consult",
+          "effects": {
+            "mental": 2,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "HR小王",
+              "trust": 2,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "还一次人情：帮HR把一个难搞的人劝走（耗精力）",
+          "nextScene": "monthly_review_after",
+          "effects": {
+            "energy": -3,
+            "mental": 1,
+            "allyImpact": {
+              "ally": "HR小王",
+              "trust": 1,
+              "debt": -2
+            }
+          }
+        }
+      ]
+    },
+    "ally_betray_hr": {
+      "id": "ally_betray_hr",
+      "text": "<h2>背刺：HR的“记录”</h2>\n<p>HR小王笑着说：\"我只是按流程记录。\"</p>\n<p>但你知道：记录本身就是武器。她把你的“波动”写进了档案，把你的“风险”写成了标签。</p>\n<p>你没有被骂，但你被定义了。</p>",
+      "choices": [
+        {
+          "text": "（证据链硬解锁）把事实与材料补齐：让记录变成双向",
+          "nextScene": "layoff_edge",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "证据链",
+              "留痕"
+            ],
+            "allyImpact": {
+              "ally": "HR小王",
+              "trust": -1,
+              "debt": 1
+            }
+          }
+        },
+        {
+          "text": "（谈判硬解锁）私下对齐：你记录可以，但要把标准写清",
+          "nextScene": "hr_layoff_talk",
+          "effects": {
+            "mental": -1,
+            "energy": -1,
+            "skills": [
+              "谈判",
+              "口径"
+            ],
+            "allyImpact": {
+              "ally": "HR小王",
+              "trust": -1,
+              "debt": -1
+            }
+          }
+        },
+        {
+          "text": "忍下去（风险）",
+          "nextScene": "layoff_edge",
+          "effects": {
+            "mental": -2,
+            "energy": -2,
+            "allyImpact": {
+              "ally": "HR小王",
+              "trust": -2,
+              "debt": 1
+            }
+          }
+        }
+      ]
+    },
+    "lockin_tech": {
+      "id": "lockin_tech",
+      "text": "<h2>不可逆：技术路线</h2>\n<p>你意识到自己正在变成“救火默认人”。</p>\n<p>这一次你必须做一个不可逆的决定：你是要把救火变成机制，还是继续当英雄？</p>",
+      "choices": [
+        {
+          "text": "锁定路线：把救火机制化（从此优先做机制）",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "routeLock": "tech",
+            "skills": [
+              "流程优化"
+            ],
+            "performance": 2,
+            "energy": -2,
+            "mental": -1
+          }
+        },
+        {
+          "text": "不锁：继续摇摆（短期更灵活，长期更危险）",
+          "nextScene": "ending_gate_tech",
+          "effects": {
+            "performance": 1,
+            "mental": -2
+          }
+        }
+      ]
+    },
+    "lockin_politics": {
+      "id": "lockin_politics",
+      "text": "<h2>不可逆：政治路线</h2>\n<p>你终于明白：不站队也是一种站队。</p>\n<p>你要不要把筹码换成位置？一旦走进来，就很难再纯粹。</p>",
+      "choices": [
+        {
+          "text": "锁定路线：用筹码换位置（从此优先保口径与交换）",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "routeLock": "politics",
+            "skills": [
+              "口径"
+            ],
+            "performance": 2,
+            "mental": -2,
+            "energy": -2
+          }
+        },
+        {
+          "text": "不锁：保持可退可进（但更容易被分配）",
+          "nextScene": "ending_gate_politics",
+          "effects": {
+            "mental": -1
+          }
+        }
+      ]
+    },
+    "lockin_jump": {
+      "id": "lockin_jump",
+      "text": "<h2>不可逆：离场路线</h2>\n<p>你发现自己已经很难再“装作没想走”。</p>\n<p>你要不要把离场变成主线？一旦锁定，就意味着你会开始收尾、留痕、减少长期投入。</p>",
+      "choices": [
+        {
+          "text": "锁定路线：体面离场（从此优先交接与叙事）",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "routeLock": "jump",
+            "mental": 2,
+            "energy": 2,
+            "performance": -1,
+            "skills": [
+              "留痕",
+              "口径"
+            ]
+          }
+        },
+        {
+          "text": "不锁：继续两边押注（更累）",
+          "nextScene": "ending_gate_jump",
+          "effects": {
+            "mental": -1,
+            "energy": -2
+          }
+        }
+      ]
+    },
+    "lockin_boundary": {
+      "id": "lockin_boundary",
+      "text": "<h2>不可逆：边界路线</h2>\n<p>你已经学会说“不”，但你也感受到：天花板可能会因此变低。</p>\n<p>你要不要把可持续放在第一位？这是一次不可逆的取舍。</p>",
+      "choices": [
+        {
+          "text": "锁定路线：可持续优先（从此优先保护精力）",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "routeLock": "boundary",
+            "mental": 3,
+            "energy": 4,
+            "performance": -1
+          }
+        },
+        {
+          "text": "不锁：继续视情况摇摆",
+          "nextScene": "ending_gate_balance",
+          "effects": {
+            "mental": 1
           }
         }
       ]
